@@ -316,6 +316,7 @@ premium::after {
     flex-grow: 1; /* Ocupa el espacio disponible */
 }
 
+/* MODIFICACIÓN: Estilo ajustado para que funcione como enlace <a> y botón */
 .add-cart-btn {
     background-color: var(--primary-color);
     color: var(--main-bg);
@@ -326,6 +327,10 @@ premium::after {
     border-radius: 3px;
     transition: opacity 0.2s;
     white-space: nowrap;
+    text-decoration: none; /* Importante al ser enlace */
+    display: inline-flex; /* Centrado flex */
+    align-items: center;
+    justify-content: center;
 }
 
 .add-cart-btn:hover { 
@@ -494,34 +499,38 @@ premium::after {
     border: 1px solid black;
     padding: 5px;
     display: inline-block;
-    background: rgb(13, 255, 0);
+    background: #fc0;
     font-weight: bold;
     font-size: 0.8em;
 }
 
 /* --- 12. VENTANA MODAL (CSS PURO) --- */
+/* Técnica :target para mostrar alertas sin JS */
+
 .modal-overlay {
+    /* Oculto por defecto */
     visibility: hidden;
     opacity: 0;
-    position: fixed;
+    position: fixed; /* Fijo en pantalla */
     top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(46, 13, 20, 0.8);
+    background-color: rgba(46, 13, 20, 0.8); /* Fondo oscuro semitransparente usando el color primario */
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
+    z-index: 1000; /* Encima de todo */
     transition: opacity 0.3s ease, visibility 0.3s;
-    pointer-events: none;
+    pointer-events: none; /* No bloquea clics cuando está oculto */
 }
 
+/* Cuando la URL tiene el hash #en-construccion, esto se activa */
 .modal-overlay:target {
     visibility: visible;
     opacity: 1;
-    pointer-events: auto;
+    pointer-events: auto; /* Reactiva los clics */
 }
 
 .modal-content {
-    background-color: var(--main-bg);
+    background-color: var(--main-bg); /* Fondo beige claro */
     color: var(--primary-color);
     padding: 30px;
     border-radius: 8px;
@@ -534,6 +543,7 @@ premium::after {
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+/* Efecto de rebote al abrir */
 .modal-overlay:target .modal-content {
     transform: scale(1);
 }
@@ -566,7 +576,7 @@ premium::after {
     color: white;
 }
 
-/* ---  ESTILOS DE FORMULARIO (GRID) --- */
+/* --- 13. ESTILOS DE FORMULARIO (GRID) --- */
 /* Fuente de reglas base: https://www.w3schools.com/css/css_form.asp */
 /* Adaptado para usar Grid Layout y la paleta de colores del proyecto */
 

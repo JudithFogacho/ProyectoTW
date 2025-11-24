@@ -66,7 +66,7 @@
                     <div class="products-grid"> 
                         
                         <!-- PRODUCTO 1: OFERTA -->
-                        <article class="product-card" id="prod-101" data-id="101" data-category="mujer">
+                        <article class="product-card" id="prod-101" data-category="mujer">
                             <oferta>-15€</oferta>
                             <img src="https://via.placeholder.com/200x200/2E0D14/EFE1D5?text=Vestido+101" alt="Vestido Floral">
                             <h4>Vestido Floral</h4>
@@ -92,7 +92,7 @@
                         </article>
 
                         <!-- PRODUCTO 2: PREMIUM -->
-                        <article class="product-card" id="prod-102" data-id="102" data-category="mujer">
+                        <article class="product-card" id="prod-102" data-category="mujer">
                             <premium></premium>
                             <img src="https://via.placeholder.com/200x200/2E0D14/EFE1D5?text=Abrigo+102" alt="Abrigo Lana">
                             <h4>Abrigo Lana</h4>
@@ -114,6 +114,30 @@
                                     <div class="stars-inner" style="width: 85%;"></div>
                                 </div>
                                 <span class="review-text">4.25 (8 votos)</span>
+                            </div>
+                        </article>
+                        <!-- PRODUCTO 3: NORMAL -->
+                        <article class="product-card" id="prod-103" data-id="103" data-category="mujer">
+                            <img src="https://via.placeholder.com/200x200/2E0D14/EFE1D5?text=Vestido+103" alt="Vestido Floral">
+                            <h4>Vestido Floral</h4>
+                            <p class="desc">Vestido ligero de verano, ideal para el campus.</p>
+                            <p class="price">25€</p>
+                            <div class="product-actions">
+                                <select name="talla-101" class="size-selector">
+                                    <option value="" disabled selected>Talla</option>
+                                    <option value="xs">XS</option>
+                                    <option value="s">S</option>
+                                    <option value="m">M</option>
+                                    <option value="l">L</option>
+                                </select>
+                                <button class="add-cart-btn" onclick="addToCart(101)">Añadir 🛒</button>
+                            </div>
+                            <a href="#en-construccion" class="ext-link">Ver detalles</a>
+                            <div class="review-container">
+                                <div class="stars-outer">
+                                    <div class="stars-inner" style="width: 96%;"></div>
+                                </div>
+                                <span class="review-text">4.8 (120 votos)</span>
                             </div>
                         </article>
 
@@ -239,7 +263,7 @@
 
         </div>
 
-        <!-- 4. PIE DE PÁGINA (4 Columnas) -->
+        <!-- PIE DE PÁGINA (4 Columnas) -->
         <footer class="footer">
             <div class="footer-col">
                 <h4>Autores</h4>
