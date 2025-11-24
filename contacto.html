@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Ropa - Productos</title>
+    <!-- Vinculación con la hoja de estilos -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<!-- CONTENEDOR GRID PRINCIPAL (Layout General) -->
+<div class="grid-container">
+
+    <!-- 1. CABECERA (Distribución 2 columnas: Título y Buscador) -->
+    <header class="header">
+        <div class="header-info">
+            <h1><a href="index.html">MODA UNIVERSITAS</a></h1>
+            <p>Tu estilo, tu universidad.</p>
+        </div>
+        
+        <!-- Zona derecha: Carrito Global + Buscador -->
+        <div class="header-search">
+            <!-- Botón del Carrito General -->
+            <button class="cart-main-btn" title="Ver mi compra">
+                🛒 <span class="cart-count">0</span>
+            </button>
+            
+            <!-- Formulario de Búsqueda (Google) -->
+            <form action="https://www.google.com/search" method="get" target="_blank">
+                <input type="text" name="q" placeholder="Buscar en Google..." required>
+                <button type="submit">BUSCAR</button>
+            </form>
+        </div>
+    </header>
+
+    <!-- 2. MENÚ HORIZONTAL DE NAVEGACIÓN -->
+    <nav class="main-menu">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <!-- Elemento con submenú desplegable -->
+            <li class="dropdown">
+                <a href="productos.html" class="active">Productos ▾</a>
+                <ul class="dropdown-content">
+                    <li><a href="productos.html#mujer">Ropa Mujer</a></li>
+                    <li><a href="productos.html#hombre">Ropa Hombre</a></li>
+                    <li><a href="productos.html#ninos">Ropa Niños</a></li>
+                </ul>
+            </li>
+            <li><a href="noticias.html">Novedades</a></li>
+            <li><a href="contacto.html">Contactos</a></li>
+        </ul>
+    </nav>
+
+    
+</body>
+
+</html>
