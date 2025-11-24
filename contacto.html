@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda de Ropa - Productos</title>
-    <!-- Vinculación con la hoja de estilos -->
+    <title>Tienda de Ropa - Contacto</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-    <!-- CONTENEDOR GRID PRINCIPAL (Layout General) -->
     <div class="grid-container">
 
         <!-- 1. CABECERA -->
@@ -34,7 +32,7 @@
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li class="dropdown">
-                    <a href="productos.html" class="active">Productos ▾</a>
+                    <a href="productos.html">Productos ▾</a>
                     <ul class="dropdown-content">
                         <li><a href="productos.html#mujer">Ropa Mujer</a></li>
                         <li><a href="productos.html#hombre">Ropa Hombre</a></li>
@@ -42,198 +40,132 @@
                     </ul>
                 </li>
                 <li><a href="noticias.html">Novedades</a></li>
-                <li><a href="contacto.html">Contactos</a></li>
+                <li><a href="contacto.html" class="active">Contactos</a></li>
             </ul>
         </nav>
 
-        <!-- ZONA CENTRAL (Grid de 2 columnas activado con clase 'with-sidebar') -->
-        <div class="main-wrapper with-sidebar">
+        <!-- 3. ZONA CENTRAL (1 columna por defecto gracias al CSS) -->
+        <div class="main-wrapper">
             
-            <!-- COLUMNA IZQUIERDA: CONTENIDO PRINCIPAL -->
+            <!-- FORMULARIO DE CONTACTO -->
             <main class="content-area">
-                
-                <h2>Nuestro Catálogo</h2>
+                <h2>Formulario de Contacto</h2>
+                <p class="warning-text">Rellene el documento, por favor. Los datos * son obligatorios.</p>
 
-                <!-- CATEGORÍA 1: MUJER -->
-                <section id="mujer" class="category-section">
-                    <h3 class="cat-title">Ropa Mujer</h3>
-                    <div class="products-grid"> 
-                        
-                        <!-- PRODUCTO 1: OFERTA -->
-                        <article class="product-card" id="prod-101" data-id="101" data-category="mujer">
-                            <oferta>-15€</oferta>
-                            <img src="https://via.placeholder.com/200x200/2E0D14/EFE1D5?text=Vestido+101" alt="Vestido Floral">
-                            <h4>Vestido Floral</h4>
-                            <p class="desc">Vestido ligero de verano, ideal para el campus.</p>
-                            <p class="price"><span class="old-price">40€</span> 25€</p>
-                            <div class="product-actions">
-                                <select name="talla-101" class="size-selector">
-                                    <option value="" disabled selected>Talla</option>
-                                    <option value="xs">XS</option>
-                                    <option value="s">S</option>
-                                    <option value="m">M</option>
-                                    <option value="l">L</option>
-                                </select>
-                                <button class="add-cart-btn" onclick="addToCart(101)">Añadir 🛒</button>
-                            </div>
-                            <a href="#en-construccion" class="ext-link">Ver detalles</a>
-                            <div class="review-container">
-                                <div class="stars-outer">
-                                    <div class="stars-inner" style="width: 96%;"></div>
-                                </div>
-                                <span class="review-text">4.8 (120 votos)</span>
-                            </div>
-                        </article>
-
-                        <!-- PRODUCTO 2: PREMIUM -->
-                        <article class="product-card" id="prod-102" data-id="102" data-category="mujer">
-                            <premium></premium>
-                            <img src="https://via.placeholder.com/200x200/2E0D14/EFE1D5?text=Abrigo+102" alt="Abrigo Lana">
-                            <h4>Abrigo Lana</h4>
-                            <p class="desc">Alta costura para el invierno.</p>
-                            <p class="price">120€</p>
-                            <div class="product-actions">
-                                <select name="talla-102" class="size-selector">
-                                    <option value="" disabled selected>Talla</option>
-                                    <option value="s">S</option>
-                                    <option value="m">M</option>
-                                    <option value="l">L</option>
-                                    <option value="xl">XL</option>
-                                </select>
-                                <button class="add-cart-btn" onclick="addToCart(102)">Añadir 🛒</button>
-                            </div>
-                            <a href="#en-construccion" class="ext-link">Ver detalles</a>
-                            <div class="review-container">
-                                <div class="stars-outer">
-                                    <div class="stars-inner" style="width: 85%;"></div>
-                                </div>
-                                <span class="review-text">4.25 (8 votos)</span>
-                            </div>
-                        </article>
-
+                <!-- Formulario maquetado con GRID -->
+                <form action="mailto:mquesada@umh.es" method="post" enctype="text/plain" class="contact-form-grid">
+                    
+                    <!-- Fila 1: Nombre y Apellido -->
+                    <div class="form-group">
+                        <label for="nombre">Nombre* :</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre..">
                     </div>
-                </section>
-
-                <!-- CATEGORÍA 2: HOMBRE (TRENDING) -->
-                <section id="hombre" class="category-section trending">
-                    <h3 class="cat-title">Ropa Hombre (Trending 🔥)</h3>
-                    <div class="products-grid">
-
-                        <!-- PRODUCTO 3: NORMAL -->
-                        <article class="product-card" id="prod-201" data-id="201" data-category="hombre">
-                            <img src="https://via.placeholder.com/200x200/2E0D14/EFE1D5?text=Traje+201" alt="Traje Slim">
-                            <h4>Traje Slim</h4>
-                            <p class="desc">Corte moderno y elegante.</p>
-                            <p class="price">90€</p>
-                            <div class="product-actions">
-                                <select name="talla-201" class="size-selector">
-                                    <option value="" disabled selected>Talla</option>
-                                    <option value="m">M</option>
-                                    <option value="l">L</option>
-                                    <option value="xl">XL</option>
-                                </select>
-                                <button class="add-cart-btn" onclick="addToCart(201)">Añadir 🛒</button>
-                            </div>
-                            <a href="#en-construccion" class="ext-link">Ver detalles</a>
-                            <div class="review-container">
-                                <div class="stars-outer">
-                                    <div class="stars-inner" style="width: 68%;"></div>
-                                </div>
-                                <span class="review-text">3.4 (Media)</span>
-                            </div>
-                        </article>
-
-                        <!-- PRODUCTO 4: HÍBRIDO -->
-                        <article class="product-card" id="prod-202" data-id="202" data-category="hombre">
-                            <premium></premium>
-                            <oferta>2x1</oferta>
-                            <img src="https://via.placeholder.com/200x200/2E0D14/EFE1D5?text=Camisas+202" alt="Pack Camisas">
-                            <h4>Pack Camisas</h4>
-                            <p class="desc">Básicos esenciales.</p>
-                            <p class="price">25€</p>
-                            <div class="product-actions">
-                                <select name="talla-202" class="size-selector">
-                                    <option value="" disabled selected>Talla</option>
-                                    <option value="m">M</option>
-                                    <option value="l">L</option>
-                                </select>
-                                <button class="add-cart-btn" onclick="addToCart(202)">Añadir 🛒</button>
-                            </div>
-                            <a href="#en-construccion" class="ext-link">Ver detalles</a>
-                            <div class="review-container">
-                                <div class="stars-outer">
-                                    <div class="stars-inner" style="width: 100%;"></div>
-                                </div>
-                                <span class="review-text">5.0 (2 votos)</span>
-                            </div>
-                        </article>
-
+                    <div class="form-group">
+                        <label for="apellido">Apellido* :</label>
+                        <input type="text" id="apellido" name="apellido" required placeholder="Tu apellido..">
                     </div>
-                </section>
 
-                <!-- CATEGORÍA 3: NIÑOS -->
-                <section id="ninos" class="category-section">
-                    <h3 class="cat-title">Ropa Niños</h3>
-                    <div class="products-grid">
-                        
-                        <!-- PRODUCTO 5: NORMAL -->
-                        <article class="product-card" id="prod-301" data-id="301" data-category="ninos">
-                            <img src="https://via.placeholder.com/200x200/2E0D14/EFE1D5?text=Chandal+301" alt="Chandal">
-                            <h4>Chándal Escolar</h4>
-                            <p class="desc">Resistente y lavable.</p>
-                            <p class="price">20€</p>
-                            <div class="product-actions">
-                                <select name="talla-301" class="size-selector">
-                                    <option value="" disabled selected>Talla</option>
-                                    <option value="s">S</option>
-                                    <option value="m">M</option>
-                                </select>
-                                <button class="add-cart-btn" onclick="addToCart(301)">Añadir 🛒</button>
-                            </div>
-                            <a href="#en-construccion" class="ext-link">Ver detalles</a>
-                            <div class="review-container">
-                                <div class="stars-outer">
-                                    <div class="stars-inner" style="width: 80%;"></div>
-                                </div>
-                                <span class="review-text">4.0 (10 votos)</span>
-                            </div>
-                        </article>
+                    <!-- Fila 2: Dirección -->
+                    <div class="form-group full-width">
+                        <label for="direccion">Dirección* :</label>
+                        <input type="text" id="direccion" name="direccion" required placeholder="Calle, número, piso...">
                     </div>
-                </section>
 
+                    <!-- Fila 3: Apartamento -->
+                    <div class="form-group full-width">
+                        <label for="Apart">Apartamento, suite o unidad:</label>
+                        <input type="text" id="Apart" name="Apart">
+                    </div>
+
+                    <!-- Fila 4: Ciudad y Provincia -->
+                    <div class="form-group">
+                        <label for="Ciudad">Ciudad* :</label>
+                        <input type="text" id="Ciudad" name="Ciudad" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Provincia">Provincia* :</label>
+                        <select id="Provincia" name="Provincia" required>
+                            <option value="">Seleccione uno...</option>
+                            <option value="AL">Alicante</option>
+                            <option value="MU">Murcia</option>
+                            <option value="VA">Valencia</option>
+                        </select>
+                    </div>
+
+                    <!-- Fila 5: CP y Email -->
+                    <div class="form-group">
+                        <label for="CopPost">Código postal* :</label>
+                        <input type="text" id="CopPost" name="CopPost" required pattern="[0-9]{5}">
+                    </div>
+                    <div class="form-group">
+                        <label for="email1">Email* :</label>
+                        <input type="email" id="email1" name="email" required placeholder="ejemplo@umh.es">
+                    </div>
+
+                    <!-- Fila 6: Teléfono y Tipo -->
+                    <div class="form-group">
+                        <label for="telef">Número telefono* :</label>
+                        <input type="tel" id="telef" name="telef" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo:</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="tipo_telef" value="casa"> Casa</label>
+                            <label><input type="radio" name="tipo_telef" value="trabajo"> Trabajo</label>
+                            <label><input type="radio" name="tipo_telef" value="movil"> Móvil</label>
+                        </div>
+                    </div>
+
+                    <!-- Fila 7: DNI y Banco -->
+                    <div class="form-group">
+                        <label for="dni">DNI* :</label>
+                        <input type="text" id="dni" name="dni" required pattern="[0-9]{8}[A-Za-z]">
+                    </div>
+                    <div class="form-group">
+                        <label for="bank">Código bancario* :</label>
+                        <input type="text" id="bank" name="bank" required pattern="[A-Za-z][A-Za-z][0-9]{22}">
+                    </div>
+
+                    <!-- Fila 8: Confirmar Email -->
+                    <div class="form-group full-width">
+                        <label for="email2">Confirmar Email* :</label>
+                        <input type="email" id="email2" name="email_confirmar" required>
+                    </div>
+
+                    <!-- Fila 9: Fecha y Color -->
+                    <div class="form-group">
+                        <label for="fecha_nac">Fecha de nacimiento:</label>
+                        <input type="date" id="fecha_nac" name="fecha_nac">
+                    </div>
+                    <div class="form-group">
+                        <label for="color_fav">Color favorito:</label>
+                        <div class="color-wrapper">
+                            <input type="color" id="color_fav" name="color_fav">
+                        </div>
+                    </div>
+
+                    <!-- Fila 10: Range -->
+                    <div class="form-group full-width">
+                        <label for="satisfac">Nivel de satisfacción (1-10):</label>
+                        <div class="range-wrapper">
+                            <span>1</span>
+                            <input type="range" id="satisfac" name="satisfac" min="1" max="10">
+                            <span>10</span>
+                        </div>
+                    </div>
+
+                    <!-- Botones -->
+                    <div class="form-buttons full-width">
+                        <input type="submit" value="Enviar" class="btn-submit">
+                        <input type="reset" value="Limpiar" class="btn-reset">
+                    </div>
+
+                </form>
             </main>
-
-            <!-- COLUMNA DERECHA: INFOGRAFÍA INTERACTIVA (ASIDE) -->
-            <aside class="sidebar-infographic">
-                <div class="infographic-container">
-                    <h3>Guía de Tallas</h3>
-                    <p class="small-text">Pasa el ratón sobre la talla para ver las medidas.</p>
-                    
-                    <div class="info-box">
-                        <div class="info-item">XS
-                            <div class="size-popup"><img src="https://via.placeholder.com/150x100/ffffff/2E0D14?text=Pecho:82cm" alt="XS"></div>
-                        </div>
-                        <div class="info-item">S
-                            <div class="size-popup"><img src="https://via.placeholder.com/150x100/ffffff/2E0D14?text=Pecho:86cm" alt="S"></div>
-                        </div>
-                        <div class="info-item">M
-                            <div class="size-popup"><img src="https://via.placeholder.com/150x100/ffffff/2E0D14?text=Pecho:90cm" alt="M"></div>
-                        </div>
-                        <div class="info-item">L
-                            <div class="size-popup"><img src="https://via.placeholder.com/150x100/ffffff/2E0D14?text=Pecho:96cm" alt="L"></div>
-                        </div>
-                        <div class="info-item">XL
-                            <div class="size-popup"><img src="https://via.placeholder.com/150x100/ffffff/2E0D14?text=Pecho:102cm" alt="XL"></div>
-                        </div>
-                    </div>
-                    
-                    <p>Elige tu talla ideal consultando nuestra guía completa.</p>
-                </div>
-            </aside>
 
         </div>
 
-        <!-- 4. PIE DE PÁGINA (4 Columnas) -->
+        <!-- 4. PIE DE PÁGINA -->
         <footer class="footer">
             <div class="footer-col">
                 <h4>Autores</h4>
@@ -255,19 +187,7 @@
                 <p><a href="https://www.umh.es/contenido/Estudios/:asi_g_2804_S8/datos_es.html">Departamento</a></p>
             </div>
         </footer>
-
     </div>
-
-    <!-- Este div está oculto y solo se ve cuando la URL tiene #en-construccion -->
-    <div id="en-construccion" class="modal-overlay">
-        <div class="modal-content">
-            <h3>🚧Página en construcción🚧</h3>
-            <p>La sección de detalles se está implementando actualmente.</p>
-            <p>Disculpa las molestias.</p>
-            <a href="#" class="modal-close-btn">Cerrar</a>
-        </div>
-    </div>
-
 </body>
 </html>
 
