@@ -42,9 +42,9 @@
                 <li class="dropdown">
                     <a href="productos.html" class="active">Productos ▾</a>
                     <ul class="dropdown-content">
-                        <li><a href="productos.html#mujer">Ropa Mujer</a></li>
-                        <li><a href="productos.html#hombre">Ropa Hombre</a></li>
-                        <li><a href="productos.html#ninos">Ropa Niños</a></li>
+                        <li><a href="#mujer">Ropa Mujer</a></li>
+                        <li><a href="#hombre">Ropa Hombre</a></li>
+                        <li><a href="#ninos">Ropa Niños</a></li>
                     </ul>
                 </li>
                 <li><a href="noticias.html">Novedades</a></li>
@@ -60,7 +60,7 @@
                 
                 <h2>Nuestro Catálogo</h2>
 
-                <!-- CATEGORÍA 1: MUJER -->
+                <!-- CATEGORÍA 1: MUJER (3 Productos) -->
                 <section id="mujer" class="category-section">
                     <h3 class="cat-title">Ropa Mujer</h3>
                     <div class="products-grid"> 
@@ -80,7 +80,6 @@
                                     <option value="m">M</option>
                                     <option value="l">L</option>
                                 </select>
-                                <!-- Enlace al modal -->
                                 <a href="#en-construccion" class="add-cart-btn">Añadir 🛒</a>
                             </div>
                             <a href="#en-construccion" class="ext-link">Ver detalles</a>
@@ -118,15 +117,39 @@
                             </div>
                         </article>
 
+                        <!-- PRODUCTO 3: NORMAL -->
+                        <article class="product-card">
+                            <img src="https://via.placeholder.com/200x200/2E0D14/EFE1D5?text=Blusa+Seda" alt="Blusa Seda">
+                            <h4>Blusa de Seda</h4>
+                            <p class="desc">Elegante y suave, perfecta para presentaciones.</p>
+                            <p class="price">45€</p>
+                            <div class="product-actions">
+                                <select name="talla" class="size-selector">
+                                    <option value="" disabled selected>Talla</option>
+                                    <option value="s">S</option>
+                                    <option value="m">M</option>
+                                    <option value="l">L</option>
+                                </select>
+                                <a href="#en-construccion" class="add-cart-btn">Añadir 🛒</a>
+                            </div>
+                            <a href="#en-construccion" class="ext-link">Ver detalles</a>
+                            <div class="review-container">
+                                <div class="stars-outer">
+                                    <div class="stars-inner" style="width: 80%;"></div>
+                                </div>
+                                <span class="review-text">4.0 (45 votos)</span>
+                            </div>
+                        </article>
+
                     </div>
                 </section>
 
-                <!-- CATEGORÍA 2: HOMBRE (TRENDING) -->
+                <!-- CATEGORÍA 2: HOMBRE (3 Productos) -->
                 <section id="hombre" class="category-section trending">
                     <h3 class="cat-title">Ropa Hombre (Trending 🔥)</h3>
                     <div class="products-grid">
 
-                        <!-- PRODUCTO 3: NORMAL -->
+                        <!-- PRODUCTO 1: NORMAL -->
                         <article class="product-card">
                             <img src="https://via.placeholder.com/200x200/2E0D14/EFE1D5?text=Traje+Slim" alt="Traje Slim">
                             <h4>Traje Slim</h4>
@@ -150,7 +173,7 @@
                             </div>
                         </article>
 
-                        <!-- PRODUCTO 4: HÍBRIDO -->
+                        <!-- PRODUCTO 2: HÍBRIDO -->
                         <article class="product-card">
                             <premium></premium>
                             <oferta>2x1</oferta>
@@ -175,15 +198,41 @@
                             </div>
                         </article>
 
+                        <!-- PRODUCTO 3: OFERTA -->
+                        <article class="product-card">
+                            <oferta>-20%</oferta>
+                            <img src="https://via.placeholder.com/200x200/2E0D14/EFE1D5?text=Vaqueros" alt="Vaqueros">
+                            <h4>Vaqueros Clásicos</h4>
+                            <p class="desc">Denim resistente para el día a día.</p>
+                            <p class="price"><span class="old-price">40€</span> 32€</p>
+                            <div class="product-actions">
+                                <select name="talla" class="size-selector">
+                                    <option value="" disabled selected>Talla</option>
+                                    <option value="38">38</option>
+                                    <option value="40">40</option>
+                                    <option value="42">42</option>
+                                    <option value="44">44</option>
+                                </select>
+                                <a href="#en-construccion" class="add-cart-btn">Añadir 🛒</a>
+                            </div>
+                            <a href="#en-construccion" class="ext-link">Ver detalles</a>
+                            <div class="review-container">
+                                <div class="stars-outer">
+                                    <div class="stars-inner" style="width: 90%;"></div>
+                                </div>
+                                <span class="review-text">4.5 (60 votos)</span>
+                            </div>
+                        </article>
+
                     </div>
                 </section>
 
-                <!-- CATEGORÍA 3: NIÑOS -->
+                <!-- CATEGORÍA 3: NIÑOS (3 Productos) -->
                 <section id="ninos" class="category-section">
                     <h3 class="cat-title">Ropa Niños</h3>
                     <div class="products-grid">
                         
-                        <!-- PRODUCTO 5: NORMAL -->
+                        <!-- PRODUCTO 1: NORMAL -->
                         <article class="product-card">
                             <img src="https://via.placeholder.com/200x200/2E0D14/EFE1D5?text=Chandal" alt="Chandal">
                             <h4>Chándal Escolar</h4>
@@ -205,6 +254,57 @@
                                 <span class="review-text">4.0 (10 votos)</span>
                             </div>
                         </article>
+
+                        <!-- PRODUCTO 2: PREMIUM -->
+                        <article class="product-card">
+                            <premium></premium>
+                            <img src="https://via.placeholder.com/200x200/2E0D14/EFE1D5?text=Vestido+Fiesta" alt="Vestido Fiesta">
+                            <h4>Vestido de Fiesta</h4>
+                            <p class="desc">Detalles bordados a mano.</p>
+                            <p class="price">55€</p>
+                            <div class="product-actions">
+                                <select name="talla" class="size-selector">
+                                    <option value="" disabled selected>Talla</option>
+                                    <option value="4a">4 Años</option>
+                                    <option value="6a">6 Años</option>
+                                    <option value="8a">8 Años</option>
+                                </select>
+                                <a href="#en-construccion" class="add-cart-btn">Añadir 🛒</a>
+                            </div>
+                            <a href="#en-construccion" class="ext-link">Ver detalles</a>
+                            <div class="review-container">
+                                <div class="stars-outer">
+                                    <div class="stars-inner" style="width: 100%;"></div>
+                                </div>
+                                <span class="review-text">5.0 (5 votos)</span>
+                            </div>
+                        </article>
+
+                        <!-- PRODUCTO 3: OFERTA -->
+                        <article class="product-card">
+                            <oferta>-5€</oferta>
+                            <img src="https://via.placeholder.com/200x200/2E0D14/EFE1D5?text=Pijama" alt="Pijama">
+                            <h4>Pijama Suave</h4>
+                            <p class="desc">Algodón 100% orgánico.</p>
+                            <p class="price"><span class="old-price">18€</span> 13€</p>
+                            <div class="product-actions">
+                                <select name="talla" class="size-selector">
+                                    <option value="" disabled selected>Talla</option>
+                                    <option value="2a">2 Años</option>
+                                    <option value="4a">4 Años</option>
+                                    <option value="6a">6 Años</option>
+                                </select>
+                                <a href="#en-construccion" class="add-cart-btn">Añadir 🛒</a>
+                            </div>
+                            <a href="#en-construccion" class="ext-link">Ver detalles</a>
+                            <div class="review-container">
+                                <div class="stars-outer">
+                                    <div class="stars-inner" style="width: 94%;"></div>
+                                </div>
+                                <span class="review-text">4.7 (22 votos)</span>
+                            </div>
+                        </article>
+
                     </div>
                 </section>
 
