@@ -1,217 +1,783 @@
-/* === ESTILOS BASE === */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f9f9f9;
+/* --- 1. VARIABLES Y RESET --- */
+:root {
+    --primary-color: #2E0D14; /* Color oscuro/acento principal */
+    --main-bg: #EFE1D5;       /* Color de fondo principal */
+    --white: #ffffff;
+    --accent-red: #d32f2f;    
+    --accent-gold: #c5a009;   
+}
+
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: var(--primary-color);
+}
+
+/* --- 2. LAYOUT GRID --- */
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "footer";
+    grid-template-rows: auto auto 1fr auto;
+    min-height: 100vh;
+}
+
+/* --- 3. CABECERA --- */
+.header {
+    grid-area: header;
+    background-color: #dcd0c5;
     padding: 20px;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    align-items: center;
+    border-bottom: 2px solid var(--primary-color);
 }
 
-h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 40px;
+.header a {
+    text-decoration: none;
+    color: var(--primary-color);
 }
 
-/* === MAQUETACIÓN DE CATEGORÍAS === */
-.categoria {
-    background: white;
-    padding: 20px;
-    margin-bottom: 40px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-h2 {
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
-    margin-top: 0;
-}
-
-/* REQUISITO: Categoría Trending (Diseño libre diferente) */
-.cat-trending {
-    background: #222; /* Fondo oscuro */
-    color: #fff;
-    border-left: 10px solid #ff4757; /* Borde llamativo */
-}
-
-.cat-trending h2 {
-    color: #ff4757;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    border-bottom: 1px solid #444;
-}
-
-/* === GRID DE PRODUCTOS === */
-.grid-productos {
+.header-search {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.cart-main-btn {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 6px 12px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.3s;
+    border-radius: 4px;
+}
+
+.cart-main-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.header-search form { display: flex; gap: 5px; }
+.header-search input { padding: 6px; border: 1px solid #ccc; border-radius: 4px; }
+.header-search button[type="submit"] {
+    background-color: var(--primary-color);
+    color: var(--main-bg);
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* --- 4. MENÚ --- */
+.main-menu {
+    grid-area: nav;
+    background-color: var(--main-bg);
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.main-menu > ul {
+    display: flex;
+    list-style: none;
     justify-content: center;
+    padding: 0;
+    margin: 0;
 }
 
-/* === TARJETA DE PRODUCTO (Resumen) === */
-.producto {
-    border: 1px solid #eee;
-    background: #fff;
-    width: 250px;
+.main-menu > ul > li { position: relative; }
+
+.main-menu a {
+    display: block;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.main-menu a:hover, .main-menu a.active {
+    background-color: #dbc9b9;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100;
+    list-style: none;
+}
+
+.dropdown:hover .dropdown-content { display: block; }
+.dropdown-content a { padding: 10px; font-size: 0.9em; border-bottom: 1px solid #eee; }
+
+/* --- 5. MAIN + SIDEBAR --- */
+.main-wrapper {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--main-bg);
+}
+
+.content-area { padding-right: 10px; }
+
+.category-section {
+    margin-bottom: 40px;
     padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    transition: transform 0.2s;
-    position: relative; /* Necesario para etiqueta premium */
-    color: #333; /* Texto negro por defecto */
+    background-color: rgba(255,255,255, 0.4);
+    border-radius: 5px;
 }
 
-.producto:hover {
+.cat-title {
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--primary-color);
+    font-size: 1.5em;
+}
+
+.trending {
+    background-color: rgba(46, 13, 20, 0.1);
+    border: 2px dashed var(--primary-color);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* --- 6. TARJETA PRODUCTO --- */
+.product-card {
+    background-color: var(--white);
+    border: 1px solid #ddd;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative; 
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-.producto img {
+.product-card img {
     width: 100%;
     height: 180px;
-    object-fit: cover;
-    border-radius: 5px;
-    background-color: #ddd; /* Color de fondo si no carga la imagen */
+    object-fit: contain;
+    margin-bottom: 10px;
+    background-color: #fff;
 }
 
-/* REQUISITO: Producto Premium */
-.prod-premium {
-    border: 2px solid gold;
-}
+.product-card h4 { margin-bottom: 5px; font-size: 1.1em; }
+.desc { font-size: 0.9em; color: #555; margin-bottom: 5px; flex-grow: 1; }
+.price { font-weight: bold; font-size: 1.2em; margin: 5px 0 10px 0; }
+.old-price { text-decoration: line-through; color: #999; font-size: 0.8em; margin-right: 5px; }
 
-/* Etiqueta flotante para premium */
-.prod-premium::before {
-    content: "👑 PREMIUM";
+/* --- 7. ETIQUETAS OFERTA/PREMIUM --- */
+oferta {
+    display: block;
     position: absolute;
-    top: -10px;
-    right: -10px;
-    background: gold;
-    color: black;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-/* REQUISITO: Precios y Ofertas */
-.precio-bloque {
-    margin: 10px 0;
-    font-size: 18px;
-}
-
-.tachado {
-    text-decoration: line-through;
-    color: #999;
-    font-size: 14px;
-    margin-right: 5px;
-}
-
-.oferta {
-    color: #e74c3c;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-/* Botón Ver Detalles */
-.btn-ver {
-    display: inline-block;
-    background-color: #007bff;
+    top: 10px;
+    right: 10px;
+    background-color: var(--accent-red);
     color: white;
-    padding: 10px 20px;
+    padding: 4px 8px;
+    font-size: 0.85em;
+    font-weight: bold;
+    border-radius: 3px;
+    z-index: 10;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+premium {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
+
+premium::after {
+    content: "PREMIUM";
+    background-color: var(--accent-gold);
+    color: var(--primary-color);
+    padding: 4px 8px;
+    font-size: 0.75em;
+    font-weight: bold;
+    border: 1px solid var(--primary-color);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Bordes según etiquetas */
+.product-card:has(oferta) { border: 2px solid var(--accent-red); }
+.product-card:has(premium) { background-color: #fffdf5; border: 2px solid var(--accent-gold); }
+.product-card:has(premium):has(oferta) { border-color: var(--primary-color); }
+
+/* --- 8. ACCIONES Y BOTONES --- */
+.product-actions {
+    display: flex;
+    gap: 5px;
+    margin-top: auto; 
+    margin-bottom: 10px;
+}
+
+.size-selector {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    font-size: 0.9em;
+    flex-grow: 1;
+}
+
+.add-cart-btn {
+    background-color: var(--primary-color);
+    color: var(--main-bg);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 3px;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+}
+
+.add-cart-btn:hover { opacity: 0.9; }
+
+.ext-link {
+    display: block;
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 0.85em;
+    margin-bottom: 5px;
+}
+
+/* --- 9. SISTEMA DE VALORACIÓN (ESTRELLAS DINÁMICAS) --- */
+
+.review-container {
+    padding-top: 10px;
+    border-top: 1px dotted #ccc;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* --- 1. VARIABLES Y CONFIGURACIÓN INICIAL --- */
+:root {
+    --primary-color: #2E0D14; /* Color oscuro/acento principal */
+    --main-bg: #EFE1D5;       /* Color de fondo principal (beige claro) */
+    --white: #ffffff;
+    --accent-red: #d32f2f;    /* Rojo para Ofertas */
+    --accent-gold: #c5a009;   /* Dorado para Premium */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: var(--primary-color);
+}
+
+/* --- 2. GRID GENERAL LAYOUT (Estructura principal) --- */
+.grid-container {
+    display: grid;
+    /* Define las áreas del layout */
+    grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "footer";
+    /* Altura automática para cabecera, menu y pie; el resto para contenido */
+    grid-template-rows: auto auto 1fr auto;
+    min-height: 100vh;
+}
+
+/* --- 3. CABECERA (Header) --- */
+.header {
+    grid-area: header;
+    background-color: #dcd0c5; /* Tono de contraste suave */
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 70% 30%; /* Título a la izq, herramientas a la dcha */
+    align-items: center;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.header a {
     text-decoration: none;
+    color: var(--primary-color);
+}
+
+/* Contenedor derecho: Carrito y Buscador */
+.header-search {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* Estilo del Botón de Carrito Global */
+.cart-main-btn {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 6px 12px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.3s;
+    border-radius: 4px;
+}
+
+.cart-main-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Estilos del Formulario de Búsqueda */
+.header-search form { 
+    display: flex; 
+    gap: 5px; 
+}
+.header-search input { 
+    padding: 6px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+}
+.header-search button[type="submit"] {
+    background-color: var(--primary-color);
+    color: var(--main-bg);
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* --- 4. MENÚ DE NAVEGACIÓN (Nav) --- */
+.main-menu {
+    grid-area: nav;
+    background-color: var(--main-bg); /* Color principal de fondo */
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.main-menu > ul {
+    display: flex; /* Flexbox para menú horizontal */
+    list-style: none; /* Elimina viñetas */
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.main-menu > ul > li { 
+    position: relative; /* Necesario para posicionar el dropdown */
+}
+
+.main-menu a {
+    display: block;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.main-menu a:hover, .main-menu a.active {
+    background-color: #dbc9b9; /* Color al pasar el ratón */
+}
+
+/* Submenú Desplegable */
+.dropdown-content {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    background-color: var(--white);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100;
+    list-style: none;
+}
+
+.dropdown:hover .dropdown-content { 
+    display: block; /* Mostrar al hacer hover */
+}
+.dropdown-content a { 
+    padding: 10px; 
+    font-size: 0.9em; 
+    border-bottom: 1px solid #eee; 
+}
+
+/* --- 5. ZONA PRINCIPAL (Main + Aside) --- */
+.main-wrapper {
+    grid-area: main;
+    display: grid;
+    /* Grid de 2 columnas: Contenido ancho (3fr) y Lateral estrecho (1fr) */
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--main-bg);
+}
+
+/* Estilos de las secciones de categorías */
+.content-area { 
+    padding-right: 10px; 
+}
+
+.category-section {
+    margin-bottom: 40px;
+    padding: 15px;
+    background-color: rgba(255,255,255, 0.4);
     border-radius: 5px;
-    margin-top: 10px;
-    font-size: 14px;
 }
 
-.btn-ver:hover {
-    background-color: #0056b3;
+.cat-title {
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--primary-color);
+    font-size: 1.5em;
 }
 
-/* Botón rojo para la zona trending */
-.cat-trending .btn-ver {
-    background-color: #ff4757;
+/* Estilo específico para la categoría Trending */
+.trending {
+    background-color: rgba(46, 13, 20, 0.1);
+    border: 2px dashed var(--primary-color);
 }
 
-.cat-trending .btn-ver:hover {
-    background-color: #e84118;
+/* Parrilla de Productos (Responsive) */
+.products-grid {
+    display: grid;
+    /* Ajusta automáticamente las columnas según el espacio disponible */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
 }
 
+/* --- 6. TARJETA DE PRODUCTO --- */
+.product-card {
+    background-color: var(--white);
+    border: 1px solid #ddd;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    /* Position relative es vital para ubicar las etiquetas oferta/premium dentro */
+    position: relative; 
+    transition: transform 0.2s, box-shadow 0.2s;
+}
 
-/* === EL TRUCO: VENTANA DE DETALLE (MODAL CSS) === */
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
 
-/* 1. Fondo oscuro (Overlay) */
-.modal-detalle {
-    display: none; /* OCULTO POR DEFECTO */
-    position: fixed;
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.product-card h4 { 
+    margin-bottom: 5px; 
+    font-size: 1.1em; 
+}
+
+.desc { 
+    font-size: 0.9em; 
+    color: #555; 
+    margin-bottom: 5px; 
+    flex-grow: 1; /* Hace que todas las descripciones ocupen lo mismo */
+}
+
+.price { 
+    font-weight: bold; 
+    font-size: 1.2em; 
+    margin: 5px 0 10px 0; 
+}
+
+.old-price { 
+    text-decoration: line-through; 
+    color: #999; 
+    font-size: 0.8em; 
+    margin-right: 5px; 
+}
+
+/* --- 7. ETIQUETAS PERSONALIZADAS (<oferta> y <premium>) --- */
+
+/* Etiqueta <oferta>: Posicionada arriba a la derecha */
+oferta {
+    display: block; /* Se comporta como caja */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--accent-red);
+    color: white;
+    padding: 4px 8px;
+    font-size: 0.85em;
+    font-weight: bold;
+    border-radius: 3px;
+    z-index: 10;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Etiqueta <premium>: Posicionada arriba a la izquierda */
+premium {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
+
+/* Contenido generado por CSS para la etiqueta vacía <premium> */
+premium::after {
+    content: "PREMIUM";
+    background-color: var(--accent-gold);
+    color: var(--primary-color);
+    padding: 4px 8px;
+    font-size: 0.75em;
+    font-weight: bold;
+    border: 1px solid var(--primary-color);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Estilos de la tarjeta BASADOS en su contenido (Selector :has) */
+/* Borde rojo si contiene <oferta> */
+.product-card:has(oferta) { 
+    border: 2px solid var(--accent-red); 
+}
+/* Fondo especial y borde dorado si contiene <premium> */
+.product-card:has(premium) { 
+    background-color: #fffdf5; 
+    border: 2px solid var(--accent-gold); 
+}
+/* Si contiene ambos, prioriza el borde principal pero mantiene fondo premium */
+.product-card:has(premium):has(oferta) { 
+    border-color: var(--primary-color); 
+}
+
+/* --- 8. ACCIONES DE COMPRA (Selectores y Botones) --- */
+.product-actions {
+    display: flex;
+    gap: 5px;
+    margin-top: auto; 
+    margin-bottom: 10px;
+}
+
+.size-selector {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    font-size: 0.9em;
+    flex-grow: 1; /* Ocupa el espacio disponible */
+}
+
+.add-cart-btn {
+    background-color: var(--primary-color);
+    color: var(--main-bg);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 3px;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+}
+
+.add-cart-btn:hover { 
+    opacity: 0.9; 
+}
+
+.ext-link {
+    display: block;
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 0.85em;
+    margin-bottom: 5px;
+}
+
+/* --- 9. SISTEMA DE VALORACIÓN (ESTRELLAS DINÁMICAS) --- */
+.review-container {
+    padding-top: 10px;
+    border-top: 1px dotted #ccc;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stars-outer {
+    position: relative;
+    display: inline-block;
+    font-size: 1.1em;
+    color: #ccc; /* Estrellas grises de fondo */
+    font-family: 'Times New Roman', serif; 
+    line-height: 1;
+}
+
+/* Dibuja 5 estrellas vacías */
+.stars-outer::before {
+    content: "\2605 \2605 \2605 \2605 \2605";
+}
+
+.stars-inner {
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.8);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0; /* Este valor se modifica en el HTML con style="width:XX%" */
+    color: var(--primary-color); /* Color de las estrellas llenas */
 }
 
-/* 2. Magia: Cuando el ID es "target" en la URL, se muestra */
-.modal-detalle:target {
-    display: flex;
-    animation: fadeIn 0.3s ease-out;
+/* Dibuja 5 estrellas llenas (que serán recortadas por el width) */
+.stars-inner::before {
+    content: "\2605 \2605 \2605 \2605 \2605";
 }
 
-/* 3. Caja Blanca del contenido */
-.detalle-contenido {
-    background: white;
-    padding: 30px;
-    width: 90%;
-    max-width: 600px;
-    border-radius: 10px;
-    position: relative;
-    max-height: 90vh; /* Evita que se salga si es muy alto */
-    overflow-y: auto; /* Scroll interno si es necesario */
-    color: #333;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+/* En la sección Trending, las estrellas son rojas */
+.trending .stars-inner {
+    color: var(--accent-red);
 }
 
-.detalle-contenido img {
-    max-width: 100%;
-    height: auto;
+.review-text {
+    font-size: 0.8em;
+    font-style: italic;
+    color: #555;
+}
+
+/* --- 10. SIDEBAR: INFOGRAFÍA INTERACTIVA (Flex) --- */
+.sidebar-infographic {
+    background-color: #dcd0c5;
+    padding: 15px;
+    text-align: center;
     border-radius: 5px;
-    margin-bottom: 15px;
 }
 
-.btn-cerrar {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-    color: #666;
-    background: #eee;
-    padding: 5px 10px;
+.small-text { 
+    font-size: 0.85em; 
+    margin-bottom: 10px; 
+    color: #555;
+}
+
+.info-box {
+    display: flex; /* Flexbox obligatorio según enunciado */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.info-item {
+    background-color: var(--primary-color);
+    color: var(--main-bg);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
+    font-weight: bold;
+    cursor: help;
+    position: relative; /* Base para el popup absoluto */
+    transition: transform 0.2s;
 }
 
-.btn-cerrar:hover {
-    background: #ccc;
-    color: #000;
+.info-item:hover { 
+    transform: scale(1.1); 
 }
 
-/* Enlace externo en el detalle */
-.enlace-externo {
+/* Popup emergente con imagen */
+.size-popup {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 120%; /* Justo debajo del círculo */
+    left: 50%;
+    transform: translateX(-50%); /* Centrado horizontal */
+    width: 140px;
+    background-color: var(--white);
+    border: 2px solid var(--primary-color);
+    padding: 5px;
+    z-index: 999;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    border-radius: 5px;
+}
+
+.size-popup img { 
+    width: 100%; 
+    display: block; 
+}
+
+/* Flechita decorativa del popup (triángulo CSS) */
+.size-popup::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -6px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent var(--primary-color) transparent;
+}
+
+/* Muestra el popup al hacer hover en el círculo */
+.info-item:hover .size-popup { 
+    display: block; 
+}
+
+/* --- 11. PIE DE PÁGINA (Footer) --- */
+.footer {
+    grid-area: footer;
+    background-color: #bbb;
+    padding: 20px;
+    display: grid;
+    /* 4 columnas de igual tamaño */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    text-align: center;
+    align-items: flex-start;
+}
+
+.footer h4 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
     display: inline-block;
-    margin-top: 15px;
-    color: #007bff;
-    text-decoration: underline;
 }
 
-/* Animación suave de entrada */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.footer-col { 
+    padding: 10px; 
+}
+
+.w3c-icon {
+    border: 1px solid black;
+    padding: 5px;
+    display: inline-block;
+    background: #fc0;
+    font-weight: bold;
+    font-size: 0.8em;
 }
