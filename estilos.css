@@ -1,0 +1,217 @@
+/* === ESTILOS BASE === */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* === MAQUETACIÓN DE CATEGORÍAS === */
+.categoria {
+    background: white;
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* REQUISITO: Categoría Trending (Diseño libre diferente) */
+.cat-trending {
+    background: #222; /* Fondo oscuro */
+    color: #fff;
+    border-left: 10px solid #ff4757; /* Borde llamativo */
+}
+
+.cat-trending h2 {
+    color: #ff4757;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-bottom: 1px solid #444;
+}
+
+/* === GRID DE PRODUCTOS === */
+.grid-productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* === TARJETA DE PRODUCTO (Resumen) === */
+.producto {
+    border: 1px solid #eee;
+    background: #fff;
+    width: 250px;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.2s;
+    position: relative; /* Necesario para etiqueta premium */
+    color: #333; /* Texto negro por defecto */
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.producto img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    background-color: #ddd; /* Color de fondo si no carga la imagen */
+}
+
+/* REQUISITO: Producto Premium */
+.prod-premium {
+    border: 2px solid gold;
+}
+
+/* Etiqueta flotante para premium */
+.prod-premium::before {
+    content: "👑 PREMIUM";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: gold;
+    color: black;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* REQUISITO: Precios y Ofertas */
+.precio-bloque {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.tachado {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.oferta {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Botón Ver Detalles */
+.btn-ver {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.btn-ver:hover {
+    background-color: #0056b3;
+}
+
+/* Botón rojo para la zona trending */
+.cat-trending .btn-ver {
+    background-color: #ff4757;
+}
+
+.cat-trending .btn-ver:hover {
+    background-color: #e84118;
+}
+
+
+/* === EL TRUCO: VENTANA DE DETALLE (MODAL CSS) === */
+
+/* 1. Fondo oscuro (Overlay) */
+.modal-detalle {
+    display: none; /* OCULTO POR DEFECTO */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 2. Magia: Cuando el ID es "target" en la URL, se muestra */
+.modal-detalle:target {
+    display: flex;
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* 3. Caja Blanca del contenido */
+.detalle-contenido {
+    background: white;
+    padding: 30px;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+    max-height: 90vh; /* Evita que se salga si es muy alto */
+    overflow-y: auto; /* Scroll interno si es necesario */
+    color: #333;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.detalle-contenido img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.btn-cerrar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    color: #666;
+    background: #eee;
+    padding: 5px 10px;
+    border-radius: 50%;
+}
+
+.btn-cerrar:hover {
+    background: #ccc;
+    color: #000;
+}
+
+/* Enlace externo en el detalle */
+.enlace-externo {
+    display: inline-block;
+    margin-top: 15px;
+    color: #007bff;
+    text-decoration: underline;
+}
+
+/* Animación suave de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
