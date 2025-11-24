@@ -494,7 +494,7 @@ premium::after {
     border: 1px solid black;
     padding: 5px;
     display: inline-block;
-    background: #fc0;
+    background: rgb(13, 255, 0);
     font-weight: bold;
     font-size: 0.8em;
 }
@@ -566,7 +566,7 @@ premium::after {
     color: white;
 }
 
-/* --- 13. ESTILOS DE FORMULARIO (GRID) --- */
+/* ---  ESTILOS DE FORMULARIO (GRID) --- */
 /* Fuente de reglas base: https://www.w3schools.com/css/css_form.asp */
 /* Adaptado para usar Grid Layout y la paleta de colores del proyecto */
 
