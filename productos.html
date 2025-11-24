@@ -18,21 +18,16 @@
     <!-- CONTENEDOR GRID PRINCIPAL (Layout General) -->
     <div class="grid-container">
 
-        <!-- 1. CABECERA (Distribución 2 columnas: Título y Buscador) -->
+        <!-- 1. CABECERA -->
         <header class="header">
             <div class="header-info">
                 <h1><a href="index.html">MODA UNIVERSITAS</a></h1>
                 <p>Tu estilo, tu universidad.</p>
             </div>
-            
-            <!-- Zona derecha: Carrito Global + Buscador -->
             <div class="header-search">
-                <!-- Botón del Carrito General -->
                 <button class="cart-main-btn" title="Ver mi compra">
                     🛒 <span class="cart-count">0</span>
                 </button>
-                
-                <!-- Formulario de Búsqueda (Google) -->
                 <form action="https://www.google.com/search" method="get" target="_blank">
                     <input type="text" name="q" placeholder="Buscar en Google..." required>
                     <button type="submit">BUSCAR</button>
@@ -40,11 +35,10 @@
             </div>
         </header>
 
-        <!-- 2. MENÚ HORIZONTAL DE NAVEGACIÓN -->
+        <!-- 2. MENÚ -->
         <nav class="main-menu">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <!-- Elemento con submenú desplegable -->
                 <li class="dropdown">
                     <a href="productos.html" class="active">Productos ▾</a>
                     <ul class="dropdown-content">
@@ -58,8 +52,8 @@
             </ul>
         </nav>
 
-        <!-- ZONA CENTRAL (Grid de 2 columnas: Contenido + Infografía) -->
-        <div class="main-wrapper">
+        <!-- ZONA CENTRAL (Grid de 2 columnas activado con clase 'with-sidebar') -->
+        <div class="main-wrapper with-sidebar">
             
             <!-- COLUMNA IZQUIERDA: CONTENIDO PRINCIPAL -->
             <main class="content-area">
@@ -74,13 +68,10 @@
                         <!-- PRODUCTO 1: OFERTA -->
                         <article class="product-card" id="prod-101" data-id="101" data-category="mujer">
                             <oferta>-15€</oferta>
-                            
                             <img src="https://via.placeholder.com/200x200/2E0D14/EFE1D5?text=Vestido+101" alt="Vestido Floral">
-                            
                             <h4>Vestido Floral</h4>
                             <p class="desc">Vestido ligero de verano, ideal para el campus.</p>
                             <p class="price"><span class="old-price">40€</span> 25€</p>
-                            
                             <div class="product-actions">
                                 <select name="talla-101" class="size-selector">
                                     <option value="" disabled selected>Talla</option>
@@ -91,10 +82,7 @@
                                 </select>
                                 <button class="add-cart-btn" onclick="addToCart(101)">Añadir 🛒</button>
                             </div>
-
-                            <!-- ENLACE MODIFICADO: Apunta al modal CSS -->
                             <a href="#en-construccion" class="ext-link">Ver detalles</a>
-                            
                             <div class="review-container">
                                 <div class="stars-outer">
                                     <div class="stars-inner" style="width: 96%;"></div>
@@ -106,13 +94,10 @@
                         <!-- PRODUCTO 2: PREMIUM -->
                         <article class="product-card" id="prod-102" data-id="102" data-category="mujer">
                             <premium></premium>
-                            
                             <img src="https://via.placeholder.com/200x200/2E0D14/EFE1D5?text=Abrigo+102" alt="Abrigo Lana">
-                            
                             <h4>Abrigo Lana</h4>
                             <p class="desc">Alta costura para el invierno.</p>
                             <p class="price">120€</p>
-                            
                             <div class="product-actions">
                                 <select name="talla-102" class="size-selector">
                                     <option value="" disabled selected>Talla</option>
@@ -123,10 +108,7 @@
                                 </select>
                                 <button class="add-cart-btn" onclick="addToCart(102)">Añadir 🛒</button>
                             </div>
-
-                            <!-- ENLACE MODIFICADO -->
                             <a href="#en-construccion" class="ext-link">Ver detalles</a>
-                            
                             <div class="review-container">
                                 <div class="stars-outer">
                                     <div class="stars-inner" style="width: 85%;"></div>
@@ -146,11 +128,9 @@
                         <!-- PRODUCTO 3: NORMAL -->
                         <article class="product-card" id="prod-201" data-id="201" data-category="hombre">
                             <img src="https://via.placeholder.com/200x200/2E0D14/EFE1D5?text=Traje+201" alt="Traje Slim">
-                            
                             <h4>Traje Slim</h4>
                             <p class="desc">Corte moderno y elegante.</p>
                             <p class="price">90€</p>
-                            
                             <div class="product-actions">
                                 <select name="talla-201" class="size-selector">
                                     <option value="" disabled selected>Talla</option>
@@ -160,10 +140,7 @@
                                 </select>
                                 <button class="add-cart-btn" onclick="addToCart(201)">Añadir 🛒</button>
                             </div>
-
-                            <!-- ENLACE MODIFICADO -->
                             <a href="#en-construccion" class="ext-link">Ver detalles</a>
-                            
                             <div class="review-container">
                                 <div class="stars-outer">
                                     <div class="stars-inner" style="width: 68%;"></div>
@@ -176,13 +153,10 @@
                         <article class="product-card" id="prod-202" data-id="202" data-category="hombre">
                             <premium></premium>
                             <oferta>2x1</oferta>
-                            
                             <img src="https://via.placeholder.com/200x200/2E0D14/EFE1D5?text=Camisas+202" alt="Pack Camisas">
-                            
                             <h4>Pack Camisas</h4>
                             <p class="desc">Básicos esenciales.</p>
                             <p class="price">25€</p>
-                            
                             <div class="product-actions">
                                 <select name="talla-202" class="size-selector">
                                     <option value="" disabled selected>Talla</option>
@@ -191,10 +165,7 @@
                                 </select>
                                 <button class="add-cart-btn" onclick="addToCart(202)">Añadir 🛒</button>
                             </div>
-
-                            <!-- ENLACE MODIFICADO -->
                             <a href="#en-construccion" class="ext-link">Ver detalles</a>
-                            
                             <div class="review-container">
                                 <div class="stars-outer">
                                     <div class="stars-inner" style="width: 100%;"></div>
@@ -214,11 +185,9 @@
                         <!-- PRODUCTO 5: NORMAL -->
                         <article class="product-card" id="prod-301" data-id="301" data-category="ninos">
                             <img src="https://via.placeholder.com/200x200/2E0D14/EFE1D5?text=Chandal+301" alt="Chandal">
-                            
                             <h4>Chándal Escolar</h4>
                             <p class="desc">Resistente y lavable.</p>
                             <p class="price">20€</p>
-                            
                             <div class="product-actions">
                                 <select name="talla-301" class="size-selector">
                                     <option value="" disabled selected>Talla</option>
@@ -227,10 +196,7 @@
                                 </select>
                                 <button class="add-cart-btn" onclick="addToCart(301)">Añadir 🛒</button>
                             </div>
-
-                            <!-- ENLACE MODIFICADO -->
                             <a href="#en-construccion" class="ext-link">Ver detalles</a>
-                            
                             <div class="review-container">
                                 <div class="stars-outer">
                                     <div class="stars-inner" style="width: 80%;"></div>
@@ -298,14 +264,12 @@
 
     </div>
 
-
     <!-- Este div está oculto y solo se ve cuando la URL tiene #en-construccion -->
     <div id="en-construccion" class="modal-overlay">
         <div class="modal-content">
             <h3>🚧Página en construcción🚧</h3>
             <p>La sección de detalles se está implementando actualmente.</p>
             <p>Disculpa las molestias.</p>
-            <!-- El botón de cerrar simplemente quita el hash de la URL -->
             <a href="#" class="modal-close-btn">Cerrar</a>
         </div>
     </div>
