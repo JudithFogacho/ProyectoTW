@@ -7,6 +7,12 @@
     --accent-gold: #c5a009;   /* Dorado para Premium */
 }
 
+.momo-trust-display-regular {
+  font-family: "Momo Trust Display", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 html {
     scroll-behavior: smooth; /* Desplazamiento suave para la navegación */
 }
@@ -28,19 +34,23 @@ body {
     display: grid;
     /* Define las áreas del layout */
     grid-template-areas: 
-        "header"
-        "nav"
-        "main"
-        "footer";
+        "header header"
+        "nav nav"
+        "main article"
+        "footer footer";
+
+    grid-template-columns: 70% 30%;
     /* Altura automática para cabecera, menu y pie; el resto para contenido */
     grid-template-rows: auto auto 1fr auto;
     min-height: 100vh;
+    gap: 0;
 }
 
 /* --- 3. CABECERA (Header) --- */
 .header {
     grid-area: header;
-    background-color: #dcd0c5; /* Tono de contraste suave */
+    background-color: #222222; /* Tono de contraste suave */
+    color: #C2D8C4;
     padding: 20px;
     display: grid;
     grid-template-columns: 70% 30%; /* Título a la izq, herramientas a la dcha */
@@ -50,7 +60,7 @@ body {
 
 .header a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: #C2D8C4;
 }
 
 /* Contenedor derecho: Carrito y Buscador */
@@ -103,7 +113,7 @@ body {
 /* --- 4. MENÚ DE NAVEGACIÓN (Nav) --- */
 .main-menu {
     grid-area: nav;
-    background-color: var(--main-bg); /* Color principal de fondo */
+    background-color: #C2D8C4; /* Color principal de fondo */
     border-bottom: 1px solid var(--primary-color);
 }
 
@@ -123,13 +133,13 @@ body {
     display: block;
     padding: 15px 30px;
     text-decoration: none;
-    color: var(--primary-color);
+    color: #222222;
     font-weight: bold;
     transition: background 0.3s;
 }
 
 .main-menu a:hover, .main-menu a.active {
-    background-color: #dbc9b9; /* Color al pasar el ratón */
+    background-color:#C2D8C4; /* Color al pasar el ratón */
 }
 
 /* Submenú Desplegable */
@@ -186,6 +196,17 @@ body {
     padding-bottom: 5px;
     border-bottom: 2px solid var(--primary-color);
     font-size: 1.5em;
+}
+
+/*Article pagina index*/
+.article-wrapper {
+    grid-area: article;
+    display: grid;
+    /* REGLA GENERAL: 1 sola columna por defecto */
+    grid-template-columns: 1fr; 
+    gap: 20px;
+    padding: 20px;
+    overflow-y: auto;
 }
 
 /* Estilo específico para la categoría Trending */
@@ -709,4 +730,83 @@ premium::after {
 }
 .btn-reset:hover {
     background-color: #bbb;
+}
+
+/*Infografia css*/
+.consejos{
+    font-size: 15px; 
+    font-weight: 100; 
+    display: block;
+}
+.emprender{
+    font-family:"Momo Trust Display", sans-serif;
+    font-size: 3rem;
+}
+.cuadroTexto{
+    border-radius: 10px; 
+    padding: 1.2rem;
+    margin: auto;
+    text-align:center;
+    border: 5px solid;
+}
+.ct1{
+    border-color: yellow;
+}
+
+.ct2{
+    border-color: red;
+}
+
+.ct3{
+    border-color: purple;
+}
+
+.ct4{
+    border-color: cyan;
+}
+
+.ct5{
+    border-color: green;
+}
+
+.cuadroTexto p{
+    font-size: 0.8rem;
+    text-align:justify;
+}
+
+.enlace{
+    font-family: "Momo Trust Display", sans-serif;
+    font-size: 1.1rem;
+}
+
+.infografia{
+    background-color: #FFFDF6;
+}
+
+.infografia img{
+    width: 100%;
+    height: auto;
+}
+
+.infografia header{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.infografia body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.infografia h2{
+  font-family: "Momo Trust Display", sans-serif;
+  font-size: 1.2rem;
+}
+
+.infografia section{
+    display: flex;
+    margin:1rem;
+}
+
+.infografia footer{
+    text-align: center;
 }
