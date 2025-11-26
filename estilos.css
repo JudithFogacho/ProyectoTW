@@ -810,3 +810,77 @@ premium::after {
 .infografia footer{
     text-align: center;
 }
+
+/*--------NOTICIAS---------*/
+.noticia {
+    position: relative;
+    width: 100%;
+    color: white; /* para que contraste con el overlay oscuro */
+    font-family: Arial, sans-serif;
+}
+
+/* IMAGEN DE FONDO (SE VE DETRÁS DEL TEXTO) */
+.noticia .imagen {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    display: block;
+}
+
+/* OVERLAY CON EL TEXTO ENCIMA */
+.contenido-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+
+    /* Color café oscuro / negro con 35% opacidad */
+    background: rgba(40, 20, 10, 0.45);
+    backdrop-filter: blur(1px); /* opcional: da elegancia */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+
+.contenido-overlay h4, h2, h3{
+    width: 50%;
+}
+
+/* TITULOS */
+.titulo {
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.subtitulo {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+/* PÁRRAFOS */
+.contenido-overlay h4 {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* PIE DE INFORMACIÓN */
+.info {
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.info a {
+    color: white;
+    font-style: italic;
+}
