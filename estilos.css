@@ -520,7 +520,7 @@ premium::after {
     border: 1px solid black;
     padding: 5px;
     display: inline-block;
-    background: #fc0;
+    background: rgb(0, 180, 0);
     font-weight: bold;
     font-size: 0.8em;
 }
