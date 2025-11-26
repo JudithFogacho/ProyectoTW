@@ -13,23 +13,18 @@
     <!-- Vinculación con la hoja de estilos -->
     <link rel="stylesheet" href="estilos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 <body>
 
-    <!-- CONTENEDOR GRID PRINCIPAL (Layout General) -->
     <div class="grid-container">
 
-        <!-- 1. CABECERA -->
         <header class="header">
             <div class="header-info">
                 <h1><a href="index.html">MODA UNIVERSITAS</a></h1>
                 <p>Tu estilo, tu universidad.</p>
             </div>
             <div class="header-search">
-                <button class="cart-main-btn" title="Ver mi compra">
-                    🛒 0
-                </button>
+                <button class="cart-main-btn" title="Ver mi compra">🛒 0</button>
                 <form action="https://www.google.com/search" method="get" target="_blank">
                     <input type="text" name="q" placeholder="Buscar en Google..." required>
                     <button type="submit">BUSCAR</button>
@@ -37,7 +32,6 @@
             </div>
         </header>
 
-        <!-- 2. MENÚ -->
         <nav class="main-menu">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -54,295 +48,194 @@
             </ul>
         </nav>
 
-        <!-- ZONA CENTRAL (Grid de 2 columnas activado con clase 'with-sidebar') -->
         <div class="main-wrapper with-sidebar">
             
-            <!-- COLUMNA IZQUIERDA: CONTENIDO PRINCIPAL -->
             <main class="content-area">
-                
                 <h2>Nuestro Catálogo</h2>
 
-                <!-- CATEGORÍA 1: MUJER (3 Productos) -->
+                <!-- CATEGORÍA 1: MUJER -->
                 <section id="mujer" class="category-section">
                     <h3 class="cat-title">Ropa Mujer</h3>
                     <div class="products-grid"> 
                         
-                        <!-- PRODUCTO 1: OFERTA -->
+                        <!-- RWD: USO DE PICTURE PARA IMAGENES RESPONSIVE -->
                         <article class="product-card">
                             <oferta>-15€</oferta>
-                            <img src="./img/tienda/Vestido_floral_gemini.png" alt="Vestido Floral" title="Imagen generada con IA">
+                            <picture>
+                                <!-- Imagen para móvil (placeholder cuadrado para notar el cambio) -->
+                                <source media="(max-width: 768px)" srcset="https://via.placeholder.com/300x300/2E0D14/EFE1D5?text=Vestido+Movil">
+                                <!-- Imagen normal -->
+                                <img src="./img/tienda/Vestido_floral_gemini.png" alt="Vestido Floral" title="Imagen generada con IA">
+                            </picture>
                             <h4>Vestido Floral</h4>
                             <p class="desc">Vestido ligero de verano, ideal para el campus.</p>
                             <p class="price"><span class="old-price">40€</span> 25€</p>
                             <div class="product-actions">
-                                <select name="talla" class="size-selector">
-                                    <option value="" disabled selected>Talla</option>
-                                    <option value="xs">XS</option>
-                                    <option value="s">S</option>
-                                    <option value="m">M</option>
-                                    <option value="l">L</option>
-                                </select>
+                                <select name="talla" class="size-selector"><option value="m">M</option></select>
                                 <a href="#en-construccion" class="add-cart-btn">Añadir 🛒</a>
                             </div>
                             <a href="#en-construccion" class="ext-link">Ver detalles</a>
-                            <div class="review-container">
-                                <div class="stars-outer">
-                                    <div class="stars-inner" style="width: 96%;"></div>
-                                </div>
-                                <span class="review-text">4.8 (120 votos)</span>
-                            </div>
+                            <div class="review-container"><span class="review-text">4.8 (120 votos)</span></div>
                         </article>
 
-                        <!-- PRODUCTO 2: PREMIUM -->
                         <article class="product-card">
                             <premium></premium>
-                            <img src="./img/tienda/Chaqueta_lana_gemini.png" alt="Abrigo Lana" title="Imagen generada con IA">
+                            <picture>
+                                <source media="(max-width: 768px)" srcset="https://via.placeholder.com/300x300/2E0D14/EFE1D5?text=Abrigo+Movil">
+                                <img src="./img/tienda/Chaqueta_lana_gemini.png" alt="Abrigo Lana" title="Imagen generada con IA">
+                            </picture>
                             <h4>Abrigo Lana</h4>
                             <p class="desc">Alta costura para el invierno.</p>
                             <p class="price">120€</p>
                             <div class="product-actions">
-                                <select name="talla" class="size-selector">
-                                    <option value="" disabled selected>Talla</option>
-                                    <option value="s">S</option>
-                                    <option value="m">M</option>
-                                    <option value="l">L</option>
-                                    <option value="xl">XL</option>
-                                </select>
+                                <select name="talla" class="size-selector"><option value="m">M</option></select>
                                 <a href="#en-construccion" class="add-cart-btn">Añadir 🛒</a>
                             </div>
                             <a href="#en-construccion" class="ext-link">Ver detalles</a>
-                            <div class="review-container">
-                                <div class="stars-outer">
-                                    <div class="stars-inner" style="width: 85%;"></div>
-                                </div>
-                                <span class="review-text">4.25 (8 votos)</span>
-                            </div>
+                            <div class="review-container"><span class="review-text">4.25 (8 votos)</span></div>
                         </article>
 
-                        <!-- PRODUCTO 3: NORMAL -->
                         <article class="product-card">
-                            <img src="./img/tienda/Blusa_seda_gemini.png" alt="Blusa Seda" title="Imagen generada con IA">
+                            <picture>
+                                <source media="(max-width: 768px)" srcset="https://via.placeholder.com/300x300/2E0D14/EFE1D5?text=Blusa+Movil">
+                                <img src="./img/tienda/Blusa_seda_gemini.png" alt="Blusa Seda" title="Imagen generada con IA">
+                            </picture>
                             <h4>Blusa de Seda</h4>
                             <p class="desc">Elegante y suave, perfecta para presentaciones.</p>
                             <p class="price">45€</p>
                             <div class="product-actions">
-                                <select name="talla" class="size-selector">
-                                    <option value="" disabled selected>Talla</option>
-                                    <option value="s">S</option>
-                                    <option value="m">M</option>
-                                    <option value="l">L</option>
-                                </select>
+                                <select name="talla" class="size-selector"><option value="s">S</option></select>
                                 <a href="#en-construccion" class="add-cart-btn">Añadir 🛒</a>
                             </div>
                             <a href="#en-construccion" class="ext-link">Ver detalles</a>
-                            <div class="review-container">
-                                <div class="stars-outer">
-                                    <div class="stars-inner" style="width: 80%;"></div>
-                                </div>
-                                <span class="review-text">4.0 (45 votos)</span>
-                            </div>
+                            <div class="review-container"><span class="review-text">4.0 (45 votos)</span></div>
                         </article>
 
                     </div>
                 </section>
 
-                <!-- CATEGORÍA 2: HOMBRE (3 Productos) -->
+                <!-- CATEGORÍA 2: HOMBRE -->
                 <section id="hombre" class="category-section trending">
                     <h3 class="cat-title">Ropa Hombre (Trending 🔥)</h3>
                     <div class="products-grid">
-
-                        <!-- PRODUCTO 1: NORMAL -->
+                        <!-- Productos estándar (imágenes normales) -->
                         <article class="product-card">
-                            <img src="./img/tienda/Traje_slim_gemini.png" alt="Traje Slim" title="Imagen generada con IA">
+                            <img src="./img/tienda/Traje_slim_gemini.png" alt="Traje Slim">
                             <h4>Traje Slim</h4>
                             <p class="desc">Corte moderno y elegante.</p>
                             <p class="price">90€</p>
                             <div class="product-actions">
-                                <select name="talla" class="size-selector">
-                                    <option value="" disabled selected>Talla</option>
-                                    <option value="m">M</option>
-                                    <option value="l">L</option>
-                                    <option value="xl">XL</option>
-                                </select>
+                                <select name="talla" class="size-selector"><option value="l">L</option></select>
                                 <a href="#en-construccion" class="add-cart-btn">Añadir 🛒</a>
                             </div>
                             <a href="#en-construccion" class="ext-link">Ver detalles</a>
-                            <div class="review-container">
-                                <div class="stars-outer">
-                                    <div class="stars-inner" style="width: 68%;"></div>
-                                </div>
-                                <span class="review-text">3.4 (47 votos)</span>
-                            </div>
+                            <div class="review-container"><span class="review-text">3.4 (47 votos)</span></div>
                         </article>
 
-                        <!-- PRODUCTO 2: HÍBRIDO -->
                         <article class="product-card">
-                            <premium></premium>
-                            <oferta>2x1</oferta>
-                            <img src="./img/tienda/Packs_camisas_hombre.png" alt="Pack Camisas" title="Imagen generada con IA">
+                            <premium></premium><oferta>2x1</oferta>
+                            <img src="./img/tienda/Packs_camisas_hombre.png" alt="Pack Camisas">
                             <h4>Pack Camisas</h4>
                             <p class="desc">Básicos esenciales.</p>
                             <p class="price">25€</p>
                             <div class="product-actions">
-                                <select name="talla" class="size-selector">
-                                    <option value="" disabled selected>Talla</option>
-                                    <option value="m">M</option>
-                                    <option value="l">L</option>
-                                </select>
+                                <select name="talla" class="size-selector"><option value="m">M</option></select>
                                 <a href="#en-construccion" class="add-cart-btn">Añadir 🛒</a>
                             </div>
                             <a href="#en-construccion" class="ext-link">Ver detalles</a>
-                            <div class="review-container">
-                                <div class="stars-outer">
-                                    <div class="stars-inner" style="width: 100%;"></div>
-                                </div>
-                                <span class="review-text">5.0 (2 votos)</span>
-                            </div>
+                            <div class="review-container"><span class="review-text">5.0 (2 votos)</span></div>
                         </article>
 
-                        <!-- PRODUCTO 3: OFERTA -->
                         <article class="product-card">
                             <oferta>-20%</oferta>
-                            <img src="./img/tienda/Vaqueros_clasicos_gemini.png" alt="Vaqueros" title="Imagen generada con IA">
+                            <img src="./img/tienda/Vaqueros_clasicos_gemini.png" alt="Vaqueros">
                             <h4>Vaqueros Clásicos</h4>
-                            <p class="desc">Denim resistente para el día a día.</p>
+                            <p class="desc">Denim resistente.</p>
                             <p class="price"><span class="old-price">40€</span> 32€</p>
                             <div class="product-actions">
-                                <select name="talla" class="size-selector">
-                                    <option value="" disabled selected>Talla</option>
-                                    <option value="38">38</option>
-                                    <option value="40">40</option>
-                                    <option value="42">42</option>
-                                    <option value="44">44</option>
-                                </select>
+                                <select name="talla" class="size-selector"><option value="40">40</option></select>
                                 <a href="#en-construccion" class="add-cart-btn">Añadir 🛒</a>
                             </div>
                             <a href="#en-construccion" class="ext-link">Ver detalles</a>
-                            <div class="review-container">
-                                <div class="stars-outer">
-                                    <div class="stars-inner" style="width: 90%;"></div>
-                                </div>
-                                <span class="review-text">4.5 (60 votos)</span>
-                            </div>
+                            <div class="review-container"><span class="review-text">4.5 (60 votos)</span></div>
                         </article>
-
                     </div>
                 </section>
 
-                <!-- CATEGORÍA 3: NIÑOS (3 Productos) -->
+                <!-- CATEGORÍA 3: NIÑOS -->
                 <section id="ninos" class="category-section">
                     <h3 class="cat-title">Ropa Niños</h3>
                     <div class="products-grid">
-                        
-                        <!-- PRODUCTO 1: NORMAL -->
                         <article class="product-card">
-                            <img src="./img/tienda/Chandal_gemini.png" alt="Chandal" title="Imagen generada con IA">
+                            <img src="./img/tienda/Chandal_gemini.png" alt="Chandal">
                             <h4>Chándal Escolar</h4>
                             <p class="desc">Resistente y lavable.</p>
                             <p class="price">20€</p>
                             <div class="product-actions">
-                                <select name="talla" class="size-selector">
-                                    <option value="" disabled selected>Talla</option>
-                                    <option value="4a">4 Años</option>
-                                    <option value="6a">6 Años</option>
-                                </select>
                                 <a href="#en-construccion" class="add-cart-btn">Añadir 🛒</a>
                             </div>
                             <a href="#en-construccion" class="ext-link">Ver detalles</a>
-                            <div class="review-container">
-                                <div class="stars-outer">
-                                    <div class="stars-inner" style="width: 80%;"></div>
-                                </div>
-                                <span class="review-text">4.0 (10 votos)</span>
-                            </div>
                         </article>
-
-                        <!-- PRODUCTO 2: PREMIUM -->
                         <article class="product-card">
                             <premium></premium>
-                            <img src="./img/tienda/Vestido_fiesta_gemini.png" alt="Vestido Fiesta" title="Imagen generada con IA">
+                            <img src="./img/tienda/Vestido_fiesta_gemini.png" alt="Vestido Fiesta">
                             <h4>Vestido de Fiesta</h4>
-                            <p class="desc">Detalles bordados a mano.</p>
+                            <p class="desc">Detalles bordados.</p>
                             <p class="price">55€</p>
                             <div class="product-actions">
-                                <select name="talla" class="size-selector">
-                                    <option value="" disabled selected>Talla</option>
-                                    <option value="4a">4 Años</option>
-                                    <option value="6a">6 Años</option>
-                                    <option value="8a">8 Años</option>
-                                </select>
                                 <a href="#en-construccion" class="add-cart-btn">Añadir 🛒</a>
                             </div>
                             <a href="#en-construccion" class="ext-link">Ver detalles</a>
-                            <div class="review-container">
-                                <div class="stars-outer">
-                                    <div class="stars-inner" style="width: 100%;"></div>
-                                </div>
-                                <span class="review-text">5.0 (5 votos)</span>
-                            </div>
                         </article>
-
-                        <!-- PRODUCTO 3: OFERTA -->
                         <article class="product-card">
                             <oferta>-5€</oferta>
-                            <img src="./img/tienda/Pijama_gemini.png" alt="Pijama" title="Imagen generada con IA">
+                            <img src="./img/tienda/Pijama_gemini.png" alt="Pijama">
                             <h4>Pijama Suave</h4>
                             <p class="desc">Algodón 100% orgánico.</p>
                             <p class="price"><span class="old-price">18€</span> 13€</p>
                             <div class="product-actions">
-                                <select name="talla" class="size-selector">
-                                    <option value="" disabled selected>Talla</option>
-                                    <option value="2a">2 Años</option>
-                                    <option value="4a">4 Años</option>
-                                    <option value="6a">6 Años</option>
-                                </select>
                                 <a href="#en-construccion" class="add-cart-btn">Añadir 🛒</a>
                             </div>
                             <a href="#en-construccion" class="ext-link">Ver detalles</a>
-                            <div class="review-container">
-                                <div class="stars-outer">
-                                    <div class="stars-inner" style="width: 94%;"></div>
-                                </div>
-                                <span class="review-text">4.7 (22 votos)</span>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- RWD: CATEGORÍA OCULTA (SOLO MÓVIL) -->
+                <section id="ofertas-flash" class="category-section mobile-only-category">
+                    <h3 class="cat-title">⚡ Ofertas Flash Móvil ⚡</h3>
+                    <div class="products-grid">
+                        <article class="product-card">
+                            <oferta>-50%</oferta>
+                            <img src="https://via.placeholder.com/200x200?text=Flash+App" alt="Oferta Flash">
+                            <h4>Zapatillas Run</h4>
+                            <p class="desc">Solo desde móvil.</p>
+                            <p class="price">30€</p>
+                            <div class="product-actions">
+                                <a href="#en-construccion" class="add-cart-btn">Añadir 🛒</a>
                             </div>
                         </article>
-
                     </div>
                 </section>
 
             </main>
 
-            <!-- COLUMNA DERECHA: INFOGRAFÍA INTERACTIVA (ASIDE) -->
             <aside class="sidebar-infographic">
                 <div class="infographic-container">
                     <h3>Guía de Tallas</h3>
-                    <p class="small-text">Pasa el ratón sobre la talla para ver las medidas.</p>
-                    
                     <div class="info-box">
-                        <div class="info-item">XS
-                            <div class="size-popup"><img src="https://via.placeholder.com/150x100/ffffff/2E0D14?text=Pecho:82cm" alt="XS"></div>
-                        </div>
-                        <div class="info-item">S
-                            <div class="size-popup"><img src="https://via.placeholder.com/150x100/ffffff/2E0D14?text=Pecho:86cm" alt="S"></div>
-                        </div>
-                        <div class="info-item">M
-                            <div class="size-popup"><img src="https://via.placeholder.com/150x100/ffffff/2E0D14?text=Pecho:90cm" alt="M"></div>
-                        </div>
-                        <div class="info-item">L
-                            <div class="size-popup"><img src="https://via.placeholder.com/150x100/ffffff/2E0D14?text=Pecho:96cm" alt="L"></div>
-                        </div>
-                        <div class="info-item">XL
-                            <div class="size-popup"><img src="https://via.placeholder.com/150x100/ffffff/2E0D14?text=Pecho:102cm" alt="XL"></div>
-                        </div>
+                        <div class="info-item">XS</div>
+                        <div class="info-item">S</div>
+                        <div class="info-item">M</div>
+                        <div class="info-item">L</div>
+                        <div class="info-item">XL</div>
                     </div>
-                    
                     <p>Elige tu talla ideal consultando nuestra guía completa.</p>
                 </div>
             </aside>
 
         </div>
         
-        <!-- 4. PIE DE PÁGINA (4 Columnas) -->
         <footer class="footer">
             <div class="footer-col">
                 <h4>Autores</h4>
@@ -355,25 +248,20 @@
             </div>
             <div class="footer-col">
                 <h4>Redes Sociales</h4>
-                <p><a href="https://www.facebook.com/UniversidadMiguelHernandezElche/?locale=es_ES"><i class="fa-brands fa-facebook"></i></a><br></p>
-                <p><a href="https://www.instagram.com/universidadmh/?hl=es"><i class="fa-brands fa-instagram"></i></a></p>
+                <p><a href="#"><i class="fa-brands fa-facebook"></i></a></p>
             </div>
             <div class="footer-col">
                 <h4>Enlaces PW</h4>
-                <p><a href="https://www.umh.es/">Universidad</a><br></p>
-                <p><a href="https://www.umh.es/contenido/Estudios/:asi_g_2804_S8/datos_es.html">Departamento</a></p>
+                <p><a href="#">Universidad</a></p>
             </div>
         </footer>
 
     </div>
 
-    <!-- Este div está oculto y solo se ve cuando la URL tiene #en-construccion -->
     <div id="en-construccion" class="modal-overlay">
         <div class="modal-content">
             <h3>🚧Página en construcción🚧</h3>
             <p>La sección de detalles se está implementando actualmente.</p>
-            <p>Disculpa las molestias.</p>
-            <!-- El botón de cerrar simplemente quita el hash de la URL -->
             <a href="#" class="modal-close-btn">Cerrar</a>
         </div>
     </div>
