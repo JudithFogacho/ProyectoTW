@@ -884,3 +884,80 @@ premium::after {
     color: white;
     font-style: italic;
 }
+
+@media (max-width: 768px){
+
+    /* 1. Layout general a 1 columna */
+    .grid-container, .grid-container-index {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* 2. Cabecera: Ocultar búsqueda */
+    .header {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .header-search {
+        display: none; /* Ocultar */
+    }
+
+    /* 3. Menú Vertical */
+
+    .main-menu > ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    .main-menu > ul > li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    .main-menu a { padding: 15px; }
+    /* Ocultar el segundo nivel en móvil */
+    .dropdown-content { display: none !important; }
+    .dropdown:hover .dropdown-content { display: none !important; }
+    
+    /* 4. Contenidos a 1 columna */
+
+    .main-wrapper, .main-wrapper.with-sidebar {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .products-grid { grid-template-columns: 1fr; }
+    .contact-form-grid { grid-template-columns: 1fr; } /* Formulario a 1 columna */
+    .full-width { grid-column: span 1; } /* Ajuste de spans del form */
+
+    /* 5. Ocultar Infografía */
+
+    .sidebar-infographic { display: none; }
+
+    /* 6. Pie de página simplificado */
+    
+    .footer { grid-template-columns: 1fr; }
+    .footer-col { display: none; }
+    .footer-col:first-child {
+        display: block; /* Solo mostrar autores */
+        width: 100%;
+    }
+
+    /* 7. Categoría Oculta (Visible solo en móvil) */
+    .mobile-only-category {
+        display: block !important;
+        margin-top: 30px;
+        border: 2px dashed var(--primary-color);
+        padding: 15px;
+    }
+    /* Textura de fondo obligatoria para la categoría oculta */
+    .mobile-only-category .product-card {
+        background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+        background-color: #fff8e1; 
+    }
+    
+
+}
+
+.mobile-only-category { display: none; }
