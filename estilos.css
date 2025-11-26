@@ -30,7 +30,7 @@ body {
 }
 
 /* --- 2. GRID GENERAL LAYOUT (Estructura principal) --- */
-.grid-container {
+.grid-container-index {
     display: grid;
     /* Define las áreas del layout */
     grid-template-areas: 
