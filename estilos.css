@@ -919,6 +919,11 @@ premium::after {
     /* Ocultar el segundo nivel en móvil */
     .dropdown-content { display: none !important; }
     .dropdown:hover .dropdown-content { display: none !important; }
+
+    /*Ocultar flecha en productos*/
+    .arrow-icon {
+        display: none;
+    }
     
     /* 4. Contenidos a 1 columna */
 
@@ -956,8 +961,6 @@ premium::after {
         background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
         background-color: #fff8e1; 
     }
-    
-
 }
 
 .mobile-only-category { display: none; }
