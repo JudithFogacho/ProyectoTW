@@ -601,6 +601,7 @@ body {
     border-bottom: 1px dashed var(--primary-color);
     padding-bottom: 10px;
     text-align: center;
+    width: 100%;
 }
 
 .modal-content p {
