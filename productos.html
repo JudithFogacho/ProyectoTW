@@ -10,7 +10,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda de Ropa - Productos</title>
+    <!-- Vinculación con la hoja de estilos -->
     <link rel="stylesheet" href="estilos.css">
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
@@ -56,13 +59,11 @@
                     <h3 class="cat-title">Ropa Mujer</h3>
                     <div class="products-grid"> 
                         
-                        <!-- RWD: USO DE PICTURE PARA IMAGENES RESPONSIVE -->
+                        <!-- P11: Vestido Floral -->
                         <article class="product-card">
-                            <p class = "oferta">-15€</p>
+                            <p class="oferta">-15€</p>
                             <picture>
-                                <!-- Imagen para móvil (placeholder cuadrado para notar el cambio) -->
                                 <source media="(max-width: 768px)" srcset="./img/tienda/Vestido_floral_gemini.png">
-                                <!-- Imagen normal -->
                                 <img src="./img/tienda/Vestido_floral_gemini.png" alt="Vestido Floral" title="Imagen generada con IA">
                             </picture>
                             <h4>Vestido Floral</h4>
@@ -79,11 +80,17 @@
                                 <a href="#en-construccion" class="add-cart-btn">Añadir 🛒</a>
                             </div>
                             <a href="#P11" class="ext-link">Ver detalles</a>
-                            <div class="review-container"><span class="review-text">4.8 (120 votos)</span></div>
+                            <div class="review-container">
+                                <div class="stars-outer">
+                                    <div class="stars-inner" style="width: 96%;"></div>
+                                </div>
+                                <span class="review-text">4.8 (120 votos)</span>
+                            </div>
                         </article>
 
+                        <!-- P12: Abrigo Lana -->
                         <article class="product-card">
-                            <p class = "premium"></p>
+                            <p class="premium"></p>
                             <picture>
                                 <source media="(max-width: 768px)" srcset="./img/tienda/Chaqueta_lana_gemini.png">
                                 <img src="./img/tienda/Chaqueta_lana_gemini.png" alt="Abrigo Lana" title="Imagen generada con IA">
@@ -102,9 +109,15 @@
                                 <a href="#en-construccion" class="add-cart-btn">Añadir 🛒</a>
                             </div>
                             <a href="#P12" class="ext-link">Ver detalles</a>
-                            <div class="review-container"><span class="review-text">4.25 (8 votos)</span></div>
+                            <div class="review-container">
+                                <div class="stars-outer">
+                                    <div class="stars-inner" style="width: 85%;"></div>
+                                </div>
+                                <span class="review-text">4.25 (8 votos)</span>
+                            </div>
                         </article>
 
+                        <!-- P13: Blusa Seda -->
                         <article class="product-card">
                             <picture>
                                 <source media="(max-width: 768px)" srcset="./img/tienda/Blusa_seda_gemini.png">
@@ -124,7 +137,12 @@
                                 <a href="#en-construccion" class="add-cart-btn">Añadir 🛒</a>
                             </div>
                             <a href="#P13" class="ext-link">Ver detalles</a>
-                            <div class="review-container"><span class="review-text">4.0 (45 votos)</span></div>
+                            <div class="review-container">
+                                <div class="stars-outer">
+                                    <div class="stars-inner" style="width: 80%;"></div>
+                                </div>
+                                <span class="review-text">4.0 (45 votos)</span>
+                            </div>
                         </article>
 
                     </div>
@@ -134,8 +152,9 @@
                 <section id="hombre" class="category-section trending">
                     <h3 class="cat-title">Ropa Hombre (Trending 🔥)</h3>
                     <div class="products-grid"> 
+                        
+                        <!-- P21: Traje Slim -->
                         <article class="product-card">
-                            
                             <picture>
                                 <source media="(max-width: 768px)" srcset="./img/tienda/Traje_slim_gemini.png">
                                 <img src="./img/tienda/Traje_slim_gemini.png" alt="Traje Slim" title="Imagen generada con IA">
@@ -153,11 +172,17 @@
                                 <a href="#en-construccion" class="add-cart-btn">Añadir 🛒</a>
                             </div>
                             <a href="#P21" class="ext-link">Ver detalles</a>
-                            <div class="review-container"><span class="review-text">3.4 (47 votos)</span></div>
+                            <div class="review-container">
+                                <div class="stars-outer">
+                                    <div class="stars-inner" style="width: 68%;"></div>
+                                </div>
+                                <span class="review-text">3.4 (47 votos)</span>
+                            </div>
                         </article>
 
+                        <!-- P22: Pack Camisas -->
                         <article class="product-card">
-                            <p class = "premium"></p><p class = "oferta">2x1</p>
+                            <p class="premium"></p><p class="oferta">2x1</p>
                             <picture>
                                 <source media="(max-width: 768px)" srcset="./img/tienda/Packs_camisas_hombre.png">
                                 <img src="./img/tienda/Packs_camisas_hombre.png" alt="Pack Camisas" title="Imagen generada con IA">
@@ -175,11 +200,17 @@
                                 <a href="#en-construccion" class="add-cart-btn">Añadir 🛒</a>
                             </div>
                             <a href="#P22" class="ext-link">Ver detalles</a>
-                            <div class="review-container"><span class="review-text">5.0 (2 votos)</span></div>
+                            <div class="review-container">
+                                <div class="stars-outer">
+                                    <div class="stars-inner" style="width: 100%;"></div>
+                                </div>
+                                <span class="review-text">5.0 (2 votos)</span>
+                            </div>
                         </article>
 
+                        <!-- P23: Vaqueros -->
                         <article class="product-card">
-                            <p class = "oferta">-20%</p>
+                            <p class="oferta">-20%</p>
                             <picture>
                                 <source media="(max-width: 768px)" srcset="./img/tienda/Vaqueros_clasicos_gemini.png">
                                 <img src="./img/tienda/Vaqueros_clasicos_gemini.png" alt="Vaqueros" title="Imagen generada con IA">
@@ -198,7 +229,12 @@
                                 <a href="#en-construccion" class="add-cart-btn">Añadir 🛒</a>
                             </div>
                             <a href="#P23" class="ext-link">Ver detalles</a>
-                            <div class="review-container"><span class="review-text">4.5 (60 votos)</span></div>
+                            <div class="review-container">
+                                <div class="stars-outer">
+                                    <div class="stars-inner" style="width: 90%;"></div>
+                                </div>
+                                <span class="review-text">4.5 (60 votos)</span>
+                            </div>
                         </article>
                     </div>
                 </section>
@@ -208,6 +244,7 @@
                     <h3 class="cat-title">Ropa Niños</h3>
                     <div class="products-grid">
                         
+                        <!-- P31: Chandal -->
                         <article class="product-card">
                             <picture>
                                 <source media="(max-width: 768px)" srcset="./img/tienda/Chandal_gemini.png">
@@ -227,11 +264,17 @@
                                 <a href="#en-construccion" class="add-cart-btn">Añadir 🛒</a>
                             </div>
                             <a href="#P31" class="ext-link">Ver detalles</a>
+                            <div class="review-container">
+                                <div class="stars-outer">
+                                    <div class="stars-inner" style="width: 80%;"></div>
+                                </div>
+                                <span class="review-text">4.0 (10 votos)</span>
+                            </div>
                         </article>
                         
+                        <!-- P32: Vestido Fiesta -->
                         <article class="product-card">
-                            <p class = "premium"></p>
-
+                            <p class="premium"></p>
                             <picture>
                                 <source media="(max-width: 768px)" srcset="./img/tienda/Vestido_fiesta_gemini.png">
                                 <img src="./img/tienda/Vestido_fiesta_gemini.png" alt="Vestido Fiesta" title="Imagen generada con IA">
@@ -249,10 +292,17 @@
                                 <a href="#en-construccion" class="add-cart-btn">Añadir 🛒</a>
                             </div>
                             <a href="#P32" class="ext-link">Ver detalles</a>
+                            <div class="review-container">
+                                <div class="stars-outer">
+                                    <div class="stars-inner" style="width: 100%;"></div>
+                                </div>
+                                <span class="review-text">5.0 (5 votos)</span>
+                            </div>
                         </article>
                         
+                        <!-- P33: Pijama -->
                         <article class="product-card">
-                            <p class = "oferta">-5€</p>
+                            <p class="oferta">-5€</p>
                             <picture>
                                 <source media="(max-width: 768px)" srcset="./img/tienda/Pijama_gemini.png">
                                 <img src="./img/tienda/Pijama_gemini.png" alt="Pijama" title="Imagen generada con IA">
@@ -271,16 +321,22 @@
                                 <a href="#en-construccion" class="add-cart-btn">Añadir 🛒</a>
                             </div>
                             <a href="#P33" class="ext-link">Ver detalles</a>
+                            <div class="review-container">
+                                <div class="stars-outer">
+                                    <div class="stars-inner" style="width: 94%;"></div>
+                                </div>
+                                <span class="review-text">4.7 (22 votos)</span>
+                            </div>
                         </article>
                     </div>
                 </section>
 
-                <!-- RWD: CATEGORÍA OCULTA (SOLO MÓVIL) -->
+                <!-- RWD: CATEGORÍA OCULTA -->
                 <section id="ofertas-flash" class="category-section mobile-only-category">
                     <h3 class="cat-title">⚡ Ofertas Flash Móvil ⚡</h3>
                     <div class="products-grid">
                         <article class="product-card">
-                            <p class = "oferta">-50%</p>
+                            <p class="oferta">-50%</p>
                             <picture>
                                 <source media="(max-width: 768px)" srcset="./img/tienda/Zapatillas_gemini.png">
                                 <img src="./img/tienda/Zapatillas_gemini.png" alt="Oferta Flash" title="Imagen generada con IA">
@@ -301,18 +357,28 @@
                 <div class="infographic-container">
                     <h3>Guía de Tallas</h3>
                     <div class="info-box">
-                        <div class="info-item">XS</div>
-                        <div class="info-item">S</div>
-                        <div class="info-item">M</div>
-                        <div class="info-item">L</div>
-                        <div class="info-item">XL</div>
+                        <div class="info-item">XS
+                            <div class="size-popup"><img src="https://via.placeholder.com/150x100/ffffff/2E0D14?text=Pecho:82cm" alt="XS"></div>
+                        </div>
+                        <div class="info-item">S
+                            <div class="size-popup"><img src="https://via.placeholder.com/150x100/ffffff/2E0D14?text=Pecho:86cm" alt="S"></div>
+                        </div>
+                        <div class="info-item">M
+                            <div class="size-popup"><img src="https://via.placeholder.com/150x100/ffffff/2E0D14?text=Pecho:90cm" alt="M"></div>
+                        </div>
+                        <div class="info-item">L
+                            <div class="size-popup"><img src="https://via.placeholder.com/150x100/ffffff/2E0D14?text=Pecho:96cm" alt="L"></div>
+                        </div>
+                        <div class="info-item">XL
+                            <div class="size-popup"><img src="https://via.placeholder.com/150x100/ffffff/2E0D14?text=Pecho:102cm" alt="XL"></div>
+                        </div>
                     </div>
                     <p>Elige tu talla ideal consultando nuestra guía completa.</p>
                 </div>
             </aside>
 
         </div>
-        <!-- PIE DE PÁGINA-->
+        
         <footer class="footer">
             <div class="footer-col">
                 <h4>Autores</h4>
@@ -321,13 +387,13 @@
             </div>
             <div class="footer-col">
                 <h4>Validación CSS</h4>
-                <br>
-                <div class="w3c-icon">✓ CSS Válido</div>
+                <p><div class="w3c-icon">✓ CSS Válido</div></p>
             </div>
             <div class="footer-col">
                 <h4>Redes Sociales</h4>
-                <p><a href="https://www.facebook.com/UniversidadMiguelHernandezElche/?locale=es_ES"><i class="fa-brands fa-facebook"></i></a><br></p>
-                <p><a href="https://www.instagram.com/universidadmh/?hl=es"><i class="fa-brands fa-instagram"></i></a></p>
+                <!-- Corrección iconos: Se asegura color visible -->
+                <p><a href="https://www.facebook.com/UniversidadMiguelHernandezElche/?locale=es_ES" style="color: #2E0D14; font-size: 1.5em; margin-right: 10px;"><i class="fa-brands fa-facebook"></i></a><br></p>
+                <p><a href="https://www.instagram.com/universidadmh/?hl=es" style="color: #2E0D14; font-size: 1.5em;"><i class="fa-brands fa-instagram"></i></a></p>
             </div>
             <div class="footer-col">
                 <h4>Enlaces PW</h4>
@@ -338,103 +404,132 @@
 
     </div>
 
-    <!-- MODAL GENÉRICO DE CONSTRUCCIÓN (Para botones de compra) -->
+    <!-- MODAL GENÉRICO -->
     <div id="en-construccion" class="modal-overlay">
         <div class="modal-content">
-            <h3>🚧 <br> Página en construcción <br> 🚧</h3>
+            <h3>🚧 Página en construcción 🚧</h3>
             <p>La sección de carrito y compra se está implementando actualmente.</p>
             <p>Disculpa las molestias.</p>
             <a href="#" class="modal-close-btn">Cerrar</a>
         </div>
     </div>
 
-    <!-- RESEÑAS PARA CADA PRODUCTO-->
+    <!-- ===== RESEÑAS INDEPENDIENTES PARA CADA PRODUCTO ===== -->
+
+    <!-- P11: Vestido Floral -->
     <div id="P11" class="modal-overlay">
         <div class="modal-content">
-            <h3>Comentarios P11</h3>
-            <p>La sección de carrito y compra se está implementando actualmente.</p>
-            <p>Disculpa las molestias.</p>
+            <h3>Vestido Floral - Opiniones</h3>
+            <div class="modal-reviews">
+                <div class="review-item"><strong>Laura M.</strong> ⭐⭐⭐⭐⭐<br><small>Es súper fresquito para el verano, me encanta el estampado.</small></div>
+                <div class="review-item"><strong>Ana P.</strong> ⭐⭐⭐⭐☆<br><small>Talla perfecto, aunque la tela se arruga un poco al sentarse.</small></div>
+            </div>
             <a href="#" class="modal-close-btn">Cerrar</a>
         </div>
     </div>
 
+    <!-- P12: Abrigo Lana -->
     <div id="P12" class="modal-overlay">
         <div class="modal-content">
-            <h3>Comentarios P12</h3>
-            <p>La sección de carrito y compra se está implementando actualmente.</p>
-            <p>Disculpa las molestias.</p>
+            <h3>Abrigo Lana - Opiniones</h3>
+            <div class="modal-reviews">
+                <div class="review-item"><strong>Carlos R.</strong> ⭐⭐⭐⭐☆<br><small>Muy buena calidad, abriga muchísimo. Pesa un poco.</small></div>
+                <div class="review-item"><strong>Marta G.</strong> ⭐⭐⭐⭐⭐<br><small>Elegante y calentito, justo lo que buscaba para invierno.</small></div>
+            </div>
             <a href="#" class="modal-close-btn">Cerrar</a>
         </div>
     </div>
 
+    <!-- P13: Blusa Seda -->
     <div id="P13" class="modal-overlay">
         <div class="modal-content">
-            <h3>Comentarios P13</h3>
-            <p>La sección de carrito y compra se está implementando actualmente.</p>
-            <p>Disculpa las molestias.</p>
+            <h3>Blusa de Seda - Opiniones</h3>
+            <div class="modal-reviews">
+                <div class="review-item"><strong>Elena S.</strong> ⭐⭐⭐⭐☆<br><small>El tacto es increíble, muy suave. Cuidado al lavarla.</small></div>
+                <div class="review-item"><strong>Sofia L.</strong> ⭐⭐⭐⭐☆<br><small>Queda muy bien con vaqueros o falda.</small></div>
+            </div>
             <a href="#" class="modal-close-btn">Cerrar</a>
         </div>
     </div>
 
+    <!-- P21: Traje Slim -->
     <div id="P21" class="modal-overlay">
         <div class="modal-content">
-            <h3>Comentarios P21</h3>
-            <p>La sección de carrito y compra se está implementando actualmente.</p>
-            <p>Disculpa las molestias.</p>
+            <h3>Traje Slim - Opiniones</h3>
+            <div class="modal-reviews">
+                <div class="review-item"><strong>Pedro J.</strong> ⭐⭐⭐☆☆<br><small>La chaqueta queda bien, pero el pantalón es demasiado estrecho.</small></div>
+                <div class="review-item"><strong>David B.</strong> ⭐⭐⭐⭐☆<br><small>Buen corte moderno por este precio.</small></div>
+            </div>
             <a href="#" class="modal-close-btn">Cerrar</a>
         </div>
     </div>
 
+    <!-- P22: Pack Camisas -->
     <div id="P22" class="modal-overlay">
         <div class="modal-content">
-            <h3>Comentarios P22</h3>
-            <p>La sección de carrito y compra se está implementando actualmente.</p>
-            <p>Disculpa las molestias.</p>
+            <h3>Pack Camisas - Opiniones</h3>
+            <div class="modal-reviews">
+                <div class="review-item"><strong>Luis A.</strong> ⭐⭐⭐⭐⭐<br><small>La mejor oferta de la tienda. Son básicas pero cumplen.</small></div>
+                <div class="review-item"><strong>Jorge M.</strong> ⭐⭐⭐⭐⭐<br><small>Perfectas para ir a trabajar a diario.</small></div>
+            </div>
             <a href="#" class="modal-close-btn">Cerrar</a>
         </div>
     </div>
 
+    <!-- P23: Vaqueros -->
     <div id="P23" class="modal-overlay">
         <div class="modal-content">
-            <h3>Comentarios P23</h3>
-            <p>La sección de carrito y compra se está implementando actualmente.</p>
-            <p>Disculpa las molestias.</p>
+            <h3>Vaqueros Clásicos - Opiniones</h3>
+            <div class="modal-reviews">
+                <div class="review-item"><strong>Jorge F.</strong> ⭐⭐⭐⭐☆<br><small>Resistentes, tela vaquera de la de antes.</small></div>
+                <div class="review-item"><strong>Antonio M.</strong> ⭐⭐⭐⭐⭐<br><small>Talla real, ni muy grandes ni muy pequeños.</small></div>
+            </div>
             <a href="#" class="modal-close-btn">Cerrar</a>
         </div>
     </div>
     
+    <!-- P31: Chandal -->
     <div id="P31" class="modal-overlay">
         <div class="modal-content">
-            <h3>Comentarios P31</h3>
-            <p>La sección de carrito y compra se está implementando actualmente.</p>
-            <p>Disculpa las molestias.</p>
+            <h3>Chándal Escolar - Opiniones</h3>
+            <div class="modal-reviews">
+                <div class="review-item"><strong>Lucía G.</strong> ⭐⭐⭐⭐☆<br><small>Aguanta bien los lavados y el trote del recreo.</small></div>
+                <div class="review-item"><strong>Pablo R.</strong> ⭐⭐⭐⭐☆<br><small>Cómodo para educación física.</small></div>
+            </div>
             <a href="#" class="modal-close-btn">Cerrar</a>
         </div>
     </div>
 
+    <!-- P32: Vestido Fiesta -->
     <div id="P32" class="modal-overlay">
         <div class="modal-content">
-            <h3>Comentarios P32</h3>
-            <p>La sección de carrito y compra se está implementando actualmente.</p>
-            <p>Disculpa las molestias.</p>
+            <h3>Vestido de Fiesta - Opiniones</h3>
+            <div class="modal-reviews">
+                <div class="review-item"><strong>Sofia N.</strong> ⭐⭐⭐⭐⭐<br><small>Precioso, mi hija se sintió como una princesa. Los bordados son lindos.</small></div>
+            </div>
             <a href="#" class="modal-close-btn">Cerrar</a>
         </div>
     </div>
 
+    <!-- P33: Pijama -->
     <div id="P33" class="modal-overlay">
         <div class="modal-content">
-            <h3>Comentarios P33</h3>
-            <p>La sección de carrito y compra se está implementando actualmente.</p>
-            <p>Disculpa las molestias.</p>
+            <h3>Pijama Suave - Opiniones</h3>
+            <div class="modal-reviews">
+                <div class="review-item"><strong>Raquel D.</strong> ⭐⭐⭐⭐⭐<br><small>El algodón es súper suave y orgánico de verdad.</small></div>
+                <div class="review-item"><strong>Beatriz S.</strong> ⭐⭐⭐⭐☆<br><small>Un poco largo de piernas, pero se arregla fácil.</small></div>
+            </div>
             <a href="#" class="modal-close-btn">Cerrar</a>
         </div>
     </div>
 
+    <!-- P41: Flash (Si existe en RWD) -->
     <div id="P41" class="modal-overlay">
         <div class="modal-content">
-            <h3>Comentarios P41</h3>
-            <p>La sección de carrito y compra se está implementando actualmente.</p>
-            <p>Disculpa las molestias.</p>
+            <h3>Zapatillas Run - Opiniones</h3>
+            <div class="modal-reviews">
+                <div class="review-item"><strong>Runner01</strong> ⭐⭐⭐⭐⭐<br><small>Ligeras como una pluma.</small></div>
+            </div>
             <a href="#" class="modal-close-btn">Cerrar</a>
         </div>
     </div>
