@@ -288,8 +288,9 @@ body {
 }
 
 /* --- 7. ETIQUETAS PERSONALIZADAS (.oferta y .premium) --- */
+/* Clase .oferta (Aplicada a <p class="oferta">) */
 .oferta {
-    display: block; /* Se comporta como caja */
+    display: block;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -301,19 +302,23 @@ body {
     border-radius: 3px;
     z-index: 10;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-    margin: 0; /* Importante para quitar margen por defecto de <p> */
+    margin: 0; /* Reset de margen de párrafo */
 }
 
+/* Clase .premium (Aplicada a <p class="premium">) */
 .premium {
     display: block;
     position: absolute;
     top: 10px;
     left: 10px;
     z-index: 10;
-    margin: 0; /* Importante para quitar margen por defecto de <p> */
+    margin: 0; /* Reset de margen de párrafo */
+    /* Aseguramos que tenga dimensiones aunque esté vacío en el HTML */
+    min-width: 50px; 
+    min-height: 20px;
 }
 
-/* El contenido generado se aplica ahora a la clase .premium */
+/* El texto "PREMIUM" se genera aquí */
 .premium::after {
     content: "PREMIUM";
     background-color: var(--accent-gold);
@@ -323,9 +328,10 @@ body {
     font-weight: bold;
     border: 1px solid var(--primary-color);
     box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    display: block; /* Asegura que se comporte como bloque */
 }
 
-/* Estilos de la tarjeta BASADOS en su contenido (Selector :has con clases) */
+/* Estilos de la tarjeta cuando contiene estas etiquetas */
 .product-card:has(.oferta) { 
     border: 2px solid var(--accent-red); 
 }
