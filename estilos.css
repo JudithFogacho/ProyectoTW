@@ -195,7 +195,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 37%;
+    height: 100%;
     padding: 40px;
     background: rgba(40, 20, 10, 0.45);
     backdrop-filter: blur(1px);
@@ -207,6 +207,7 @@ body {
     padding: 1rem;
     width: 100%;
     font-family: "Oswald", sans-serif;
+
 }
 
 .contenido-overlay-index h3{
@@ -215,6 +216,31 @@ body {
     padding: 1rem;
     font-family: "Oswald", sans-serif;
 }
+
+.bienvenida{
+    font-family: "Oswald",sans-serif;
+    color: #990011;
+    font-size: 1.2rem;
+}
+.bienvenida h2{
+    font-family: "Oswald",sans-serif;
+    color: #990011;
+    font-size: 3rem;
+}
+
+
+.bienvenida2{
+    display: flex;
+    font-family: "Oswald", sans-serif;
+    color: #990011;
+    font-size: 1.5rem;
+}
+
+.bienvenida2 img{
+    width: 100%;
+    height: auto;
+}
+
 .indexBienvenida{
     position: relative;
     color: #fcf6fc; /* para que contraste con el overlay oscuro */
@@ -225,6 +251,56 @@ body {
     height: 350px;
     object-fit: cover;
 }
+
+.container{
+      width:100%;
+}
+
+.sede-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr; 
+      align-items:stretch;
+      gap:20px;
+    }
+
+.sede{
+      background:#990011;
+      border:1px solid #e0e0e0;;
+      border-radius:10px;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      box-shadow: 0 6px 18px rgba(15,20,30,0.04);
+      min-height:320px;
+    }
+ .sede .contenido{
+      padding:16px;
+      display:flex;
+      gap:12px;
+      flex-direction:column;
+    }
+
+.sede h2, .datos{
+      margin:0;
+      font-family: "Oswald", sans-serif;
+      color:#FCF6F5FF;
+      text-align: center;
+      width: 100%;
+    }
+.datos small{ display:block; color:#666; margin-top:6px; }
+
+    .map-wrap{
+      width:100%;
+      height:220px;
+      flex-shrink:0;
+    }
+.map-wrap iframe{
+      width:100%;
+      height:100%;
+      border:0;
+      display:block;
+    }
+
 
 /* REGLA ESPECÍFICA: Solo para páginas con barra lateral (Productos) */
 .main-wrapper.with-sidebar {
@@ -895,9 +971,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.infografia h2{
+.infografia h2, .infografia h3{
   font-family: "Momo Trust Display", sans-serif;
   font-size: 1.2rem;
+  width: 100%;
 }
 
 .infografia section{
