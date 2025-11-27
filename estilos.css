@@ -287,8 +287,8 @@ body {
     margin-right: 5px; 
 }
 
-/* --- 7. ETIQUETAS PERSONALIZADAS (<oferta> y <premium>) --- */
-oferta {
+/* --- 7. ETIQUETAS PERSONALIZADAS (.oferta y .premium) --- */
+.oferta {
     display: block; /* Se comporta como caja */
     position: absolute;
     top: 10px;
@@ -301,17 +301,20 @@ oferta {
     border-radius: 3px;
     z-index: 10;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    margin: 0; /* Importante para quitar margen por defecto de <p> */
 }
 
-premium {
+.premium {
     display: block;
     position: absolute;
     top: 10px;
     left: 10px;
     z-index: 10;
+    margin: 0; /* Importante para quitar margen por defecto de <p> */
 }
 
-premium::after {
+/* El contenido generado se aplica ahora a la clase .premium */
+.premium::after {
     content: "PREMIUM";
     background-color: var(--accent-gold);
     color: var(--primary-color);
@@ -322,17 +325,18 @@ premium::after {
     box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
 }
 
-/* Estilos de la tarjeta BASADOS en su contenido (Selector :has) */
-.product-card:has(oferta) { 
+/* Estilos de la tarjeta BASADOS en su contenido (Selector :has con clases) */
+.product-card:has(.oferta) { 
     border: 2px solid var(--accent-red); 
 }
-.product-card:has(premium) { 
+.product-card:has(.premium) { 
     background-color: #fffdf5; 
     border: 2px solid var(--accent-gold); 
 }
-.product-card:has(premium):has(oferta) { 
+.product-card:has(.premium):has(.oferta) { 
     border-color: var(--primary-color); 
 }
+
 
 /* --- 8. ACCIONES DE COMPRA (Selectores y Botones) --- */
 .product-actions {
@@ -576,6 +580,8 @@ premium::after {
     box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     transform: scale(0.8);
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Forzamos margen 0 para que no interfiera con flexbox */
+    margin: 0; 
 }
 
 /* Efecto de rebote al abrir */
@@ -595,6 +601,26 @@ premium::after {
     line-height: 1.5;
 }
 
+/* CORRECCIÓN 2: Estilos para las reseñas en el modal */
+.modal-reviews {
+    text-align: left;
+    margin-bottom: 20px;
+    padding-top: 15px;
+    border-top: 1px dotted var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.review-item {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.review-item strong {
+    color: var(--accent-red);
+}
+
 .modal-close-btn {
     display: inline-block;
     background-color: var(--primary-color);
@@ -604,6 +630,11 @@ premium::after {
     border-radius: 5px;
     font-weight: bold;
     transition: background 0.3s;
+}
+
+.modal-close-btn:hover {
+    background-color: var(--accent-red);
+    color: white;
 }
 
 .modal-close-btn:hover {
