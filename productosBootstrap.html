@@ -4,26 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda - Productos (Bootstrap)</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- CSS Propio Corregido -->
     <link rel="stylesheet" href="estiloBootstrap.css">
 </head>
 <body class="d-flex flex-column min-vh-100">
 
-    <!-- HEADER + NAV (Igual al Index) -->
+    <!-- HEADER (Color #990011 corregido via .bg-brand) -->
     <header class="bg-brand py-3 text-white">
         <div class="container d-flex flex-wrap justify-content-between align-items-center">
-            <h1><a href="indexBootstrap.html" class="text-white text-decoration-none">MODA UNIVERSITAS</a></h1>
-            <div class="d-flex gap-2">
-                <button class="btn btn-outline-light">🛒 0</button>
+            <div class="header-info">
+                <h1 class="m-0"><a href="indexBootstrap.html" class="text-white text-decoration-none">MODA UNIVERSITAS</a></h1>
+                <small>Tu estilo, tu universidad.</small>
+            </div>
+            <div class="d-flex gap-2 align-items-center">
+                <button class="btn btn-light text-brand fw-bold btn-sm">🛒 0</button>
                 <form action="https://www.google.com/search" target="_blank" class="d-flex">
                     <input type="text" name="q" class="form-control form-control-sm" placeholder="Buscar en Google..." required>
-                    <button type="submit" class="btn btn-dark">BUSCAR</button>
+                    <button type="submit" class="btn btn-dark btn-sm ms-1">BUSCAR</button>
                 </form>
             </div>
         </div>
     </header>
     
+    <!-- NAVBAR (Estilo #FCF6F5 corregido via .navbar-custom) -->
     <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navProd">
@@ -50,7 +57,7 @@
     <div class="container my-4">
         <div class="row">
             
-            <!-- CONTENIDO PRINCIPAL (Columna Izquierda ancha) -->
+            <!-- CONTENIDO PRINCIPAL -->
             <main class="col-lg-9 order-2 order-lg-1">
                 <h2 class="border-bottom pb-2 mb-4 text-brand">Nuestro Catálogo</h2>
 
@@ -58,56 +65,58 @@
                 <section id="mujer" class="mb-5 p-3 bg-white rounded shadow-sm border">
                     <h3 class="h4 mb-3 text-brand border-bottom">Ropa Mujer</h3>
                     <div class="row g-3">
-                        <!-- P11: Vestido Floral -->
+                        <!-- P11 -->
                         <div class="col-12 col-md-4">
                             <div class="card h-100 shadow-sm position-relative">
                                 <span class="position-absolute top-0 end-0 badge bg-danger m-2">-20€</span>
                                 <img src="./img/tienda/Vestido_floral_gemini.png" class="card-img-top p-3" alt="Vestido Floral">
-                                <div class="card-body">
+                                <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Vestido Floral</h5>
-                                    <p class="card-text text-muted small">Vestido ligero de verano, ideal para el campus.</p>
+                                    <p class="card-text text-muted small flex-grow-1">Vestido ligero de verano, ideal para el campus.</p>
                                     <p class="fw-bold"><span class="text-decoration-line-through text-muted small me-2">70€</span>50€</p>
                                     <div class="d-grid gap-2">
                                         <select class="form-select form-select-sm"><option>Talla</option><option>XS</option><option>S</option><option>M</option><option>L</option></select>
                                         <button class="btn btn-brand btn-sm">Añadir 🛒</button>
-                                        <button class="btn btn-link btn-sm" data-bs-toggle="modal" data-bs-target="#P11">Ver detalles</button>
+                                        <button class="btn btn-link btn-sm text-brand" data-bs-toggle="modal" data-bs-target="#P11">Ver detalles</button>
                                     </div>
                                     <div class="stars-outer mt-2"><div class="stars-inner" style="width: 96%;"></div></div> <span class="small">4.8 (120)</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- P12: Abrigo Lana -->
+                        <!-- P12 (PREMIUM) -->
                         <div class="col-12 col-md-4">
+                            <!-- Clase 'premium' añadida al card -->
                             <div class="card h-100 premium shadow-sm position-relative">
-                                <span class="position-absolute top-0 start-0 badge badge-premium m-2">PREMIUM</span>
+                                <!-- Clase 'badge-premium' para la etiqueta exacta -->
+                                <span class="position-absolute top-0 start-0 m-2 badge-premium">PREMIUM</span>
                                 <img src="./img/tienda/Chaqueta_lana_gemini.png" class="card-img-top p-3" alt="Abrigo Lana">
-                                <div class="card-body">
+                                <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Abrigo Lana</h5>
-                                    <p class="card-text text-muted small">Alta costura para el invierno.</p>
+                                    <p class="card-text text-muted small flex-grow-1">Alta costura para el invierno.</p>
                                     <p class="fw-bold">220€</p>
                                     <div class="d-grid gap-2">
                                         <select class="form-select form-select-sm"><option>Talla</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
                                         <button class="btn btn-brand btn-sm">Añadir 🛒</button>
-                                        <button class="btn btn-link btn-sm" data-bs-toggle="modal" data-bs-target="#P12">Ver detalles</button>
+                                        <button class="btn btn-link btn-sm text-brand" data-bs-toggle="modal" data-bs-target="#P12">Ver detalles</button>
                                     </div>
                                     <div class="stars-outer mt-2"><div class="stars-inner" style="width: 85%;"></div></div> <span class="small">4.25 (8)</span>
                                 </div>
                             </div>
                         </div>
 
-                         <!-- P13: Blusa Seda -->
-                         <div class="col-12 col-md-4">
+                        <!-- P13 -->
+                        <div class="col-12 col-md-4">
                             <div class="card h-100 shadow-sm">
                                 <img src="./img/tienda/Blusa_seda_gemini.png" class="card-img-top p-3" alt="Blusa Seda">
-                                <div class="card-body">
+                                <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Blusa de Seda</h5>
-                                    <p class="card-text text-muted small">Elegante y suave, perfecta para presentaciones.</p>
+                                    <p class="card-text text-muted small flex-grow-1">Elegante y suave, perfecta para presentaciones.</p>
                                     <p class="fw-bold">95€</p>
                                     <div class="d-grid gap-2">
                                         <select class="form-select form-select-sm"><option>Talla</option><option>XS</option><option>S</option><option>M</option><option>L</option></select>
                                         <button class="btn btn-brand btn-sm">Añadir 🛒</button>
-                                        <button class="btn btn-link btn-sm" data-bs-toggle="modal" data-bs-target="#P13">Ver detalles</button>
+                                        <button class="btn btn-link btn-sm text-brand" data-bs-toggle="modal" data-bs-target="#P13">Ver detalles</button>
                                     </div>
                                     <div class="stars-outer mt-2"><div class="stars-inner" style="width: 80%;"></div></div> <span class="small">4.0 (45)</span>
                                 </div>
@@ -120,57 +129,58 @@
                 <section id="hombre" class="mb-5 p-3 rounded shadow-sm trending">
                     <h3 class="h4 mb-3 text-brand border-bottom">Ropa Hombre (Trending 🔥)</h3>
                     <div class="row g-3">
-                         <!-- P21: Traje Slim -->
-                         <div class="col-12 col-md-4">
+                        <!-- P21 -->
+                        <div class="col-12 col-md-4">
                             <div class="card h-100 shadow-sm">
                                 <img src="./img/tienda/Traje_slim_gemini.png" class="card-img-top p-3" alt="Traje Slim">
-                                <div class="card-body">
+                                <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Traje Slim</h5>
-                                    <p class="card-text text-muted small">Corte moderno y elegante.</p>
+                                    <p class="card-text text-muted small flex-grow-1">Corte moderno y elegante.</p>
                                     <p class="fw-bold">190€</p>
                                     <div class="d-grid gap-2">
                                         <select class="form-select form-select-sm"><option>Talla</option><option>M</option><option>L</option><option>XL</option></select>
                                         <button class="btn btn-brand btn-sm">Añadir 🛒</button>
-                                        <button class="btn btn-link btn-sm" data-bs-toggle="modal" data-bs-target="#P21">Ver detalles</button>
+                                        <button class="btn btn-link btn-sm text-brand" data-bs-toggle="modal" data-bs-target="#P21">Ver detalles</button>
                                     </div>
+                                    <!-- Estrellas rojas por trending -->
                                     <div class="stars-outer mt-2"><div class="stars-inner text-danger" style="width: 68%;"></div></div> <span class="small">3.4 (47)</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- P22: Pack Camisas -->
+                        <!-- P22 (PREMIUM) -->
                         <div class="col-12 col-md-4">
                             <div class="card h-100 premium shadow-sm position-relative">
-                                <span class="position-absolute top-0 start-0 badge badge-premium m-2">PREMIUM</span>
+                                <span class="position-absolute top-0 start-0 m-2 badge-premium">PREMIUM</span>
                                 <span class="position-absolute top-0 end-0 badge bg-danger m-2">2x1</span>
                                 <img src="./img/tienda/Packs_camisas_hombre_gemini.png" class="card-img-top p-3" alt="Pack Camisas">
-                                <div class="card-body">
+                                <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Pack Camisas</h5>
-                                    <p class="card-text text-muted small">Básicos esenciales.</p>
+                                    <p class="card-text text-muted small flex-grow-1">Básicos esenciales.</p>
                                     <p class="fw-bold">150€</p>
                                     <div class="d-grid gap-2">
                                         <select class="form-select form-select-sm"><option>Talla</option><option>S</option><option>M</option><option>L</option></select>
                                         <button class="btn btn-brand btn-sm">Añadir 🛒</button>
-                                        <button class="btn btn-link btn-sm" data-bs-toggle="modal" data-bs-target="#P22">Ver detalles</button>
+                                        <button class="btn btn-link btn-sm text-brand" data-bs-toggle="modal" data-bs-target="#P22">Ver detalles</button>
                                     </div>
                                     <div class="stars-outer mt-2"><div class="stars-inner text-danger" style="width: 100%;"></div></div> <span class="small">5.0 (2)</span>
                                 </div>
                             </div>
                         </div>
 
-                         <!-- P23: Vaqueros -->
-                         <div class="col-12 col-md-4">
+                        <!-- P23 -->
+                        <div class="col-12 col-md-4">
                             <div class="card h-100 shadow-sm position-relative">
                                 <span class="position-absolute top-0 end-0 badge bg-danger m-2">-20%</span>
                                 <img src="./img/tienda/Vaqueros_clasicos_gemini.png" class="card-img-top p-3" alt="Vaqueros">
-                                <div class="card-body">
+                                <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Vaqueros Clásicos</h5>
-                                    <p class="card-text text-muted small">Denim resistente.</p>
+                                    <p class="card-text text-muted small flex-grow-1">Denim resistente.</p>
                                     <p class="fw-bold"><span class="text-decoration-line-through text-muted small me-2">70€</span>56€</p>
                                     <div class="d-grid gap-2">
                                         <select class="form-select form-select-sm"><option>Talla</option><option>38</option><option>40</option><option>42</option><option>44</option></select>
                                         <button class="btn btn-brand btn-sm">Añadir 🛒</button>
-                                        <button class="btn btn-link btn-sm" data-bs-toggle="modal" data-bs-target="#P23">Ver detalles</button>
+                                        <button class="btn btn-link btn-sm text-brand" data-bs-toggle="modal" data-bs-target="#P23">Ver detalles</button>
                                     </div>
                                     <div class="stars-outer mt-2"><div class="stars-inner text-danger" style="width: 90%;"></div></div> <span class="small">4.5 (60)</span>
                                 </div>
@@ -183,56 +193,56 @@
                 <section id="ninos" class="mb-5 p-3 bg-white rounded shadow-sm border">
                     <h3 class="h4 mb-3 text-brand border-bottom">Ropa Niños</h3>
                     <div class="row g-3">
-                        <!-- P31: Chandal -->
+                        <!-- P31 -->
                         <div class="col-12 col-md-4">
                             <div class="card h-100 shadow-sm">
                                 <img src="./img/tienda/Chandal_gemini.png" class="card-img-top p-3" alt="Chandal">
-                                <div class="card-body">
+                                <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Chándal Escolar</h5>
-                                    <p class="card-text text-muted small">Resistente y lavable.</p>
+                                    <p class="card-text text-muted small flex-grow-1">Resistente y lavable.</p>
                                     <p class="fw-bold">20€</p>
                                     <div class="d-grid gap-2">
                                         <select class="form-select form-select-sm"><option>Talla</option><option>4a</option><option>6a</option><option>8a</option><option>10a</option></select>
                                         <button class="btn btn-brand btn-sm">Añadir 🛒</button>
-                                        <button class="btn btn-link btn-sm" data-bs-toggle="modal" data-bs-target="#P31">Ver detalles</button>
+                                        <button class="btn btn-link btn-sm text-brand" data-bs-toggle="modal" data-bs-target="#P31">Ver detalles</button>
                                     </div>
                                     <div class="stars-outer mt-2"><div class="stars-inner" style="width: 80%;"></div></div> <span class="small">4.0 (10)</span>
                                 </div>
                             </div>
                         </div>
 
-                         <!-- P32: Vestido Fiesta -->
-                         <div class="col-12 col-md-4">
+                        <!-- P32 (PREMIUM) -->
+                        <div class="col-12 col-md-4">
                             <div class="card h-100 premium shadow-sm position-relative">
-                                <span class="position-absolute top-0 start-0 badge badge-premium m-2">PREMIUM</span>
+                                <span class="position-absolute top-0 start-0 m-2 badge-premium">PREMIUM</span>
                                 <img src="./img/tienda/Vestido_fiesta_gemini.png" class="card-img-top p-3" alt="Vestido Fiesta">
-                                <div class="card-body">
+                                <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Vestido de Fiesta</h5>
-                                    <p class="card-text text-muted small">Detalles bordados.</p>
+                                    <p class="card-text text-muted small flex-grow-1">Detalles bordados.</p>
                                     <p class="fw-bold">55€</p>
                                     <div class="d-grid gap-2">
                                         <select class="form-select form-select-sm"><option>Talla</option><option>4a</option><option>6a</option><option>8a</option></select>
                                         <button class="btn btn-brand btn-sm">Añadir 🛒</button>
-                                        <button class="btn btn-link btn-sm" data-bs-toggle="modal" data-bs-target="#P32">Ver detalles</button>
+                                        <button class="btn btn-link btn-sm text-brand" data-bs-toggle="modal" data-bs-target="#P32">Ver detalles</button>
                                     </div>
                                     <div class="stars-outer mt-2"><div class="stars-inner" style="width: 100%;"></div></div> <span class="small">5.0 (5)</span>
                                 </div>
                             </div>
                         </div>
 
-                         <!-- P33: Pijama -->
-                         <div class="col-12 col-md-4">
+                        <!-- P33 -->
+                        <div class="col-12 col-md-4">
                             <div class="card h-100 shadow-sm position-relative">
                                 <span class="position-absolute top-0 end-0 badge bg-danger m-2">-5€</span>
                                 <img src="./img/tienda/Pijama_gemini.png" class="card-img-top p-3" alt="Pijama">
-                                <div class="card-body">
+                                <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Pijama Suave</h5>
-                                    <p class="card-text text-muted small">Algodón 100% orgánico.</p>
+                                    <p class="card-text text-muted small flex-grow-1">Algodón 100% orgánico.</p>
                                     <p class="fw-bold"><span class="text-decoration-line-through text-muted small me-2">18€</span>13€</p>
                                     <div class="d-grid gap-2">
                                         <select class="form-select form-select-sm"><option>Talla</option><option>2a</option><option>3a</option><option>4a</option><option>5a</option></select>
                                         <button class="btn btn-brand btn-sm">Añadir 🛒</button>
-                                        <button class="btn btn-link btn-sm" data-bs-toggle="modal" data-bs-target="#P33">Ver detalles</button>
+                                        <button class="btn btn-link btn-sm text-brand" data-bs-toggle="modal" data-bs-target="#P33">Ver detalles</button>
                                     </div>
                                     <div class="stars-outer mt-2"><div class="stars-inner" style="width: 94%;"></div></div> <span class="small">4.7 (22)</span>
                                 </div>
@@ -241,7 +251,7 @@
                     </div>
                 </section>
 
-                <!-- Categoría Oculta (SOLO MÓVIL: d-md-none) -->
+                <!-- Categoría Oculta (SOLO MÓVIL) -->
                 <section class="d-block d-md-none mobile-texture p-3 mb-4 rounded">
                     <h3 class="h5 text-center text-brand">⚡ Ofertas Flash Móvil ⚡</h3>
                     <div class="card border-0 bg-transparent">
@@ -252,7 +262,7 @@
                             <p class="small">Solo desde móvil.</p>
                             <p class="fw-bold fs-4 text-danger"><span class="text-decoration-line-through text-muted small me-2">30€</span>15€</p>
                             <button class="btn btn-danger w-100">Añadir 🛒</button>
-                            <button class="btn btn-link btn-sm" data-bs-toggle="modal" data-bs-target="#P41">Ver detalles</button>
+                            <button class="btn btn-link btn-sm text-danger" data-bs-toggle="modal" data-bs-target="#P41">Ver detalles</button>
                             <div class="stars-outer mt-2"><div class="stars-inner" style="width: 94%;"></div></div> <span class="small">4.5 (86)</span>
                         </div>
                     </div>
@@ -260,16 +270,27 @@
 
             </main>
 
-            <!-- SIDEBAR (Columna Derecha estrecha) -->
+            <!-- SIDEBAR -->
             <aside class="col-lg-3 order-1 order-lg-2 mb-4">
                 <div class="p-3 bg-light rounded text-center border sticky-top" style="top: 80px; z-index: 1;">
                     <h4 class="text-brand">Guía de Tallas</h4>
-                    <div class="d-flex flex-wrap justify-content-center gap-2 my-3">
-                        <div class="size-circle" data-bs-toggle="tooltip" title="<img src='./img/tienda/tallas/XS.png'>">XS</div>
-                        <div class="size-circle" data-bs-toggle="tooltip" title="<img src='./img/tienda/tallas/S.png'>">S</div>
-                        <div class="size-circle" data-bs-toggle="tooltip" title="<img src='./img/tienda/tallas/M.png'>">M</div>
-                        <div class="size-circle" data-bs-toggle="tooltip" title="<img src='./img/tienda/tallas/L.png'>">L</div>
-                        <div class="size-circle" data-bs-toggle="tooltip" title="<img src='./img/tienda/tallas/XL.png'>">XL</div>
+                    <!-- ESTRUCTURA EXACTA PARA EL CSS ARREGLADO -->
+                    <div class="info-box">
+                        <div class="info-item">XS
+                            <div class="size-popup"><img src="./img/tienda/tallas/XS.png" alt="XS"></div>
+                        </div>
+                        <div class="info-item">S
+                            <div class="size-popup"><img src="./img/tienda/tallas/S.png" alt="S"></div>
+                        </div>
+                        <div class="info-item">M
+                            <div class="size-popup"><img src="./img/tienda/tallas/M.png" alt="M"></div>
+                        </div>
+                        <div class="info-item">L
+                            <div class="size-popup"><img src="./img/tienda/tallas/L.png" alt="L"></div>
+                        </div>
+                        <div class="info-item">XL
+                            <div class="size-popup"><img src="./img/tienda/tallas/XL.png" alt="XL"></div>
+                        </div>
                     </div>
                     <p class="small">Elige tu talla ideal consultando nuestra guía completa.</p>
                 </div>
@@ -277,8 +298,7 @@
         </div>
     </div>
 
-    <!-- MODALS DE RESEÑAS (Uno por producto) -->
-    
+    <!-- MODALS -->
     <!-- P11 -->
     <div class="modal fade" id="P11" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Vestido Floral - Opiniones</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="alert alert-light border"><strong>Laura M.</strong> ⭐⭐⭐⭐⭐<br><small>Es súper fresquito para el verano, me encanta el estampado.</small></div><div class="alert alert-light border"><strong>Ana P.</strong> ⭐⭐⭐⭐☆<br><small>Talla perfecto, aunque la tela se arruga un poco al sentarse.</small></div></div></div></div></div>
     <!-- P12 -->
@@ -300,7 +320,7 @@
     <!-- P41 -->
     <div class="modal fade" id="P41" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Zapatillas Run - Opiniones</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="alert alert-light border"><strong>Runner01</strong> ⭐⭐⭐⭐⭐<br><small>Ligeras como una pluma.</small></div></div></div></div></div>
 
-    <!-- FOOTER REUTILIZADO -->
+    <!-- FOOTER -->
     <footer class="py-5 mt-auto text-center">
         <div class="container">
             <div class="row g-4">
@@ -313,9 +333,5 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-        const tooltipList = [...tooltipTriggerList].map(t => new bootstrap.Tooltip(t, {html: true}))
-    </script>
 </body>
 </html>

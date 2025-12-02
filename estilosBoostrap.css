@@ -1,18 +1,18 @@
-/* --- 1. VARIABLES Y FUENTES (Reciclado) --- */
+/* --- 1. VARIABLES Y FUENTES (Copia exacta de estilos.css) --- */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
 
 :root {
     --primary-color: #2E0D14; /* Color oscuro/acento principal */
-    --secondary-color: #990011; /* Rojo corporativo */
+    --secondary-color: #990011; /* Rojo específico de la cabecera original */
     --main-bg: #EFE1D5;       /* Beige claro */
     --white: #ffffff;
     --accent-gold: #c5a009;   /* Dorado Premium */
     --accent-red: #d32f2f;    /* Rojo Ofertas */
 }
 
-/* Aplicación de fuentes globales */
+/* Aplicación global */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
@@ -28,9 +28,9 @@ h1, h2, h3, h4, h5, .navbar-brand {
     font-size: 1.1rem;
 }
 
-/* --- 2. PERSONALIZACIÓN DE BOOTSTRAP --- */
+/* --- 2. PERSONALIZACIÓN DE BOOTSTRAP (Colores Exactos) --- */
 
-/* Cabecera y Navbar */
+/* Cabecera y elementos de marca (#990011) */
 .bg-brand {
     background-color: var(--secondary-color) !important;
 }
@@ -39,24 +39,24 @@ h1, h2, h3, h4, h5, .navbar-brand {
     color: var(--secondary-color) !important;
 }
 
+/* Navbar: Fondo claro (#FCF6F5) y borde primario */
 .navbar-custom {
     background-color: #FCF6F5;
-    border-bottom: 2px solid var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
 }
 
 .navbar-custom .nav-link {
-    color: #222;
+    color: #222222;
     font-weight: bold;
-    text-transform: uppercase;
 }
 
 .navbar-custom .nav-link:hover, 
 .navbar-custom .nav-link.active {
     background-color: var(--secondary-color);
-    color: var(--white);
+    color: #FCF6F5; /* Texto claro al hacer hover */
 }
 
-/* Botones personalizados */
+/* Botones: Color primario (#2E0D14) */
 .btn-brand {
     background-color: var(--primary-color);
     color: var(--white);
@@ -67,25 +67,26 @@ h1, h2, h3, h4, h5, .navbar-brand {
     color: var(--white);
 }
 
-/* Footer */
+/* Footer: Rojo corporativo (#990011) */
 footer {
     background-color: var(--secondary-color);
-    color: var(--white);
+    color: #FCF6F5;
     font-family: "Oswald", sans-serif;
 }
 footer a {
-    color: var(--white);
+    color: #FCF6F5;
     text-decoration: none;
 }
 footer h4 {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #FCF6F5;
     padding-bottom: 5px;
     display: inline-block;
+    color: #FCF6F5;
 }
 
-/* --- 3. ESTILOS ESPECÍFICOS DE PRODUCTOS (Reciclado) --- */
+/* --- 3. ESTILOS DE PRODUCTOS --- */
 
-/* Estrellas de valoración */
+/* Estrellas */
 .stars-outer {
     position: relative;
     display: inline-block;
@@ -99,48 +100,108 @@ footer h4 {
 }
 .stars-inner::before { content: "\2605 \2605 \2605 \2605 \2605"; }
 
-/* Bordes y etiquetas especiales */
+/* ETIQUETA PREMIUM (Estilo caja idéntico al original) */
 .card.premium {
-    border: 2px solid var(--accent-gold);
     background-color: #fffdf5;
+    border: 2px solid var(--accent-gold);
 }
 
 .badge-premium {
     background-color: var(--accent-gold);
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    font-size: 0.75em;
+    font-weight: bold;
+    padding: 4px 8px;
+    display: inline-block;
+    text-transform: uppercase;
 }
 
-/* Categoría Trending */
+/* Categoría Trending (Fondo rojizo suave) */
 .trending {
-    background-color: rgba(46, 13, 20, 0.05);
-    border: 2px dashed var(--secondary-color);
+    background-color: rgba(46, 13, 20, 0.1);
+    border: 2px dashed var(--primary-color);
+}
+.trending .stars-inner {
+    color: var(--accent-red);
 }
 
-/* Categoría Oculta Móvil (Textura) */
+/* Categoría Oculta Móvil */
 .mobile-texture {
     background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
     background-color: #fff8e1;
-    border: 2px dashed var(--secondary-color);
+    border: 2px dashed var(--primary-color);
 }
 
-/* Guía de Tallas (Círculos) */
-.size-circle {
-    width: 40px; height: 40px;
+/* --- 4. GUÍA DE TALLAS (Solución Overflow) --- */
+.info-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.info-item {
     background-color: var(--primary-color);
     color: var(--main-bg);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: bold; cursor: help;
+    font-weight: bold;
+    cursor: help;
+    position: relative;
+    transition: transform 0.2s;
 }
 
-/* --- 4. NOTICIAS (Overlay) --- */
-.news-overlay {
-    background: rgba(40, 20, 10, 0.65); /* Fondo oscuro semitransparente */
-    backdrop-filter: blur(2px);
+.info-item:hover { 
+    transform: scale(1.1); 
 }
 
-/* W3C Icon */
+/* Popup emergente corregido */
+.size-popup {
+    display: none;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px; /* Ancho fijo para evitar gigantismo */
+    background-color: var(--white);
+    border: 2px solid var(--primary-color);
+    padding: 5px;
+    z-index: 1050; /* Z-index alto para estar sobre otros elementos */
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    border-radius: 5px;
+}
+
+/* Importante: Forzar que la imagen no exceda el popup */
+.size-popup img { 
+    width: 100%; 
+    height: auto;
+    display: block; 
+}
+
+/* Flecha del popup */
+.size-popup::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -6px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent var(--primary-color) transparent;
+}
+
+.info-item:hover .size-popup { 
+    display: block; 
+}
+
+/* --- 5. EXTRAS --- */
 .w3c-icon {
     border: 1px solid black;
     padding: 5px;
