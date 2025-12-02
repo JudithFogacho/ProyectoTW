@@ -1028,14 +1028,14 @@ body {
 
 /* TITULOS */
 .titulo {
-    font-size: 32px;
+    font-size: 30px;
     font-weight: bold;
     margin-bottom: 20px;
     font-family: "Oswald", sans-serif;
 }
 
 .subtitulo {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     margin-bottom: 30px;
     font-family: "Oswald", sans-serif;
@@ -1043,7 +1043,7 @@ body {
 
 /* PÁRRAFOS */
 .contenido-overlay h4 {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.5;
     margin-bottom: 15px;
     font-family: "Barlow Condensed", sans-serif;
@@ -1148,3 +1148,91 @@ body {
 }
 
 .mobile-only-category { display: none; }
+
+/*Responsive de la pagina Noticias*/
+@media (max-width: 768px) {
+    
+    /* Reducir altura de imagen en móvil */
+    .noticia .imagen {
+        height: 300px;
+    }
+
+    /* Reducir padding del overlay */
+    .contenido-overlay {
+        padding: 15px;
+        justify-content: center;
+    }
+
+    /* Hacer que todo el contenido ocupe el ancho completo en móvil */
+    .contenido-overlay h2,
+    .contenido-overlay h3,
+    .contenido-overlay h4 {
+        width: 100% !important; 
+    }
+
+    .titulo {
+        font-size: 16px; 
+        margin-bottom: 10px; 
+    }
+
+    .subtitulo {
+        font-size: 12px; 
+        margin-bottom: 15px;
+    }
+
+    .contenido-overlay h4 {
+        font-size: 9px;
+        line-height: 1.4; 
+        margin-bottom: 10px; 
+    }
+
+    /* Información al final en columna vertical */
+    .info {
+        margin-top: 15px; 
+        flex-direction: column; 
+        gap: 8px; 
+        font-size: 13px; 
+    }
+
+    .info p,
+    .info a {
+        font-size: 13px;
+        margin: 0;
+    }
+
+    .internacional {
+        border-width: 3px;
+    }
+
+    .contenido-overlay {
+        backdrop-filter: blur(0.5px); 
+    }
+}
+
+@media (max-width: 480px) {
+    
+    .noticia .imagen {
+        height: 250px; 
+    }
+
+    .contenido-overlay {
+        padding: 10px;
+    }
+
+    .titulo {
+        font-size: 16px;
+    }
+
+    .subtitulo {
+        font-size: 12px;
+    }
+
+    .contenido-overlay h4 {
+        font-size: 10px;
+    }
+
+    .info p,
+    .info a {
+        font-size: 9px;
+    }
+}
