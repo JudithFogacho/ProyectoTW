@@ -2,161 +2,136 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda - Productos (Bootstrap)</title>
+    <title>Tienda - Noticias (Bootstrap)</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="estiloBootstrap.css">
+    <style>
+        .news-img { height: 550px; object-fit: cover; }
+    </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
 
-    <!-- HEADER REUTILIZADO -->
+    <!-- HEADER + NAV -->
     <header class="bg-brand py-3 text-white">
         <div class="container d-flex flex-wrap justify-content-between align-items-center">
             <h1><a href="indexBootstrap.html" class="text-white text-decoration-none">MODA UNIVERSITAS</a></h1>
             <div class="d-flex gap-2">
                 <button class="btn btn-outline-light">🛒 0</button>
                 <form action="https://www.google.com/search" target="_blank" class="d-flex">
-                    <input type="text" name="q" class="form-control form-control-sm" placeholder="Buscar...">
+                    <input type="text" name="q" class="form-control form-control-sm" placeholder="Buscar en Google..." required>
+                    <button type="submit" class="btn btn-dark">BUSCAR</button>
                 </form>
             </div>
         </div>
     </header>
-    
-    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navProd">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navNews">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navProd">
+            <div class="collapse navbar-collapse justify-content-center" id="navNews">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="indexBootstrap.html">Inicio</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Productos</a>
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Productos</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#mujer">Ropa Mujer</a></li>
-                            <li><a class="dropdown-item" href="#hombre">Ropa Hombre</a></li>
-                            <li><a class="dropdown-item" href="#ninos">Ropa Niños</a></li>
+                            <li><a class="dropdown-item" href="productosBootstrap.html#mujer">Ropa Mujer</a></li>
+                            <li><a class="dropdown-item" href="productosBootstrap.html#hombre">Ropa Hombre</a></li>
+                            <li><a class="dropdown-item" href="productosBootstrap.html#ninos">Ropa Niños</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="noticiasBootstrap.html">Novedades</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="noticiasBootstrap.html">Novedades</a></li>
                     <li class="nav-item"><a class="nav-link" href="contactoBootstrap.html">Contactos</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container my-4">
-        <div class="row">
-            
-            <!-- COLUMNA PRINCIPAL (Grid: 9/12 en escritorio) -->
-            <main class="col-lg-9 order-2 order-lg-1">
-                <h2 class="border-bottom pb-2 mb-4 text-brand">Nuestro Catálogo</h2>
-
-                <!-- Categoría 1: Mujer -->
-                <section id="mujer" class="mb-5">
-                    <h3 class="h4 mb-3">Ropa Mujer</h3>
-                    <div class="row g-3">
-                        <div class="col-12 col-md-4">
-                            <div class="card h-100 shadow-sm">
-                                <span class="position-absolute top-0 end-0 badge bg-danger m-2">-20€</span>
-                                <img src="./img/tienda/Vestido_floral_gemini.png" class="card-img-top p-3" alt="Vestido">
-                                <div class="card-body">
-                                    <h5 class="card-title">Vestido Floral</h5>
-                                    <p class="card-text text-muted">Ideal para el verano.</p>
-                                    <p class="fw-bold"><span class="text-decoration-line-through text-muted small me-2">70€</span>50€</p>
-                                    <div class="stars-outer mb-2"><div class="stars-inner" style="width: 90%;"></div></div>
-                                    <div class="d-grid gap-2">
-                                        <button class="btn btn-brand btn-sm">Añadir</button>
-                                        <button class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalP11">Ver Opiniones</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Producto Premium -->
-                        <div class="col-12 col-md-4">
-                            <div class="card h-100 premium shadow-sm">
-                                <span class="position-absolute top-0 start-0 badge badge-premium m-2">PREMIUM</span>
-                                <img src="./img/tienda/Chaqueta_lana_gemini.png" class="card-img-top p-3" alt="Abrigo">
-                                <div class="card-body">
-                                    <h5 class="card-title">Abrigo Lana</h5>
-                                    <p class="card-text text-muted">Alta costura.</p>
-                                    <p class="fw-bold">220€</p>
-                                    <div class="stars-outer mb-2"><div class="stars-inner" style="width: 80%;"></div></div>
-                                    <button class="btn btn-brand btn-sm w-100">Añadir</button>
-                                </div>
-                            </div>
-                        </div>
+    <main class="container my-5">
+        
+        <!-- Noticia 1 (Nacional) -->
+        <article class="card text-white mb-5 border-0 shadow">
+            <img src="./img/noticias/Noticia1.jpg" class="card-img news-img" alt="Noticia 1">
+            <div class="card-img-overlay d-flex flex-column justify-content-center p-0">
+                <div class="news-overlay p-4 col-md-8 col-lg-6 h-100 d-flex flex-column justify-content-center">
+                    <h2 class="card-title display-6 fw-bold">Wonderland, la exposición del otoño que explora la trayectoria de Annie Leibovitz</h2>
+                    <h3 class="h5 mb-3 text-light">El MOP de A Coruña acoge la primera gran retrospectiva de la fotógrafa norteamericana en nuestro país</h3>
+                    <p class="card-text d-none d-md-block small">A Annie Leibovitz le encanta acompañar cada uno de sus libros con una correspondiente exposición. Sin embargo, hizo la excepción en 2021 con el lanzamiento de Wonderland, donde pone el foco en su fotografía de moda...</p>
+                    <p class="card-text d-none d-md-block small">Leibovitz representa así la sexta exposición que el MOP dedica a algunos de los fotógrafos más representativos del s. XX. Ella, además de ser la fotógrafa mejor pagada del mundo, es la primera mujer incluida...</p>
+                    <div class="mt-3 small border-top pt-2">
+                        <p class="m-0">Ámbito: Nacional | 21 Nov 2025 | Autor: Nuria Luis</p>
+                        <a href="https://www.vogue.es/articulos/annie-leibovitz-wonderland-exposicion-mop-a-coruna" target="_blank" class="text-warning">Enlace noticia original</a>
                     </div>
-                </section>
-
-                <!-- Categoría Oculta (SOLO MÓVIL: d-md-none) -->
-                <section class="d-block d-md-none mobile-texture p-3 mb-4 rounded">
-                    <h3 class="h5 text-center text-brand">⚡ Ofertas Flash Móvil ⚡</h3>
-                    <div class="card border-0 bg-transparent">
-                        <img src="./img/tienda/Zapatillas_gemini.png" class="card-img-top p-3" alt="Zapatillas">
-                        <div class="card-body text-center">
-                            <h5>Zapatillas Run</h5>
-                            <p class="fw-bold fs-4 text-danger">15€</p>
-                            <button class="btn btn-danger w-100">¡Compra Rápida!</button>
-                        </div>
-                    </div>
-                </section>
-
-            </main>
-
-            <!-- BARRA LATERAL (Grid: 3/12 en escritorio) -->
-            <aside class="col-lg-3 order-1 order-lg-2 mb-4">
-                <div class="p-3 bg-light rounded text-center border sticky-top" style="top: 80px;">
-                    <h4 class="text-brand">Guía de Tallas</h4>
-                    <div class="d-flex flex-wrap justify-content-center gap-2 my-3">
-                        <div class="size-circle" data-bs-toggle="tooltip" title="Extra Pequeño">XS</div>
-                        <div class="size-circle" data-bs-toggle="tooltip" title="Pequeño">S</div>
-                        <div class="size-circle" data-bs-toggle="tooltip" title="Mediano">M</div>
-                        <div class="size-circle" data-bs-toggle="tooltip" title="Grande">L</div>
-                    </div>
-                    <div class="alert alert-info small m-0">Consulta antes de pedir.</div>
-                </div>
-            </aside>
-
-        </div>
-    </div>
-
-    <!-- MODAL (Componente 4) -->
-    <div class="modal fade" id="modalP11" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Opiniones - Vestido Floral</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="d-flex align-items-start mb-3">
-                        <div class="me-3 fs-3">👩</div>
-                        <div>
-                            <strong>Laura M.</strong> ⭐⭐⭐⭐⭐
-                            <p class="small text-muted mb-0">Es súper fresquito para el verano.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 </div>
             </div>
-        </div>
-    </div>
+        </article>
 
-    <footer class="text-center py-4 mt-auto">
+        <!-- Noticia 2 (Internacional - Borde Dorado) -->
+        <article class="card text-white mb-5 border-warning border-4 shadow">
+            <img src="./img/noticias/Noticia2.jpg" class="card-img news-img" alt="Noticia 2">
+            <div class="card-img-overlay d-flex flex-column justify-content-center p-0">
+                <div class="news-overlay p-4 col-md-8 col-lg-6 h-100 d-flex flex-column justify-content-center border-start border-warning border-5">
+                    <h2 class="card-title display-6 fw-bold">Cómo llevar medias de colores este invierno sin resultar extravagante</h2>
+                    <h3 class="h5 mb-3 text-light">Rojas, blancas e incluso verdes: las medias de colores son la estrella del otoño-invierno 2025/2026</h3>
+                    <p class="card-text d-none d-md-block small">Con las temperaturas bajando poco a poco y el aire cada vez más cortante, el armario se prepara para dar la bienvenida a nuevas prendas y accesorios imprescindibles para combatir el frío, pero no solo eso...</p>
+                    <p class="card-text d-none d-md-block small">Como suele ocurrir, las pasarelas y el street style nos han demostrado que con las medias en invierno la diversión y el estilo están asegurados. Junto a los tonos clásicos negro y azul marino, también los hay más atrevidos...</p>
+                    <div class="mt-3 small border-top pt-2">
+                        <p class="m-0">Ámbito: Internacional | 25 Nov 2025 | Autor: Emma Bocchi</p>
+                        <a href="https://www.vogue.es/articulos/como-llevar-medias-colores-invierno#intcid=_vogue-es-right-rail_a7eab52d-38e5-4346-8dd5-941d634ad182_popular4-2" target="_blank" class="text-warning">Enlace noticia original</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Noticia 3 (Nacional) -->
+        <article class="card text-white mb-5 border-0 shadow">
+            <img src="./img/noticias/Noticia3.jpg" class="card-img news-img" alt="Noticia 3">
+            <div class="card-img-overlay d-flex flex-column justify-content-center p-0">
+                <div class="news-overlay p-4 col-md-8 col-lg-6 h-100 d-flex flex-column justify-content-center">
+                    <h2 class="card-title display-6 fw-bold">La boda en Alicante del diseñador Edward Cuming: una celebración minimalista en una joya arquitectónica contemporánea</h2>
+                    <h3 class="h5 mb-3 text-light">A continuación, los detalles de la boda en Alicante de Edward Cuming y Juanma Costa Ripoll:</h3>
+                    <p class="card-text d-none d-md-block small">El pasado mes de octubre fue de lo más especial para Edward Cuming. El diseñador australiano no solo se coronó como el ganador de la 14ª edición de Vogue Fashion Fund...</p>
+                    <p class="card-text d-none d-md-block small">La pareja celebró su boda el pasado 11 de octubre en el Auditori Teulada Moraira, una localización inédita en la que nunca se había celebrado un evento privado de estas características...</p>
+                    <div class="mt-3 small border-top pt-2">
+                        <p class="m-0">Ámbito: Nacional | 26 Nov 2025 | Autor: Tatiana Ojea</p>
+                        <a href="https://www.vogue.es/galerias/boda-alicante-edward-cuming-auditori-teulada-moraira-estilo-decoracion-arquitectonico-minimalista#intcid=_vogue-es-right-rail_8a655085-66d3-44e9-acb9-3a0cf86bc56c_popular4-2" target="_blank" class="text-warning">Enlace noticia original</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Noticia 4 (Nacional) -->
+        <article class="card text-white mb-5 border-0 shadow">
+            <img src="./img/noticias/Noticia4.jpg" class="card-img news-img" alt="Noticia 4">
+            <div class="card-img-overlay d-flex flex-column justify-content-center p-0">
+                <div class="news-overlay p-4 col-md-8 col-lg-6 h-100 d-flex flex-column justify-content-center">
+                    <h2 class="card-title display-6 fw-bold">Vuelven los vestidos de fiesta navideños, vuelve el qipao</h2>
+                    <h3 class="h5 mb-3 text-light">El vestido que se convirtió en el símbolo estético de la China moderna vuelve al armario de cara a las fiestas</h3>
+                    <p class="card-text d-none d-md-block small">Hay algunos vestidos de fiesta que, como el turrón, siempre están de vuelta por Navidad. Uno de ellos es la enésima versión del diseño verde que luce Keira Knightley en Expiación...</p>
+                    <p class="card-text d-none d-md-block small">La frontera con la apropiación cultural ya es otra cuestión, pero no falla que cada temporada pueda encontrarse en la sección de fiesta de nuestras tiendas de cabecera...</p>
+                    <div class="mt-3 small border-top pt-2">
+                        <p class="m-0">Ámbito: Nacional | 25 Nov 2025 | Autor: Nuria Luis</p>
+                        <a href="https://www.vogue.es/articulos/qipao-vestido-fiesta-navidad-2025#intcid=_vogue-es-right-rail_69a9eb15-4beb-40cc-be9b-0459c391600c_popular4-2" target="_blank" class="text-warning">Enlace noticia original</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </main>
+    
+    <!-- FOOTER REUTILIZADO -->
+    <footer class="py-5 mt-auto text-center">
         <div class="container">
-            <p>© 2025 Moda Universitas - Versión Bootstrap</p>
+            <div class="row g-4">
+                <div class="col-12 col-sm-6 col-lg-3"><h4>Autores</h4><p class="mt-2">José Manuel Moreno Quesada<br>Alejandra Fogacho Suquilanda</p></div>
+                <div class="col-12 col-sm-6 col-lg-3"><h4>Validación CSS</h4><br><div class="w3c-icon">✓ Bootstrap 5</div></div>
+                <div class="col-12 col-sm-6 col-lg-3"><h4>Redes Sociales</h4><div class="mt-2 fs-4"><p><a href="https://www.facebook.com/UniversidadMiguelHernandezElche/?locale=es_ES"><i class="fa-brands fa-facebook"></i></a><br></p><p><a href="https://www.instagram.com/universidadmh/?hl=es"><i class="fa-brands fa-instagram"></i></a></p></div></div>
+                <div class="col-12 col-sm-6 col-lg-3"><h4>Enlaces PW</h4><p class="mt-2"><a href="https://www.umh.es/">Universidad</a><br></p><p><a href="https://www.umh.es/contenido/Estudios/:asi_g_2804_S8/datos_es.html">Departamento</a></p></div>
+            </div>
         </div>
     </footer>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Inicializar Tooltips
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-        const tooltipList = [...tooltipTriggerList].map(t => new bootstrap.Tooltip(t))
-    </script>
 </body>
 </html>

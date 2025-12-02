@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda - Contacto (Bootstrap)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="estiloBootstrap.css">
+</head>
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+    <!-- HEADER + NAV -->
+    <header class="bg-brand py-3 text-white">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center">
+            <h1><a href="indexBootstrap.html" class="text-white text-decoration-none">MODA UNIVERSITAS</a></h1>
+            <div class="d-flex gap-2">
+                <button class="btn btn-outline-light">🛒 <span class="badge bg-white text-dark">0</span></button>
+                <form action="https://www.google.com/search" target="_blank" class="d-flex">
+                    <input type="text" name="q" class="form-control form-control-sm" placeholder="Buscar en Google..." required>
+                    <button type="submit" class="btn btn-dark">BUSCAR</button>
+                </form>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContact">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navContact">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="indexBootstrap.html">Inicio</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Productos</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="productosBootstrap.html#mujer">Ropa Mujer</a></li>
+                            <li><a class="dropdown-item" href="productosBootstrap.html#hombre">Ropa Hombre</a></li>
+                            <li><a class="dropdown-item" href="productosBootstrap.html#ninos">Ropa Niños</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="noticiasBootstrap.html">Novedades</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contactoBootstrap.html">Contactos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow border-0">
+                    <div class="card-header bg-white pt-4 border-0 text-center">
+                        <h2 class="text-brand">Formulario de contacto</h2>
+                        <div class="alert alert-warning py-2 small d-inline-block">
+                            Rellene el documento, por favor. Los datos * son obligatorios.
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <form action="mailto:mquesada@umh.es" method="post" enctype="text/plain" class="row g-3">
+                            
+                            <!-- Nombre y Apellido -->
+                            <div class="col-md-6">
+                                <label for="nombre" class="form-label text-brand fw-bold">Nombre*</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Tu nombre..">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="apellido" class="form-label text-brand fw-bold">Apellido*</label>
+                                <input type="text" class="form-control" id="apellido" name="apellido" required placeholder="Tu apellido..">
+                            </div>
+
+                            <!-- Dirección -->
+                            <div class="col-12">
+                                <label for="direccion" class="form-label text-brand fw-bold">Dirección*</label>
+                                <input type="text" class="form-control" id="direccion" name="direccion" required placeholder="Calle, número, piso...">
+                            </div>
+
+                            <!-- Apartamento -->
+                            <div class="col-12">
+                                <label for="Apart" class="form-label text-brand fw-bold">Apartamento, suite o unidad</label>
+                                <input type="text" class="form-control" id="Apart" name="Apart">
+                            </div>
+
+                            <!-- Ciudad, Provincia, CP -->
+                            <div class="col-md-5">
+                                <label for="Ciudad" class="form-label text-brand fw-bold">Ciudad*</label>
+                                <input type="text" class="form-control" id="Ciudad" name="Ciudad" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="Provincia" class="form-label text-brand fw-bold">Provincia*</label>
+                                <select id="Provincia" name="Provincia" class="form-select" required>
+                                    <option value="">Seleccione uno...</option>
+                                    <option value="AL">Alicante</option>
+                                    <option value="MU">Murcia</option>
+                                    <option value="VA">Valencia</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="CopPost" class="form-label text-brand fw-bold">Código postal*</label>
+                                <input type="text" class="form-control" id="CopPost" name="CopPost" required pattern="[0-9]{5}">
+                            </div>
+
+                            <!-- Email -->
+                            <div class="col-12">
+                                <label for="email1" class="form-label text-brand fw-bold">Email*</label>
+                                <input type="email" class="form-control" id="email1" name="email" required placeholder="ejemplo@umh.es">
+                            </div>
+
+                            <!-- Teléfono y Tipo -->
+                            <div class="col-md-6">
+                                <label for="telef" class="form-label text-brand fw-bold">Número de teléfono*</label>
+                                <input type="tel" class="form-control" id="telef" name="telef" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-brand fw-bold">Tipo</label>
+                                <div class="d-flex gap-3 pt-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="tipo_telef" value="casa">
+                                        <label class="form-check-label">Casa</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="tipo_telef" value="trabajo">
+                                        <label class="form-check-label">Trabajo</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="tipo_telef" value="movil">
+                                        <label class="form-check-label">Móvil</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- DNI y Banco -->
+                            <div class="col-md-6">
+                                <label for="dni" class="form-label text-brand fw-bold">DNI*</label>
+                                <input type="text" class="form-control" id="dni" name="dni" required pattern="[0-9]{8}[A-Za-z]">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="bank" class="form-label text-brand fw-bold">Código bancario*</label>
+                                <input type="text" class="form-control" id="bank" name="bank" required pattern="[A-Za-z][A-Za-z][0-9]{22}">
+                            </div>
+
+                             <!-- Confirmar Email -->
+                             <div class="col-12">
+                                <label for="email2" class="form-label text-brand fw-bold">Confirmar Email*</label>
+                                <input type="email" class="form-control" id="email2" name="email_confirmar" required>
+                            </div>
+
+                            <!-- Fecha y Color -->
+                            <div class="col-md-6">
+                                <label for="fecha_nac" class="form-label text-brand fw-bold">Fecha de nacimiento</label>
+                                <input type="date" class="form-control" id="fecha_nac" name="fecha_nac">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="color_fav" class="form-label text-brand fw-bold">Color favorito:</label>
+                                <input type="color" class="form-control form-control-color w-100" id="color_fav" name="color_fav" value="#000000">
+                            </div>
+
+                            <!-- Range Slider -->
+                            <div class="col-12 mt-4">
+                                <label for="satisfac" class="form-label text-brand fw-bold">Nivel de satisfacción (1-10):</label>
+                                <div class="d-flex align-items-center gap-2">
+                                    <span>1</span>
+                                    <input type="range" class="form-range" id="satisfac" name="satisfac" min="1" max="10">
+                                    <span>10</span>
+                                </div>
+                            </div>
+
+                            <!-- Botones -->
+                            <div class="col-12 text-center mt-4 d-flex gap-2">
+                                <input type="submit" value="Enviar" class="btn btn-brand w-50">
+                                <input type="reset" value="Limpiar" class="btn btn-secondary w-50">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER REUTILIZADO -->
+    <footer class="py-5 mt-auto text-center">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-sm-6 col-lg-3"><h4>Autores</h4><p class="mt-2">José Manuel Moreno Quesada<br>Alejandra Fogacho Suquilanda</p></div>
+                <div class="col-12 col-sm-6 col-lg-3"><h4>Validación CSS</h4><br><div class="w3c-icon">✓ Bootstrap 5</div></div>
+                <div class="col-12 col-sm-6 col-lg-3"><h4>Redes Sociales</h4><div class="mt-2 fs-4"><p><a href="https://www.facebook.com/UniversidadMiguelHernandezElche/?locale=es_ES"><i class="fa-brands fa-facebook"></i></a><br></p><p><a href="https://www.instagram.com/universidadmh/?hl=es"><i class="fa-brands fa-instagram"></i></a></p></div></div>
+                <div class="col-12 col-sm-6 col-lg-3"><h4>Enlaces PW</h4><p class="mt-2"><a href="https://www.umh.es/">Universidad</a><br></p><p><a href="https://www.umh.es/contenido/Estudios/:asi_g_2804_S8/datos_es.html">Departamento</a></p></div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

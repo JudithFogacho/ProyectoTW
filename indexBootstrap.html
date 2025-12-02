@@ -13,7 +13,7 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
 
-    <!-- HEADER -->
+    <!-- HEADER (Grid adaptativo) -->
     <header class="bg-brand py-3 text-white">
         <div class="container">
             <div class="row align-items-center">
@@ -25,7 +25,7 @@
                     <div class="d-flex gap-2 justify-content-center justify-content-md-end">
                         <button class="btn btn-outline-light">🛒 <span class="badge bg-white text-dark">0</span></button>
                         <form action="https://www.google.com/search" target="_blank" class="d-flex">
-                            <input type="text" name="q" class="form-control me-1" placeholder="Buscar..." required>
+                            <input type="text" name="q" class="form-control me-1" placeholder="Buscar en Google..." required>
                             <button type="submit" class="btn btn-dark"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
                     </div>
@@ -34,7 +34,7 @@
         </div>
     </header>
 
-    <!-- NAVBAR (Componente 1) -->
+    <!-- NAVBAR (Componente Bootstrap) -->
     <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
@@ -64,24 +64,30 @@
         <!-- Sección Bienvenida -->
         <div class="text-center mb-5">
             <h2 class="text-brand fw-bold">BIENVENIDOS A MODA UNIVERSITAS</h2>
-            <p class="lead">¡Bienvenido a nuestra página web! Explora nuestros productos más recientes.</p>
+            <p class="lead">¡Bienvenido a nuestra página web! Nos complace tenerte. Explora nuestros productos/artículos más recientes.</p>
         </div>
 
-        <!-- CAROUSEL (Componente 2) -->
+        <!-- CAROUSEL (Componente Bootstrap para secciones de imagen) -->
         <div id="heroCarousel" class="carousel slide mb-5 shadow rounded overflow-hidden" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+            </div>
             <div class="carousel-inner">
+                <!-- Slide 1 -->
                 <div class="carousel-item active">
-                    <img src="./img/Index1.jpg" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Promo 1">
+                    <img src="./img/Index1.jpg" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Modas Membresía">
                     <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
-                        <h5>Modas Membresía</h5>
-                        <p>Regístrate y disfruta ventajas exclusivas.</p>
+                        <h5>Modas Membresia</h5>
+                        <p>Regístrate y disfruta de un 2% de cashback con cada compra, ventajas exclusivas y mucho más</p>
                     </div>
                 </div>
+                <!-- Slide 2 -->
                 <div class="carousel-item">
-                    <img src="./img/bienvenida2.jpg" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Promo 2">
+                    <img src="./img/bienvenida2.jpg" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="#UNIVESITYLOOKS">
                     <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
-                        <h5>#UNIVERSITYLOOKS</h5>
-                        <p>Inspírate con los looks de nuestra comunidad.</p>
+                        <h5>#UNIVESITYLOOKS</h5>
+                        <p>Inspírate con los #stradilooks de nuestra comunidad y descubre cómo tú también puedes convertirte en creador de contenido.</p>
                     </div>
                 </div>
             </div>
@@ -93,43 +99,58 @@
             </button>
         </div>
 
-        <!-- SEDES (Grid System: 1 col móvil, 2 col tablet/desktop) -->
+        <!-- SEDES (Grid System) -->
         <section class="mb-5">
             <h3 class="text-center mb-4">Nuestras Sedes</h3>
             <div class="row g-4">
+                <!-- Sede 1 -->
                 <div class="col-md-6">
                     <div class="card h-100 border-danger shadow-sm">
-                        <div class="card-header bg-brand text-white">Sede Central</div>
+                        <div class="card-header bg-brand text-white">Sede Central — Ciudad A</div>
                         <div class="card-body">
                             <p><strong>Dirección:</strong> Calle Ejemplo 123, Ciudad A</p>
-                            <p><strong>Horario:</strong> 09:00 - 18:00</p>
+                            <p><strong>Teléfono:</strong> +34 600 000 000</p>
+                            <p><strong>Horario:</strong> Lun–Vie 09:00–18:00</p>
+                            <p><small>Correo: <a href="mailto:central@empresa.com">central@empresa.com</a></small></p>
                             <div class="d-grid gap-2">
-                                <a href="#" class="btn btn-outline-danger">Ver Mapa</a>
-                                <a href="#" class="btn btn-brand">Llamar</a>
+                                <a href="https://maps.google.com/?q=Calle+Ejemplo+123+Ciudad+A" target="_blank" class="btn btn-outline-danger">Abrir en Google Maps</a>
+                                <a href="tel:+34600000000" class="btn btn-brand">Llamar</a>
                             </div>
+                        </div>
+                        <div class="card-footer p-0">
+                            <iframe src="https://www.google.com/maps?q=Calle+Ejemplo+123+Ciudad+A&output=embed" width="100%" height="200" style="border:0;" loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
+                <!-- Sede 2 -->
                 <div class="col-md-6">
                     <div class="card h-100 border-danger shadow-sm">
-                        <div class="card-header bg-brand text-white">Oficina Regional</div>
+                        <div class="card-header bg-brand text-white">Oficina Regional — Ciudad B</div>
                         <div class="card-body">
-                            <p><strong>Dirección:</strong> Av. Modelo 45, Ciudad B</p>
-                            <p><strong>Horario:</strong> 08:30 - 17:30</p>
+                            <p><strong>Dirección:</strong> Avenida Modelo 45, Ciudad B</p>
+                            <p><strong>Teléfono:</strong> +34 611 111 111</p>
+                            <p><strong>Horario:</strong> Lun–Vie 08:30–17:30</p>
+                            <p><small>Correo: <a href="mailto:regional@empresa.com">regional@empresa.com</a></small></p>
                             <div class="d-grid gap-2">
-                                <a href="#" class="btn btn-outline-danger">Ver Mapa</a>
-                                <a href="#" class="btn btn-brand">Llamar</a>
+                                <a href="https://maps.google.com/?q=Calle+Ejemplo+123+Ciudad+A&output=embed" target="_blank" class="btn btn-outline-danger">Abrir en Google Maps</a>
+                                <a href="tel:+34611111111" class="btn btn-brand">Llamar</a>
                             </div>
+                        </div>
+                        <div class="card-footer p-0">
+                            <iframe src="https://www.google.com/maps?q=Calle+Ejemplo+123+Ciudad+A&output=embed" width="100%" height="200" style="border:0;" loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- INFOGRAFÍA / ACORDEÓN (Componente 3) -->
+        <!-- INFOGRAFÍA / ACORDEÓN (Completo con los 5 consejos) -->
         <section class="bg-light p-4 rounded border">
             <h3 class="text-center mb-4">Consejos para <span class="text-brand">EMPRENDER</span></h3>
+            <p class="text-center text-muted">Presentado por El Pulpo Simpático</p>
+            
             <div class="accordion" id="accordionInfografia">
+                <!-- Consejo 1 -->
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c1">
@@ -139,12 +160,13 @@
                     <div id="c1" class="accordion-collapse collapse show" data-bs-parent="#accordionInfografia">
                         <div class="accordion-body">
                             <div class="row align-items-center">
-                                <div class="col-8">La pasión se transmite. Si tú no amas tu proyecto, nadie lo hará.</div>
-                                <div class="col-4"><img src="./img/img1.jpg" class="img-fluid rounded" alt="img1"></div>
+                                <div class="col-md-8">Si tu no amas tu proyecto, es difícil que los demás lo hagan. La pasión se transmite, así que si tú estás convencida de lo que haces, los demás creerán en ti.</div>
+                                <div class="col-md-4 text-center"><img src="./img/img1.jpg" class="img-fluid rounded" alt="img1" style="max-height: 150px;"></div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Consejo 2 -->
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2">
@@ -152,46 +174,94 @@
                         </button>
                     </h2>
                     <div id="c2" class="accordion-collapse collapse" data-bs-parent="#accordionInfografia">
-                        <div class="accordion-body">Ten claras tus metas a corto y largo plazo para establecer un plan de acción.</div>
+                        <div class="accordion-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-8">Es muy importante que tengas claras tus metas a corto, mediano y largo plazo, de manera que puedas establecer un plan de acción para cumplir cada una de ellas.</div>
+                                <div class="col-md-4 text-center"><img src="./img/img2.jpg" class="img-fluid rounded" alt="img2" style="max-height: 150px;"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="accordion-item">
+                 <!-- Consejo 3 -->
+                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3">
                             3. DIFUNDE TU PROYECTO
                         </button>
                     </h2>
                     <div id="c3" class="accordion-collapse collapse" data-bs-parent="#accordionInfografia">
-                        <div class="accordion-body">Usa las redes sociales para darte a conocer.</div>
+                        <div class="accordion-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-8">Para conseguir clientes, es fundamental darte a conocer. Las redes sociales pueden ser grandes herramientas para esto.</div>
+                                <div class="col-md-4 text-center"><img src="./img/img3.jpg" class="img-fluid rounded" alt="img3" style="max-height: 150px;"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                 <!-- Consejo 4 -->
+                 <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c4">
+                            4. CONTROLA TUS FINANZAS
+                        </button>
+                    </h2>
+                    <div id="c4" class="accordion-collapse collapse" data-bs-parent="#accordionInfografia">
+                        <div class="accordion-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-8">Ya sea que lo hagas tú o lo delegues a otra persona, tener muy bien organizadas las finanzas de tu emprendimiento te ayudará a que crezca.</div>
+                                <div class="col-md-4 text-center"><img src="./img/img4.jpg" class="img-fluid rounded" alt="img4" style="max-height: 150px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Consejo 5 -->
+                 <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c5">
+                            5. PIENSA EN TUS CLIENTES
+                        </button>
+                    </h2>
+                    <div id="c5" class="accordion-collapse collapse" data-bs-parent="#accordionInfografia">
+                        <div class="accordion-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-8">Tu negocio está centrado en tus clientes, recuerda siempre estar atenta a sus necesidades y preferencias.</div>
+                                <div class="col-md-4 text-center"><img src="./img/img5.jpg" class="img-fluid rounded" alt="img5" style="max-height: 150px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>Para más consejos ingresa a: <a href="#" class="fw-bold text-brand">www.sitioincreible.com</a></p>
             </div>
         </section>
 
     </main>
 
-    <!-- FOOTER (Grid System: 1->2->4 columnas) -->
+    <!-- FOOTER (Grid System) -->
     <footer class="py-5 mt-auto text-center">
         <div class="container">
             <div class="row g-4">
                 <div class="col-12 col-sm-6 col-lg-3">
                     <h4>Autores</h4>
-                    <p class="mt-2">José Manuel Moreno<br>Alejandra Fogacho</p>
+                    <p class="mt-2">José Manuel Moreno Quesada<br>Alejandra Fogacho Suquilanda</p>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3">
-                    <h4>Validación</h4>
-                    <div class="mt-2 text-success fw-bold">✓ Bootstrap 5</div>
+                    <h4>Validación CSS</h4>
+                    <br>
+                    <div class="w3c-icon">✓ Bootstrap 5</div>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3">
                     <h4>Redes Sociales</h4>
                     <div class="mt-2 fs-4">
-                        <i class="fa-brands fa-facebook mx-2"></i>
-                        <i class="fa-brands fa-instagram mx-2"></i>
+                        <p><a href="https://www.facebook.com/UniversidadMiguelHernandezElche/?locale=es_ES"><i class="fa-brands fa-facebook"></i></a><br></p>
+                        <p><a href="https://www.instagram.com/universidadmh/?hl=es"><i class="fa-brands fa-instagram"></i></a></p>
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3">
-                    <h4>Enlaces</h4>
-                    <p class="mt-2"><a href="#">Universidad</a><br><a href="#">Departamento</a></p>
+                    <h4>Enlaces PW</h4>
+                    <p class="mt-2"><a href="https://www.umh.es/">Universidad</a><br></p>
+                    <p><a href="https://www.umh.es/contenido/Estudios/:asi_g_2804_S8/datos_es.html">Departamento</a></p>
                 </div>
             </div>
         </div>
