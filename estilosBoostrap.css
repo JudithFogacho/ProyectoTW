@@ -1,0 +1,134 @@
+/* --- 1. VARIABLES Y FUENTES (Reciclado) --- */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
+
+:root {
+    --primary-color: #2E0D14; /* Color oscuro/acento principal */
+    --secondary-color: #990011; /* Rojo corporativo */
+    --main-bg: #EFE1D5;       /* Beige claro */
+    --white: #ffffff;
+    --accent-gold: #c5a009;   /* Dorado Premium */
+    --accent-red: #d32f2f;    /* Rojo Ofertas */
+}
+
+/* Aplicación de fuentes */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: var(--primary-color);
+}
+
+h1, h2, h3, h4, h5, .navbar-brand {
+    font-family: "Oswald", sans-serif;
+}
+
+.lead, .card-text, .nav-link {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.1rem;
+}
+
+/* --- 2. PERSONALIZACIÓN DE BOOTSTRAP --- */
+
+/* Cabecera y Navbar */
+.bg-brand {
+    background-color: var(--secondary-color) !important;
+}
+
+.text-brand {
+    color: var(--secondary-color) !important;
+}
+
+.navbar-custom {
+    background-color: #FCF6F5;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.navbar-custom .nav-link {
+    color: #222;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.navbar-custom .nav-link:hover, 
+.navbar-custom .nav-link.active {
+    color: var(--secondary-color);
+}
+
+/* Botones personalizados */
+.btn-brand {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+}
+.btn-brand:hover {
+    background-color: #44131d;
+    color: var(--white);
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    font-family: "Oswald", sans-serif;
+}
+footer a {
+    color: var(--white);
+    text-decoration: none;
+}
+footer h4 {
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+/* --- 3. ESTILOS ESPECÍFICOS DE PRODUCTOS (Reciclado) --- */
+
+/* Estrellas de valoración */
+.stars-outer {
+    position: relative;
+    display: inline-block;
+    font-family: 'Times New Roman', serif;
+}
+.stars-outer::before { content: "\2605 \2605 \2605 \2605 \2605"; color: #ccc; }
+.stars-inner {
+    position: absolute; top: 0; left: 0;
+    white-space: nowrap; overflow: hidden;
+    color: var(--primary-color);
+}
+.stars-inner::before { content: "\2605 \2605 \2605 \2605 \2605"; }
+
+/* Bordes y etiquetas especiales */
+.card.premium {
+    border: 2px solid var(--accent-gold);
+    background-color: #fffdf5;
+}
+
+.badge-premium {
+    background-color: var(--accent-gold);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+/* Categoría Oculta Móvil (Textura) */
+.mobile-texture {
+    background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+    background-color: #fff8e1;
+    border: 2px dashed var(--secondary-color);
+}
+
+/* Guía de Tallas (Círculos) */
+.size-circle {
+    width: 40px; height: 40px;
+    background-color: var(--primary-color);
+    color: var(--main-bg);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: bold; cursor: help;
+}
+
+/* --- 4. NOTICIAS (Overlay) --- */
+.news-overlay {
+    background: rgba(40, 20, 10, 0.65); /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(2px);
+}
