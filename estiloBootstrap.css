@@ -65,65 +65,66 @@ footer h4 { border-bottom: 1px solid var(--text-light); padding-bottom: 5px; dis
     color: var(--white);
 }
 
-/* --- 3. ETIQUETAS DE PRODUCTOS (RESTAURADAS Y ARREGLADAS) --- */
+/* --- 3. TARJETAS Y ETIQUETAS (RESTAURACIÓN FIEL) --- */
 
-/* Posicionamiento relativo para contener las etiquetas absolutas */
+/* Posición relativa OBLIGATORIA para que los hijos absolutos (oferta/premium) se posicionen respecto a la carta */
 .card {
-    position: relative; 
+    position: relative !important; 
     border: 1px solid #ddd;
     transition: transform 0.2s, box-shadow 0.2s;
     background-color: var(--white);
+    overflow: visible !important; /* Importante para que las etiquetas no se corten si sobresalen */
 }
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* OFERTA: Esquina superior derecha, caja roja */
+/* OFERTA: Caja Roja Flotante (Derecha) */
 .oferta {
+    display: block;
     position: absolute;
     top: 10px;
     right: 10px;
     background-color: var(--accent-red);
     color: white;
     padding: 4px 8px;
-    font-size: 0.85em;
+    font-size: 0.9em;
     font-weight: bold;
     border-radius: 3px;
-    z-index: 20; /* Encima de todo */
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-    margin: 0; /* Reset margen de párrafo */
+    z-index: 50;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    margin: 0;
 }
 
-/* Borde rojo para tarjetas con oferta */
+/* PREMIUM: Caja Dorada Flotante (Izquierda) */
+.premium {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--accent-gold);
+    color: var(--primary-color);
+    padding: 4px 8px;
+    font-size: 0.8em;
+    font-weight: bold;
+    border: 1px solid var(--primary-color);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    z-index: 50;
+    margin: 0;
+}
+
+/* Bordes de las tarjetas */
 .card.has-oferta {
     border: 2px solid var(--accent-red);
 }
 
-/* PREMIUM: Esquina superior izquierda, caja dorada */
-.premium {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 20;
-    margin: 0;
-    background-color: var(--accent-gold);
-    color: var(--primary-color);
-    padding: 4px 8px;
-    font-size: 0.75em;
-    font-weight: bold;
-    border: 1px solid var(--primary-color);
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-    display: inline-block;
-}
-
-/* Tarjeta Premium: Fondo crema y borde dorado */
 .card.premium-card {
     background-color: #fffdf5;
     border: 2px solid var(--accent-gold);
 }
 
-/* Si es Premium Y Oferta a la vez, borde primario */
+/* Si tiene ambas cosas, borde primario (según lógica original) */
 .card.premium-card.has-oferta {
     border-color: var(--primary-color);
 }
@@ -154,7 +155,7 @@ footer h4 { border-bottom: 1px solid var(--text-light); padding-bottom: 5px; dis
     border: 2px dashed var(--primary-color);
 }
 
-/* --- 4. GUÍA DE TALLAS (SOLUCIÓN POPUP ARREGLADA) --- */
+/* --- 4. GUÍA DE TALLAS (SOLUCIÓN DEFINITIVA) --- */
 
 .info-box {
     display: flex;
@@ -175,50 +176,50 @@ footer h4 { border-bottom: 1px solid var(--text-light); padding-bottom: 5px; dis
     border-radius: 50%;
     font-weight: bold;
     cursor: help;
-    position: relative; /* Contexto para el popup */
+    position: relative; /* Contexto relativo para el popup absoluto */
 }
 
-/* Estilo del Popup Contenedor */
+/* Estilo del Popup */
 .size-popup {
-    display: none; /* OCULTO POR DEFECTO */
+    display: none; /* OCULTO INICIALMENTE */
     position: absolute;
-    /* Posicionamiento para que aparezca debajo y centrado */
-    top: 55px; 
+    /* Posición: Centrado horizontalmente y debajo del círculo */
+    top: 50px; 
     left: 50%;
     transform: translateX(-50%); 
     
-    /* TAMAÑO CONTROLADO */
-    width: 200px; 
+    /* Ancho controlado */
+    width: 150px; 
     background-color: var(--white);
     border: 2px solid var(--primary-color);
     padding: 5px;
-    z-index: 10000; /* Muy alto para estar encima de todo */
+    z-index: 1000;
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
     border-radius: 5px;
 }
 
-/* Importante: Forzar la imagen a ajustarse al ancho del popup */
+/* Mostrar al Hover (Prioridad alta con !important por si acaso) */
+.info-item:hover .size-popup { 
+    display: block !important; 
+}
+
+/* Imagen dentro del popup */
 .size-popup img { 
     width: 100%; 
     height: auto; 
     display: block; 
 }
 
-/* Triángulo decorativo superior */
+/* Triángulo decorativo */
 .size-popup::before {
     content: "";
     position: absolute;
-    bottom: 100%; /* Arriba del popup */
+    bottom: 100%;
     left: 50%;
     margin-left: -6px;
     border-width: 6px;
     border-style: solid;
     border-color: transparent transparent var(--primary-color) transparent;
-}
-
-/* Mostrar SOLO al hacer hover sobre el círculo */
-.info-item:hover .size-popup { 
-    display: block !important; 
 }
 
 .w3c-icon {
