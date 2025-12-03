@@ -1,10 +1,10 @@
-/* --- 1. VARIABLES Y FUENTES (Idénticas a estilos.css) --- */
+/* --- 1. VARIABLES Y FUENTES (Originales) --- */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
 
 :root {
-    --primary-color: #2E0D14; /* Color oscuro */
+    --primary-color: #2E0D14; /* Marrón oscuro */
     --secondary-color: #990011; /* Rojo corporativo */
     --main-bg: #EFE1D5;       /* Beige claro */
     --white: #ffffff;
@@ -28,27 +28,19 @@ h1, h2, h3, h4, h5, .navbar-brand {
     font-size: 1.1rem;
 }
 
-/* --- 2. PERSONALIZACIÓN DE BOOTSTRAP (Colores Exactos) --- */
+/* --- 2. INTEGRACIÓN BOOTSTRAP (Colores Exactos) --- */
 
-/* Cabecera y Footer (#990011) */
 .bg-brand, footer {
     background-color: var(--secondary-color) !important;
     color: var(--text-light) !important;
 }
 
-footer a {
-    color: var(--text-light);
-    text-decoration: none;
-}
+footer a { color: var(--text-light); text-decoration: none; }
+footer h4 { border-bottom: 1px solid var(--text-light); padding-bottom: 5px; display: inline-block; color: var(--text-light); }
 
-.text-brand {
-    color: var(--secondary-color) !important;
-}
-
-/* Navbar (#FCF6F5) */
 .navbar-custom {
-    background-color: #FCF6F5;
-    border-bottom: 2px solid var(--primary-color);
+    background-color: var(--text-light);
+    border-bottom: 1px solid var(--primary-color);
 }
 
 .navbar-custom .nav-link {
@@ -63,7 +55,6 @@ footer a {
     color: var(--text-light);
 }
 
-/* Botones */
 .btn-brand {
     background-color: var(--primary-color);
     color: var(--white);
@@ -74,21 +65,22 @@ footer a {
     color: var(--white);
 }
 
-/* --- 3. ESTILOS DE PRODUCTOS Y ETIQUETAS (Restaurados de estilos.css) --- */
+/* --- 3. ETIQUETAS DE PRODUCTOS (RESTAURADAS Y ARREGLADAS) --- */
 
-/* Tarjetas base */
+/* Posicionamiento relativo para contener las etiquetas absolutas */
 .card {
+    position: relative; 
     border: 1px solid #ddd;
     transition: transform 0.2s, box-shadow 0.2s;
+    background-color: var(--white);
 }
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* ETIQUETA OFERTA (Cajita Roja Derecha) */
+/* OFERTA: Esquina superior derecha, caja roja */
 .oferta {
-    display: block;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -98,23 +90,22 @@ footer a {
     font-size: 0.85em;
     font-weight: bold;
     border-radius: 3px;
-    z-index: 10;
+    z-index: 20; /* Encima de todo */
     box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-    margin: 0;
+    margin: 0; /* Reset margen de párrafo */
 }
 
-/* Borde rojo si hay oferta (usando :has si el navegador lo soporta, o clase manual) */
+/* Borde rojo para tarjetas con oferta */
 .card.has-oferta {
     border: 2px solid var(--accent-red);
 }
 
-/* ETIQUETA PREMIUM (Cajita Dorada Izquierda) */
+/* PREMIUM: Esquina superior izquierda, caja dorada */
 .premium {
-    display: block;
     position: absolute;
     top: 10px;
     left: 10px;
-    z-index: 10;
+    z-index: 20;
     margin: 0;
     background-color: var(--accent-gold);
     color: var(--primary-color);
@@ -123,12 +114,18 @@ footer a {
     font-weight: bold;
     border: 1px solid var(--primary-color);
     box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    display: inline-block;
 }
 
-/* Estilo tarjeta premium */
+/* Tarjeta Premium: Fondo crema y borde dorado */
 .card.premium-card {
     background-color: #fffdf5;
     border: 2px solid var(--accent-gold);
+}
+
+/* Si es Premium Y Oferta a la vez, borde primario */
+.card.premium-card.has-oferta {
+    border-color: var(--primary-color);
 }
 
 /* Estrellas */
@@ -145,21 +142,20 @@ footer a {
 }
 .stars-inner::before { content: "\2605 \2605 \2605 \2605 \2605"; }
 
-/* Categoría Trending */
 .trending {
     background-color: rgba(46, 13, 20, 0.1);
     border: 2px dashed var(--primary-color);
 }
 .trending .stars-inner { color: var(--accent-red); }
 
-/* Categoría Oculta Móvil */
 .mobile-texture {
     background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
     background-color: #fff8e1;
     border: 2px dashed var(--primary-color);
 }
 
-/* --- 4. GUÍA DE TALLAS (SOLUCIÓN TAMAÑO Y POSICIÓN) --- */
+/* --- 4. GUÍA DE TALLAS (SOLUCIÓN POPUP ARREGLADA) --- */
+
 .info-box {
     display: flex;
     flex-wrap: wrap;
@@ -179,56 +175,52 @@ footer a {
     border-radius: 50%;
     font-weight: bold;
     cursor: help;
-    position: relative; /* Clave para el posicionamiento del popup */
+    position: relative; /* Contexto para el popup */
 }
 
-/* Popup de Tallas */
+/* Estilo del Popup Contenedor */
 .size-popup {
-    display: none; /* Oculto por defecto */
+    display: none; /* OCULTO POR DEFECTO */
     position: absolute;
-    bottom: 120%; /* Encima del círculo */
+    /* Posicionamiento para que aparezca debajo y centrado */
+    top: 55px; 
     left: 50%;
-    transform: translateX(-50%); /* Centrado horizontalmente respecto al círculo */
+    transform: translateX(-50%); 
     
-    /* TAMAÑO FIJO IMPORTANTE PARA EVITAR QUE SEAN GIGANTES */
-    width: 140px; 
-    
+    /* TAMAÑO CONTROLADO */
+    width: 200px; 
     background-color: var(--white);
     border: 2px solid var(--primary-color);
     padding: 5px;
-    z-index: 1000;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    z-index: 10000; /* Muy alto para estar encima de todo */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
     border-radius: 5px;
 }
 
-/* Forzar que la imagen se ajuste al ancho del popup (140px) */
+/* Importante: Forzar la imagen a ajustarse al ancho del popup */
 .size-popup img { 
     width: 100%; 
-    height: auto;
+    height: auto; 
     display: block; 
 }
 
-/* Flechita decorativa */
-.size-popup::after {
+/* Triángulo decorativo superior */
+.size-popup::before {
     content: "";
     position: absolute;
-    top: 100%;
+    bottom: 100%; /* Arriba del popup */
     left: 50%;
     margin-left: -6px;
     border-width: 6px;
     border-style: solid;
-    border-color: var(--primary-color) transparent transparent transparent;
+    border-color: transparent transparent var(--primary-color) transparent;
 }
 
+/* Mostrar SOLO al hacer hover sobre el círculo */
 .info-item:hover .size-popup { 
-    display: block; 
+    display: block !important; 
 }
 
-.info-item:hover { 
-    transform: scale(1.1); 
-}
-
-/* Extras */
 .w3c-icon {
     border: 1px solid black;
     padding: 5px;
