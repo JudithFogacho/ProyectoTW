@@ -65,22 +65,22 @@ footer h4 { border-bottom: 1px solid var(--text-light); padding-bottom: 5px; dis
     color: var(--white);
 }
 
-/* --- 3. TARJETAS Y ETIQUETAS (RESTAURACIÓN FIEL) --- */
+/* --- 3. ETIQUETAS DE PRODUCTOS --- */
 
-/* Posición relativa OBLIGATORIA para que los hijos absolutos (oferta/premium) se posicionen respecto a la carta */
+/* Posicionamiento relativo para contener las etiquetas absolutas */
 .card {
     position: relative !important; 
     border: 1px solid #ddd;
     transition: transform 0.2s, box-shadow 0.2s;
     background-color: var(--white);
-    overflow: visible !important; /* Importante para que las etiquetas no se corten si sobresalen */
+    overflow: visible; /* Permitir que sombras o elementos no se corten */
 }
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* OFERTA: Caja Roja Flotante (Derecha) */
+/* OFERTA: Caja Roja (Derecha) */
 .oferta {
     display: block;
     position: absolute;
@@ -97,7 +97,7 @@ footer h4 { border-bottom: 1px solid var(--text-light); padding-bottom: 5px; dis
     margin: 0;
 }
 
-/* PREMIUM: Caja Dorada Flotante (Izquierda) */
+/* PREMIUM: Caja Dorada (Izquierda) */
 .premium {
     display: block;
     position: absolute;
@@ -112,9 +112,10 @@ footer h4 { border-bottom: 1px solid var(--text-light); padding-bottom: 5px; dis
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     z-index: 50;
     margin: 0;
+    text-transform: uppercase;
 }
 
-/* Bordes de las tarjetas */
+/* Bordes de tarjetas */
 .card.has-oferta {
     border: 2px solid var(--accent-red);
 }
@@ -124,7 +125,7 @@ footer h4 { border-bottom: 1px solid var(--text-light); padding-bottom: 5px; dis
     border: 2px solid var(--accent-gold);
 }
 
-/* Si tiene ambas cosas, borde primario (según lógica original) */
+/* Si es Premium + Oferta */
 .card.premium-card.has-oferta {
     border-color: var(--primary-color);
 }
@@ -176,20 +177,20 @@ footer h4 { border-bottom: 1px solid var(--text-light); padding-bottom: 5px; dis
     border-radius: 50%;
     font-weight: bold;
     cursor: help;
-    position: relative; /* Contexto relativo para el popup absoluto */
+    position: relative; /* Contexto relativo para posicionar el popup */
 }
 
 /* Estilo del Popup */
 .size-popup {
-    display: none; /* OCULTO INICIALMENTE */
+    display: none; /* OCULTO POR DEFECTO */
     position: absolute;
-    /* Posición: Centrado horizontalmente y debajo del círculo */
-    top: 50px; 
+    /* Posición: Centrado debajo del círculo */
+    top: 55px; 
     left: 50%;
     transform: translateX(-50%); 
     
-    /* Ancho controlado */
-    width: 150px; 
+    /* TAMAÑO FIJO Y PEQUEÑO */
+    width: 120px; 
     background-color: var(--white);
     border: 2px solid var(--primary-color);
     padding: 5px;
@@ -198,19 +199,19 @@ footer h4 { border-bottom: 1px solid var(--text-light); padding-bottom: 5px; dis
     border-radius: 5px;
 }
 
-/* Mostrar al Hover (Prioridad alta con !important por si acaso) */
+/* MOSTRAR SOLO AL PASAR EL RATÓN */
 .info-item:hover .size-popup { 
-    display: block !important; 
+    display: block; 
 }
 
-/* Imagen dentro del popup */
+/* Imagen ajustada al contenedor */
 .size-popup img { 
     width: 100%; 
     height: auto; 
     display: block; 
 }
 
-/* Triángulo decorativo */
+/* Triángulo decorativo superior */
 .size-popup::before {
     content: "";
     position: absolute;
@@ -222,6 +223,7 @@ footer h4 { border-bottom: 1px solid var(--text-light); padding-bottom: 5px; dis
     border-color: transparent transparent var(--primary-color) transparent;
 }
 
+/* Icono W3C */
 .w3c-icon {
     border: 1px solid black;
     padding: 5px;
