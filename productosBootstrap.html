@@ -8,13 +8,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- CSS Propio -->
+    <!-- CSS Propio Corregido -->
     <link rel="stylesheet" href="estiloBootstrap.css">
 </head>
 <body class="d-flex flex-column min-vh-100">
 
     <!-- HEADER -->
-    <header class="bg-brand py-3 text-white">
+    <header class="bg-brand py-3">
         <div class="container d-flex flex-wrap justify-content-between align-items-center">
             <div class="header-info">
                 <h1 class="m-0"><a href="indexBootstrap.html" class="text-white text-decoration-none">MODA UNIVERSITAS</a></h1>
@@ -68,7 +68,7 @@
                         <!-- P11 -->
                         <div class="col-12 col-md-4">
                             <div class="card h-100 shadow-sm position-relative">
-                                <span class="position-absolute top-0 end-0 badge bg-danger m-2">-20€</span>
+                                <span class="position-absolute top-0 end-0 badge badge-offer m-2">-20€</span>
                                 <img src="./img/tienda/Vestido_floral_gemini.png" class="card-img-top p-3" alt="Vestido Floral">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Vestido Floral</h5>
@@ -86,9 +86,8 @@
 
                         <!-- P12 (PREMIUM) -->
                         <div class="col-12 col-md-4">
-                            <!-- Clase 'premium' añadida para el borde dorado -->
                             <div class="card h-100 premium shadow-sm position-relative">
-                                <!-- Clase 'badge-premium' para la caja dorada exacta -->
+                                <!-- Etiqueta Premium Dorada -->
                                 <span class="position-absolute top-0 start-0 m-2 badge-premium">PREMIUM</span>
                                 <img src="./img/tienda/Chaqueta_lana_gemini.png" class="card-img-top p-3" alt="Abrigo Lana">
                                 <div class="card-body d-flex flex-column">
@@ -151,7 +150,7 @@
                         <div class="col-12 col-md-4">
                             <div class="card h-100 premium shadow-sm position-relative">
                                 <span class="position-absolute top-0 start-0 m-2 badge-premium">PREMIUM</span>
-                                <span class="position-absolute top-0 end-0 badge bg-danger m-2">2x1</span>
+                                <span class="position-absolute top-0 end-0 badge badge-offer m-2">2x1</span>
                                 <img src="./img/tienda/Packs_camisas_hombre_gemini.png" class="card-img-top p-3" alt="Pack Camisas">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Pack Camisas</h5>
@@ -170,7 +169,7 @@
                         <!-- P23 -->
                         <div class="col-12 col-md-4">
                             <div class="card h-100 shadow-sm position-relative">
-                                <span class="position-absolute top-0 end-0 badge bg-danger m-2">-20%</span>
+                                <span class="position-absolute top-0 end-0 badge badge-offer m-2">-20%</span>
                                 <img src="./img/tienda/Vaqueros_clasicos_gemini.png" class="card-img-top p-3" alt="Vaqueros">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Vaqueros Clásicos</h5>
@@ -232,7 +231,7 @@
                         <!-- P33 -->
                         <div class="col-12 col-md-4">
                             <div class="card h-100 shadow-sm position-relative">
-                                <span class="position-absolute top-0 end-0 badge bg-danger m-2">-5€</span>
+                                <span class="position-absolute top-0 end-0 badge badge-offer m-2">-5€</span>
                                 <img src="./img/tienda/Pijama_gemini.png" class="card-img-top p-3" alt="Pijama">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Pijama Suave</h5>
@@ -254,7 +253,7 @@
                 <section class="d-block d-md-none mobile-texture p-3 mb-4 rounded">
                     <h3 class="h5 text-center text-brand">⚡ Ofertas Flash Móvil ⚡</h3>
                     <div class="card border-0 bg-transparent">
-                        <span class="position-absolute top-0 end-0 badge bg-danger m-2">-50%</span>
+                        <span class="position-absolute top-0 end-0 badge badge-offer m-2">-50%</span>
                         <img src="./img/tienda/Zapatillas_gemini.png" class="card-img-top p-3" alt="Zapatillas">
                         <div class="card-body text-center">
                             <h5>Zapatillas Run</h5>
@@ -273,7 +272,7 @@
             <aside class="col-lg-3 order-1 order-lg-2 mb-4">
                 <div class="p-3 bg-light rounded text-center border sticky-top" style="top: 80px; z-index: 1;">
                     <h4 class="text-brand">Guía de Tallas</h4>
-                    <!-- POPUPS Restaurados: Ahora funcionan con la lógica de estiloBootstrap.css -->
+                    <!-- POPUPS DE TALLAS (Estructura pura CSS sin tooltips bootstrap) -->
                     <div class="info-box">
                         <div class="info-item">XS
                             <div class="size-popup"><img src="./img/tienda/tallas/XS.png" alt="XS"></div>
@@ -297,7 +296,7 @@
         </div>
     </div>
 
-    <!-- MODALS -->
+    <!-- MODALS DE RESEÑAS -->
     <!-- P11 -->
     <div class="modal fade" id="P11" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Vestido Floral - Opiniones</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="alert alert-light border"><strong>Laura M.</strong> ⭐⭐⭐⭐⭐<br><small>Es súper fresquito para el verano, me encanta el estampado.</small></div><div class="alert alert-light border"><strong>Ana P.</strong> ⭐⭐⭐⭐☆<br><small>Talla perfecto, aunque la tela se arruga un poco al sentarse.</small></div></div></div></div></div>
     <!-- P12 -->
@@ -333,8 +332,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-        const tooltipList = [...tooltipTriggerList].map(t => new bootstrap.Tooltip(t, {html: true}))
+        // No JS tooltips needed for sizes anymore
     </script>
 </body>
 </html>
