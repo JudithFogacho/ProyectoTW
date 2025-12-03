@@ -15,17 +15,21 @@
 
     <!-- HEADER -->
     <header class="bg-brand py-3 text-white">
-        <div class="container d-flex flex-wrap justify-content-between align-items-center">
-            <div class="header-info">
-                <h1 class="m-0"><a href="indexBootstrap.html" class="text-white text-decoration-none">MODA UNIVERSITAS</a></h1>
-                <small>Tu estilo, tu universidad.</small>
-            </div>
-            <div class="d-flex gap-2 align-items-center">
-                <button class="btn btn-light text-brand fw-bold btn-sm">🛒 0</button>
-                <form action="https://www.google.com/search" target="_blank" class="d-flex">
-                    <input type="text" name="q" class="form-control form-control-sm" placeholder="Buscar en Google..." required>
-                    <button type="submit" class="btn btn-dark btn-sm ms-1">BUSCAR</button>
-                </form>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8 text-center text-md-start">
+                    <h1 class="display-6 m-0"><a href="indexBootstrap.html" class="text-white text-decoration-none">MODA UNIVERSITAS</a></h1>
+                    <small>Tu estilo, tu universidad.</small>
+                </div>
+                <div class="col-md-4 mt-3 mt-md-0">
+                    <div class="d-flex gap-2 justify-content-center justify-content-md-end">
+                        <button class="btn btn-light text-brand fw-bold">🛒 <span class="badge bg-dark text-white">0</span></button>
+                        <form action="https://www.google.com/search" target="_blank" class="d-flex">
+                            <input type="text" name="q" class="form-control me-1" placeholder="Buscar en Google..." required>
+                            <button type="submit" class="btn btn-dark"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
