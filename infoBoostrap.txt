@@ -1,5 +1,14 @@
 PRÁCTICA 3 - USO DE FRAMEWORK BOOTSTRAP
 
+USO DE GRID SYSTEM (RWD)
+Se ha implementado la rejilla de Bootstrap para adaptar el layout a tres resoluciones:
+
+Móvil (xs): Columnas apiladas (col-12) en formularios y listados de productos.
+
+Tablet (md): Distribución de 2 columnas para noticias y sedes (col-md-6).
+
+Escritorio (lg): Distribución de layout principal con barra lateral (col-lg-9 + col-lg-3) y footer a 4 columnas.
+
 COMPONENTES BOOTSTRAP UTILIZADOS
 
 A) Navbar (Barra de Navegación)
