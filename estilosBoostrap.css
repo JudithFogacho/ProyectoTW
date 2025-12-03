@@ -4,14 +4,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
 
 :root {
-    /* Paleta exacta del proyecto */
-    --primary-color: #2E0D14;   /* Marrón muy oscuro (Textos, bordes) */
-    --secondary-color: #990011; /* Rojo corporativo (Cabecera, Footer) */
-    --main-bg: #EFE1D5;         /* Beige (Fondo principal) */
+    --primary-color: #2E0D14; /* Color oscuro */
+    --secondary-color: #990011; /* Rojo corporativo */
+    --main-bg: #EFE1D5;       /* Beige claro */
     --white: #ffffff;
-    --accent-gold: #c5a009;     /* Dorado (Premium) */
-    --accent-red: #d32f2f;      /* Rojo (Ofertas) */
-    --text-light: #FCF6F5;      /* Blanco roto (Texto en fondos oscuros) */
+    --accent-red: #d32f2f;    /* Rojo Ofertas */
+    --accent-gold: #c5a009;   /* Dorado Premium */
+    --text-light: #FCF6F5;    /* Texto claro */
 }
 
 body {
@@ -29,7 +28,7 @@ h1, h2, h3, h4, h5, .navbar-brand {
     font-size: 1.1rem;
 }
 
-/* --- 2. PERSONALIZACIÓN BOOTSTRAP (Colores Exactos) --- */
+/* --- 2. PERSONALIZACIÓN DE BOOTSTRAP (Colores Exactos) --- */
 
 /* Cabecera y Footer (#990011) */
 .bg-brand, footer {
@@ -46,9 +45,9 @@ footer a {
     color: var(--secondary-color) !important;
 }
 
-/* Navbar (#FCF6F5 con borde #2E0D14) */
+/* Navbar (#FCF6F5) */
 .navbar-custom {
-    background-color: var(--text-light);
+    background-color: #FCF6F5;
     border-bottom: 2px solid var(--primary-color);
 }
 
@@ -64,18 +63,73 @@ footer a {
     color: var(--text-light);
 }
 
-/* Botones (#2E0D14) */
+/* Botones */
 .btn-brand {
     background-color: var(--primary-color);
     color: var(--white);
     border: none;
 }
 .btn-brand:hover {
-    background-color: #44131d; /* Un poco más claro/oscuro al hover */
+    background-color: #44131d;
     color: var(--white);
 }
 
-/* --- 3. ESTILOS PRODUCTOS --- */
+/* --- 3. ESTILOS DE PRODUCTOS Y ETIQUETAS (Restaurados de estilos.css) --- */
+
+/* Tarjetas base */
+.card {
+    border: 1px solid #ddd;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ETIQUETA OFERTA (Cajita Roja Derecha) */
+.oferta {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--accent-red);
+    color: white;
+    padding: 4px 8px;
+    font-size: 0.85em;
+    font-weight: bold;
+    border-radius: 3px;
+    z-index: 10;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    margin: 0;
+}
+
+/* Borde rojo si hay oferta (usando :has si el navegador lo soporta, o clase manual) */
+.card.has-oferta {
+    border: 2px solid var(--accent-red);
+}
+
+/* ETIQUETA PREMIUM (Cajita Dorada Izquierda) */
+.premium {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    margin: 0;
+    background-color: var(--accent-gold);
+    color: var(--primary-color);
+    padding: 4px 8px;
+    font-size: 0.75em;
+    font-weight: bold;
+    border: 1px solid var(--primary-color);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Estilo tarjeta premium */
+.card.premium-card {
+    background-color: #fffdf5;
+    border: 2px solid var(--accent-gold);
+}
 
 /* Estrellas */
 .stars-outer {
@@ -91,33 +145,6 @@ footer a {
 }
 .stars-inner::before { content: "\2605 \2605 \2605 \2605 \2605"; }
 
-/* ETIQUETA PREMIUM (CORREGIDO: Caja Amarilla/Dorada) */
-.card.premium {
-    background-color: #fffdf5;
-    border: 2px solid var(--accent-gold);
-}
-
-.badge-premium {
-    background-color: var(--accent-gold) !important; /* Forzamos el dorado */
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
-    padding: 4px 8px;
-    font-weight: bold;
-    font-size: 0.75em;
-    text-transform: uppercase;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-    display: inline-block;
-    z-index: 10;
-}
-
-/* Ofertas */
-.badge-offer {
-    background-color: var(--accent-red);
-    color: white;
-    font-weight: bold;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-}
-
 /* Categoría Trending */
 .trending {
     background-color: rgba(46, 13, 20, 0.1);
@@ -132,7 +159,7 @@ footer a {
     border: 2px dashed var(--primary-color);
 }
 
-/* --- 4. GUÍA DE TALLAS (POPUP CORREGIDO) --- */
+/* --- 4. GUÍA DE TALLAS (SOLUCIÓN TAMAÑO Y POSICIÓN) --- */
 .info-box {
     display: flex;
     flex-wrap: wrap;
@@ -152,44 +179,40 @@ footer a {
     border-radius: 50%;
     font-weight: bold;
     cursor: help;
-    position: relative; /* Contexto para el popup absoluto */
-    transition: transform 0.2s;
+    position: relative; /* Clave para el posicionamiento del popup */
 }
 
-.info-item:hover {
-    transform: scale(1.1);
-    z-index: 100; /* Asegura que el item activo esté encima */
-}
-
-/* Estilo del Popup */
+/* Popup de Tallas */
 .size-popup {
-    display: none; /* IMPORTANTE: Oculto por defecto */
+    display: none; /* Oculto por defecto */
     position: absolute;
-    bottom: 120%; /* Aparece ARRIBA del círculo */
+    bottom: 120%; /* Encima del círculo */
     left: 50%;
-    transform: translateX(-50%); /* Centrado horizontal */
-    width: 160px; /* Ancho fijo para controlar tamaño de imagen */
+    transform: translateX(-50%); /* Centrado horizontalmente respecto al círculo */
+    
+    /* TAMAÑO FIJO IMPORTANTE PARA EVITAR QUE SEAN GIGANTES */
+    width: 140px; 
+    
     background-color: var(--white);
     border: 2px solid var(--primary-color);
     padding: 5px;
     z-index: 1000;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
     border-radius: 5px;
-    pointer-events: none; /* Evita parpadeos */
 }
 
-/* Imagen dentro del popup: Ajustada al contenedor */
-.size-popup img {
-    width: 100%;
+/* Forzar que la imagen se ajuste al ancho del popup (140px) */
+.size-popup img { 
+    width: 100%; 
     height: auto;
-    display: block;
+    display: block; 
 }
 
-/* Triángulo del popup */
+/* Flechita decorativa */
 .size-popup::after {
     content: "";
     position: absolute;
-    top: 100%; /* Debajo del popup */
+    top: 100%;
     left: 50%;
     margin-left: -6px;
     border-width: 6px;
@@ -197,12 +220,15 @@ footer a {
     border-color: var(--primary-color) transparent transparent transparent;
 }
 
-/* Mostrar al hacer hover */
-.info-item:hover .size-popup {
-    display: block;
+.info-item:hover .size-popup { 
+    display: block; 
 }
 
-/* W3C Icon */
+.info-item:hover { 
+    transform: scale(1.1); 
+}
+
+/* Extras */
 .w3c-icon {
     border: 1px solid black;
     padding: 5px;
