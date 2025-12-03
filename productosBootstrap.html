@@ -2,325 +2,125 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda - Productos (Bootstrap)</title>
-    <!-- Bootstrap CSS -->
+    <title>Tienda - Noticias (Bootstrap)</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- CSS Propio Corregido -->
     <link rel="stylesheet" href="estiloBootstrap.css">
+    <style>
+        .news-img { height: 550px; object-fit: cover; }
+    </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
 
-    <!-- HEADER (Color #990011 corregido via .bg-brand) -->
+    <!-- HEADER + NAV -->
     <header class="bg-brand py-3 text-white">
         <div class="container d-flex flex-wrap justify-content-between align-items-center">
-            <div class="header-info">
-                <h1 class="m-0"><a href="indexBootstrap.html" class="text-white text-decoration-none">MODA UNIVERSITAS</a></h1>
-                <small>Tu estilo, tu universidad.</small>
-            </div>
-            <div class="d-flex gap-2 align-items-center">
-                <button class="btn btn-light text-brand fw-bold btn-sm">🛒 0</button>
+            <h1><a href="indexBootstrap.html" class="text-white text-decoration-none">MODA UNIVERSITAS</a></h1>
+            <div class="d-flex gap-2">
+                <button class="btn btn-outline-light">🛒 0</button>
                 <form action="https://www.google.com/search" target="_blank" class="d-flex">
                     <input type="text" name="q" class="form-control form-control-sm" placeholder="Buscar en Google..." required>
-                    <button type="submit" class="btn btn-dark btn-sm ms-1">BUSCAR</button>
+                    <button type="submit" class="btn btn-dark">BUSCAR</button>
                 </form>
             </div>
         </div>
     </header>
-    
-    <!-- NAVBAR (Estilo #FCF6F5 corregido via .navbar-custom) -->
-    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navProd">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navNews">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navProd">
+            <div class="collapse navbar-collapse justify-content-center" id="navNews">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="indexBootstrap.html">Inicio</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Productos</a>
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Productos</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#mujer">Ropa Mujer</a></li>
-                            <li><a class="dropdown-item" href="#hombre">Ropa Hombre</a></li>
-                            <li><a class="dropdown-item" href="#ninos">Ropa Niños</a></li>
+                            <li><a class="dropdown-item" href="productosBootstrap.html#mujer">Ropa Mujer</a></li>
+                            <li><a class="dropdown-item" href="productosBootstrap.html#hombre">Ropa Hombre</a></li>
+                            <li><a class="dropdown-item" href="productosBootstrap.html#ninos">Ropa Niños</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="noticiasBootstrap.html">Novedades</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="noticiasBootstrap.html">Novedades</a></li>
                     <li class="nav-item"><a class="nav-link" href="contactoBootstrap.html">Contactos</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container my-4">
-        <div class="row">
-            
-            <!-- CONTENIDO PRINCIPAL -->
-            <main class="col-lg-9 order-2 order-lg-1">
-                <h2 class="border-bottom pb-2 mb-4 text-brand">Nuestro Catálogo</h2>
-
-                <!-- CATEGORÍA 1: MUJER -->
-                <section id="mujer" class="mb-5 p-3 bg-white rounded shadow-sm border">
-                    <h3 class="h4 mb-3 text-brand border-bottom">Ropa Mujer</h3>
-                    <div class="row g-3">
-                        <!-- P11 -->
-                        <div class="col-12 col-md-4">
-                            <div class="card h-100 shadow-sm position-relative">
-                                <span class="position-absolute top-0 end-0 badge bg-danger m-2">-20€</span>
-                                <img src="./img/tienda/Vestido_floral_gemini.png" class="card-img-top p-3" alt="Vestido Floral">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title">Vestido Floral</h5>
-                                    <p class="card-text text-muted small flex-grow-1">Vestido ligero de verano, ideal para el campus.</p>
-                                    <p class="fw-bold"><span class="text-decoration-line-through text-muted small me-2">70€</span>50€</p>
-                                    <div class="d-grid gap-2">
-                                        <select class="form-select form-select-sm"><option>Talla</option><option>XS</option><option>S</option><option>M</option><option>L</option></select>
-                                        <button class="btn btn-brand btn-sm">Añadir 🛒</button>
-                                        <button class="btn btn-link btn-sm text-brand" data-bs-toggle="modal" data-bs-target="#P11">Ver detalles</button>
-                                    </div>
-                                    <div class="stars-outer mt-2"><div class="stars-inner" style="width: 96%;"></div></div> <span class="small">4.8 (120)</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- P12 (PREMIUM) -->
-                        <div class="col-12 col-md-4">
-                            <!-- Clase 'premium' añadida al card -->
-                            <div class="card h-100 premium shadow-sm position-relative">
-                                <!-- Clase 'badge-premium' para la etiqueta exacta -->
-                                <span class="position-absolute top-0 start-0 m-2 badge-premium">PREMIUM</span>
-                                <img src="./img/tienda/Chaqueta_lana_gemini.png" class="card-img-top p-3" alt="Abrigo Lana">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title">Abrigo Lana</h5>
-                                    <p class="card-text text-muted small flex-grow-1">Alta costura para el invierno.</p>
-                                    <p class="fw-bold">220€</p>
-                                    <div class="d-grid gap-2">
-                                        <select class="form-select form-select-sm"><option>Talla</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
-                                        <button class="btn btn-brand btn-sm">Añadir 🛒</button>
-                                        <button class="btn btn-link btn-sm text-brand" data-bs-toggle="modal" data-bs-target="#P12">Ver detalles</button>
-                                    </div>
-                                    <div class="stars-outer mt-2"><div class="stars-inner" style="width: 85%;"></div></div> <span class="small">4.25 (8)</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- P13 -->
-                        <div class="col-12 col-md-4">
-                            <div class="card h-100 shadow-sm">
-                                <img src="./img/tienda/Blusa_seda_gemini.png" class="card-img-top p-3" alt="Blusa Seda">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title">Blusa de Seda</h5>
-                                    <p class="card-text text-muted small flex-grow-1">Elegante y suave, perfecta para presentaciones.</p>
-                                    <p class="fw-bold">95€</p>
-                                    <div class="d-grid gap-2">
-                                        <select class="form-select form-select-sm"><option>Talla</option><option>XS</option><option>S</option><option>M</option><option>L</option></select>
-                                        <button class="btn btn-brand btn-sm">Añadir 🛒</button>
-                                        <button class="btn btn-link btn-sm text-brand" data-bs-toggle="modal" data-bs-target="#P13">Ver detalles</button>
-                                    </div>
-                                    <div class="stars-outer mt-2"><div class="stars-inner" style="width: 80%;"></div></div> <span class="small">4.0 (45)</span>
-                                </div>
-                            </div>
-                        </div>
+    <main class="container my-5">
+        
+        <!-- Noticia 1 (Nacional) -->
+        <article class="card text-white mb-5 border-0 shadow">
+            <img src="./img/noticias/Noticia1.jpg" class="card-img news-img" alt="Noticia 1">
+            <div class="card-img-overlay d-flex flex-column justify-content-center p-0">
+                <div class="news-overlay p-4 col-md-8 col-lg-6 h-100 d-flex flex-column justify-content-center">
+                    <h2 class="card-title display-6 fw-bold">Wonderland, la exposición del otoño que explora la trayectoria de Annie Leibovitz</h2>
+                    <h3 class="h5 mb-3 text-light">El MOP de A Coruña acoge la primera gran retrospectiva de la fotógrafa norteamericana en nuestro país</h3>
+                    <p class="card-text d-none d-md-block small">A Annie Leibovitz le encanta acompañar cada uno de sus libros con una correspondiente exposición. Sin embargo, hizo la excepción en 2021 con el lanzamiento de Wonderland, donde pone el foco en su fotografía de moda...</p>
+                    <p class="card-text d-none d-md-block small">Leibovitz representa así la sexta exposición que el MOP dedica a algunos de los fotógrafos más representativos del s. XX. Ella, además de ser la fotógrafa mejor pagada del mundo, es la primera mujer incluida...</p>
+                    <div class="mt-3 small border-top pt-2">
+                        <p class="m-0">Ámbito: Nacional | 21 Nov 2025 | Autor: Nuria Luis</p>
+                        <a href="https://www.vogue.es/articulos/annie-leibovitz-wonderland-exposicion-mop-a-coruna" target="_blank" class="text-warning">Enlace noticia original</a>
                     </div>
-                </section>
-
-                <!-- CATEGORÍA 2: HOMBRE (Trending) -->
-                <section id="hombre" class="mb-5 p-3 rounded shadow-sm trending">
-                    <h3 class="h4 mb-3 text-brand border-bottom">Ropa Hombre (Trending 🔥)</h3>
-                    <div class="row g-3">
-                        <!-- P21 -->
-                        <div class="col-12 col-md-4">
-                            <div class="card h-100 shadow-sm">
-                                <img src="./img/tienda/Traje_slim_gemini.png" class="card-img-top p-3" alt="Traje Slim">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title">Traje Slim</h5>
-                                    <p class="card-text text-muted small flex-grow-1">Corte moderno y elegante.</p>
-                                    <p class="fw-bold">190€</p>
-                                    <div class="d-grid gap-2">
-                                        <select class="form-select form-select-sm"><option>Talla</option><option>M</option><option>L</option><option>XL</option></select>
-                                        <button class="btn btn-brand btn-sm">Añadir 🛒</button>
-                                        <button class="btn btn-link btn-sm text-brand" data-bs-toggle="modal" data-bs-target="#P21">Ver detalles</button>
-                                    </div>
-                                    <!-- Estrellas rojas por trending -->
-                                    <div class="stars-outer mt-2"><div class="stars-inner text-danger" style="width: 68%;"></div></div> <span class="small">3.4 (47)</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- P22 (PREMIUM) -->
-                        <div class="col-12 col-md-4">
-                            <div class="card h-100 premium shadow-sm position-relative">
-                                <span class="position-absolute top-0 start-0 m-2 badge-premium">PREMIUM</span>
-                                <span class="position-absolute top-0 end-0 badge bg-danger m-2">2x1</span>
-                                <img src="./img/tienda/Packs_camisas_hombre_gemini.png" class="card-img-top p-3" alt="Pack Camisas">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title">Pack Camisas</h5>
-                                    <p class="card-text text-muted small flex-grow-1">Básicos esenciales.</p>
-                                    <p class="fw-bold">150€</p>
-                                    <div class="d-grid gap-2">
-                                        <select class="form-select form-select-sm"><option>Talla</option><option>S</option><option>M</option><option>L</option></select>
-                                        <button class="btn btn-brand btn-sm">Añadir 🛒</button>
-                                        <button class="btn btn-link btn-sm text-brand" data-bs-toggle="modal" data-bs-target="#P22">Ver detalles</button>
-                                    </div>
-                                    <div class="stars-outer mt-2"><div class="stars-inner text-danger" style="width: 100%;"></div></div> <span class="small">5.0 (2)</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- P23 -->
-                        <div class="col-12 col-md-4">
-                            <div class="card h-100 shadow-sm position-relative">
-                                <span class="position-absolute top-0 end-0 badge bg-danger m-2">-20%</span>
-                                <img src="./img/tienda/Vaqueros_clasicos_gemini.png" class="card-img-top p-3" alt="Vaqueros">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title">Vaqueros Clásicos</h5>
-                                    <p class="card-text text-muted small flex-grow-1">Denim resistente.</p>
-                                    <p class="fw-bold"><span class="text-decoration-line-through text-muted small me-2">70€</span>56€</p>
-                                    <div class="d-grid gap-2">
-                                        <select class="form-select form-select-sm"><option>Talla</option><option>38</option><option>40</option><option>42</option><option>44</option></select>
-                                        <button class="btn btn-brand btn-sm">Añadir 🛒</button>
-                                        <button class="btn btn-link btn-sm text-brand" data-bs-toggle="modal" data-bs-target="#P23">Ver detalles</button>
-                                    </div>
-                                    <div class="stars-outer mt-2"><div class="stars-inner text-danger" style="width: 90%;"></div></div> <span class="small">4.5 (60)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- CATEGORÍA 3: NIÑOS -->
-                <section id="ninos" class="mb-5 p-3 bg-white rounded shadow-sm border">
-                    <h3 class="h4 mb-3 text-brand border-bottom">Ropa Niños</h3>
-                    <div class="row g-3">
-                        <!-- P31 -->
-                        <div class="col-12 col-md-4">
-                            <div class="card h-100 shadow-sm">
-                                <img src="./img/tienda/Chandal_gemini.png" class="card-img-top p-3" alt="Chandal">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title">Chándal Escolar</h5>
-                                    <p class="card-text text-muted small flex-grow-1">Resistente y lavable.</p>
-                                    <p class="fw-bold">20€</p>
-                                    <div class="d-grid gap-2">
-                                        <select class="form-select form-select-sm"><option>Talla</option><option>4a</option><option>6a</option><option>8a</option><option>10a</option></select>
-                                        <button class="btn btn-brand btn-sm">Añadir 🛒</button>
-                                        <button class="btn btn-link btn-sm text-brand" data-bs-toggle="modal" data-bs-target="#P31">Ver detalles</button>
-                                    </div>
-                                    <div class="stars-outer mt-2"><div class="stars-inner" style="width: 80%;"></div></div> <span class="small">4.0 (10)</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- P32 (PREMIUM) -->
-                        <div class="col-12 col-md-4">
-                            <div class="card h-100 premium shadow-sm position-relative">
-                                <span class="position-absolute top-0 start-0 m-2 badge-premium">PREMIUM</span>
-                                <img src="./img/tienda/Vestido_fiesta_gemini.png" class="card-img-top p-3" alt="Vestido Fiesta">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title">Vestido de Fiesta</h5>
-                                    <p class="card-text text-muted small flex-grow-1">Detalles bordados.</p>
-                                    <p class="fw-bold">55€</p>
-                                    <div class="d-grid gap-2">
-                                        <select class="form-select form-select-sm"><option>Talla</option><option>4a</option><option>6a</option><option>8a</option></select>
-                                        <button class="btn btn-brand btn-sm">Añadir 🛒</button>
-                                        <button class="btn btn-link btn-sm text-brand" data-bs-toggle="modal" data-bs-target="#P32">Ver detalles</button>
-                                    </div>
-                                    <div class="stars-outer mt-2"><div class="stars-inner" style="width: 100%;"></div></div> <span class="small">5.0 (5)</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- P33 -->
-                        <div class="col-12 col-md-4">
-                            <div class="card h-100 shadow-sm position-relative">
-                                <span class="position-absolute top-0 end-0 badge bg-danger m-2">-5€</span>
-                                <img src="./img/tienda/Pijama_gemini.png" class="card-img-top p-3" alt="Pijama">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title">Pijama Suave</h5>
-                                    <p class="card-text text-muted small flex-grow-1">Algodón 100% orgánico.</p>
-                                    <p class="fw-bold"><span class="text-decoration-line-through text-muted small me-2">18€</span>13€</p>
-                                    <div class="d-grid gap-2">
-                                        <select class="form-select form-select-sm"><option>Talla</option><option>2a</option><option>3a</option><option>4a</option><option>5a</option></select>
-                                        <button class="btn btn-brand btn-sm">Añadir 🛒</button>
-                                        <button class="btn btn-link btn-sm text-brand" data-bs-toggle="modal" data-bs-target="#P33">Ver detalles</button>
-                                    </div>
-                                    <div class="stars-outer mt-2"><div class="stars-inner" style="width: 94%;"></div></div> <span class="small">4.7 (22)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Categoría Oculta (SOLO MÓVIL) -->
-                <section class="d-block d-md-none mobile-texture p-3 mb-4 rounded">
-                    <h3 class="h5 text-center text-brand">⚡ Ofertas Flash Móvil ⚡</h3>
-                    <div class="card border-0 bg-transparent">
-                        <span class="position-absolute top-0 end-0 badge bg-danger m-2">-50%</span>
-                        <img src="./img/tienda/Zapatillas_gemini.png" class="card-img-top p-3" alt="Zapatillas">
-                        <div class="card-body text-center">
-                            <h5>Zapatillas Run</h5>
-                            <p class="small">Solo desde móvil.</p>
-                            <p class="fw-bold fs-4 text-danger"><span class="text-decoration-line-through text-muted small me-2">30€</span>15€</p>
-                            <button class="btn btn-danger w-100">Añadir 🛒</button>
-                            <button class="btn btn-link btn-sm text-danger" data-bs-toggle="modal" data-bs-target="#P41">Ver detalles</button>
-                            <div class="stars-outer mt-2"><div class="stars-inner" style="width: 94%;"></div></div> <span class="small">4.5 (86)</span>
-                        </div>
-                    </div>
-                </section>
-
-            </main>
-
-            <!-- SIDEBAR -->
-            <aside class="col-lg-3 order-1 order-lg-2 mb-4">
-                <div class="p-3 bg-light rounded text-center border sticky-top" style="top: 80px; z-index: 1;">
-                    <h4 class="text-brand">Guía de Tallas</h4>
-                    <!-- ESTRUCTURA EXACTA PARA EL CSS ARREGLADO -->
-                    <div class="info-box">
-                        <div class="info-item">XS
-                            <div class="size-popup"><img src="./img/tienda/tallas/XS.png" alt="XS"></div>
-                        </div>
-                        <div class="info-item">S
-                            <div class="size-popup"><img src="./img/tienda/tallas/S.png" alt="S"></div>
-                        </div>
-                        <div class="info-item">M
-                            <div class="size-popup"><img src="./img/tienda/tallas/M.png" alt="M"></div>
-                        </div>
-                        <div class="info-item">L
-                            <div class="size-popup"><img src="./img/tienda/tallas/L.png" alt="L"></div>
-                        </div>
-                        <div class="info-item">XL
-                            <div class="size-popup"><img src="./img/tienda/tallas/XL.png" alt="XL"></div>
-                        </div>
-                    </div>
-                    <p class="small">Elige tu talla ideal consultando nuestra guía completa.</p>
                 </div>
-            </aside>
-        </div>
-    </div>
+            </div>
+        </article>
 
-    <!-- MODALS -->
-    <!-- P11 -->
-    <div class="modal fade" id="P11" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Vestido Floral - Opiniones</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="alert alert-light border"><strong>Laura M.</strong> ⭐⭐⭐⭐⭐<br><small>Es súper fresquito para el verano, me encanta el estampado.</small></div><div class="alert alert-light border"><strong>Ana P.</strong> ⭐⭐⭐⭐☆<br><small>Talla perfecto, aunque la tela se arruga un poco al sentarse.</small></div></div></div></div></div>
-    <!-- P12 -->
-    <div class="modal fade" id="P12" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Abrigo Lana - Opiniones</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="alert alert-light border"><strong>Carlos R.</strong> ⭐⭐⭐⭐☆<br><small>Muy buena calidad, abriga muchísimo. Pesa un poco.</small></div><div class="alert alert-light border"><strong>Marta G.</strong> ⭐⭐⭐⭐⭐<br><small>Elegante y calentito, justo lo que buscaba para invierno.</small></div></div></div></div></div>
-    <!-- P13 -->
-    <div class="modal fade" id="P13" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Blusa Seda - Opiniones</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="alert alert-light border"><strong>Elena S.</strong> ⭐⭐⭐⭐☆<br><small>El tacto es increíble, muy suave. Cuidado al lavarla.</small></div><div class="alert alert-light border"><strong>Sofia L.</strong> ⭐⭐⭐⭐☆<br><small>Queda muy bien con vaqueros o falda.</small></div></div></div></div></div>
-    <!-- P21 -->
-    <div class="modal fade" id="P21" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Traje Slim - Opiniones</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="alert alert-light border"><strong>Pedro J.</strong> ⭐⭐⭐☆☆<br><small>La chaqueta queda bien, pero el pantalón es demasiado estrecho.</small></div><div class="alert alert-light border"><strong>David B.</strong> ⭐⭐⭐⭐☆<br><small>Buen corte moderno por este precio.</small></div></div></div></div></div>
-    <!-- P22 -->
-    <div class="modal fade" id="P22" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Pack Camisas - Opiniones</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="alert alert-light border"><strong>Luis A.</strong> ⭐⭐⭐⭐⭐<br><small>La mejor oferta de la tienda. Son básicas pero cumplen.</small></div><div class="alert alert-light border"><strong>Jorge M.</strong> ⭐⭐⭐⭐⭐<br><small>Perfectas para ir a trabajar a diario.</small></div></div></div></div></div>
-    <!-- P23 -->
-    <div class="modal fade" id="P23" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Vaqueros Clásicos - Opiniones</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="alert alert-light border"><strong>Jorge F.</strong> ⭐⭐⭐⭐☆<br><small>Resistentes, tela vaquera de la de antes.</small></div><div class="alert alert-light border"><strong>Antonio M.</strong> ⭐⭐⭐⭐⭐<br><small>Talla real, ni muy grandes ni muy pequeños.</small></div></div></div></div></div>
-    <!-- P31 -->
-    <div class="modal fade" id="P31" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Chándal Escolar - Opiniones</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="alert alert-light border"><strong>Lucía G.</strong> ⭐⭐⭐⭐☆<br><small>Aguanta bien los lavados y el trote del recreo.</small></div><div class="alert alert-light border"><strong>Pablo R.</strong> ⭐⭐⭐⭐☆<br><small>Cómodo para educación física.</small></div></div></div></div></div>
-    <!-- P32 -->
-    <div class="modal fade" id="P32" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Vestido Fiesta - Opiniones</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="alert alert-light border"><strong>Sofia N.</strong> ⭐⭐⭐⭐⭐<br><small>Precioso, mi hija se sintió como una princesa. Los bordados son lindos.</small></div></div></div></div></div>
-    <!-- P33 -->
-    <div class="modal fade" id="P33" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Pijama Suave - Opiniones</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="alert alert-light border"><strong>Raquel D.</strong> ⭐⭐⭐⭐⭐<br><small>El algodón es súper suave y orgánico de verdad.</small></div><div class="alert alert-light border"><strong>Beatriz S.</strong> ⭐⭐⭐⭐☆<br><small>Un poco largo de piernas, pero se arregla fácil.</small></div></div></div></div></div>
-    <!-- P41 -->
-    <div class="modal fade" id="P41" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Zapatillas Run - Opiniones</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="alert alert-light border"><strong>Runner01</strong> ⭐⭐⭐⭐⭐<br><small>Ligeras como una pluma.</small></div></div></div></div></div>
+        <!-- Noticia 2 (Internacional - Borde Dorado) -->
+        <article class="card text-white mb-5 border-warning border-4 shadow">
+            <img src="./img/noticias/Noticia2.jpg" class="card-img news-img" alt="Noticia 2">
+            <div class="card-img-overlay d-flex flex-column justify-content-center p-0">
+                <div class="news-overlay p-4 col-md-8 col-lg-6 h-100 d-flex flex-column justify-content-center border-start border-warning border-5">
+                    <h2 class="card-title display-6 fw-bold">Cómo llevar medias de colores este invierno sin resultar extravagante</h2>
+                    <h3 class="h5 mb-3 text-light">Rojas, blancas e incluso verdes: las medias de colores son la estrella del otoño-invierno 2025/2026</h3>
+                    <p class="card-text d-none d-md-block small">Con las temperaturas bajando poco a poco y el aire cada vez más cortante, el armario se prepara para dar la bienvenida a nuevas prendas y accesorios imprescindibles para combatir el frío, pero no solo eso...</p>
+                    <p class="card-text d-none d-md-block small">Como suele ocurrir, las pasarelas y el street style nos han demostrado que con las medias en invierno la diversión y el estilo están asegurados. Junto a los tonos clásicos negro y azul marino, también los hay más atrevidos...</p>
+                    <div class="mt-3 small border-top pt-2">
+                        <p class="m-0">Ámbito: Internacional | 25 Nov 2025 | Autor: Emma Bocchi</p>
+                        <a href="https://www.vogue.es/articulos/como-llevar-medias-colores-invierno#intcid=_vogue-es-right-rail_a7eab52d-38e5-4346-8dd5-941d634ad182_popular4-2" target="_blank" class="text-warning">Enlace noticia original</a>
+                    </div>
+                </div>
+            </div>
+        </article>
 
-    <!-- FOOTER -->
+        <!-- Noticia 3 (Nacional) -->
+        <article class="card text-white mb-5 border-0 shadow">
+            <img src="./img/noticias/Noticia3.jpg" class="card-img news-img" alt="Noticia 3">
+            <div class="card-img-overlay d-flex flex-column justify-content-center p-0">
+                <div class="news-overlay p-4 col-md-8 col-lg-6 h-100 d-flex flex-column justify-content-center">
+                    <h2 class="card-title display-6 fw-bold">La boda en Alicante del diseñador Edward Cuming: una celebración minimalista en una joya arquitectónica contemporánea</h2>
+                    <h3 class="h5 mb-3 text-light">A continuación, los detalles de la boda en Alicante de Edward Cuming y Juanma Costa Ripoll:</h3>
+                    <p class="card-text d-none d-md-block small">El pasado mes de octubre fue de lo más especial para Edward Cuming. El diseñador australiano no solo se coronó como el ganador de la 14ª edición de Vogue Fashion Fund...</p>
+                    <p class="card-text d-none d-md-block small">La pareja celebró su boda el pasado 11 de octubre en el Auditori Teulada Moraira, una localización inédita en la que nunca se había celebrado un evento privado de estas características...</p>
+                    <div class="mt-3 small border-top pt-2">
+                        <p class="m-0">Ámbito: Nacional | 26 Nov 2025 | Autor: Tatiana Ojea</p>
+                        <a href="https://www.vogue.es/galerias/boda-alicante-edward-cuming-auditori-teulada-moraira-estilo-decoracion-arquitectonico-minimalista#intcid=_vogue-es-right-rail_8a655085-66d3-44e9-acb9-3a0cf86bc56c_popular4-2" target="_blank" class="text-warning">Enlace noticia original</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Noticia 4 (Nacional) -->
+        <article class="card text-white mb-5 border-0 shadow">
+            <img src="./img/noticias/Noticia4.jpg" class="card-img news-img" alt="Noticia 4">
+            <div class="card-img-overlay d-flex flex-column justify-content-center p-0">
+                <div class="news-overlay p-4 col-md-8 col-lg-6 h-100 d-flex flex-column justify-content-center">
+                    <h2 class="card-title display-6 fw-bold">Vuelven los vestidos de fiesta navideños, vuelve el qipao</h2>
+                    <h3 class="h5 mb-3 text-light">El vestido que se convirtió en el símbolo estético de la China moderna vuelve al armario de cara a las fiestas</h3>
+                    <p class="card-text d-none d-md-block small">Hay algunos vestidos de fiesta que, como el turrón, siempre están de vuelta por Navidad. Uno de ellos es la enésima versión del diseño verde que luce Keira Knightley en Expiación...</p>
+                    <p class="card-text d-none d-md-block small">La frontera con la apropiación cultural ya es otra cuestión, pero no falla que cada temporada pueda encontrarse en la sección de fiesta de nuestras tiendas de cabecera...</p>
+                    <div class="mt-3 small border-top pt-2">
+                        <p class="m-0">Ámbito: Nacional | 25 Nov 2025 | Autor: Nuria Luis</p>
+                        <a href="https://www.vogue.es/articulos/qipao-vestido-fiesta-navidad-2025#intcid=_vogue-es-right-rail_69a9eb15-4beb-40cc-be9b-0459c391600c_popular4-2" target="_blank" class="text-warning">Enlace noticia original</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </main>
+    
+    <!-- FOOTER REUTILIZADO -->
     <footer class="py-5 mt-auto text-center">
         <div class="container">
             <div class="row g-4">
@@ -331,7 +131,7 @@
             </div>
         </div>
     </footer>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

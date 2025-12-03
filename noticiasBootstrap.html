@@ -3,28 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Tienda - Noticias (Bootstrap)</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- CSS Propio -->
     <link rel="stylesheet" href="estiloBootstrap.css">
-    <style>
-        .news-img { height: 550px; object-fit: cover; }
-    </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
 
     <!-- HEADER + NAV -->
     <header class="bg-brand py-3 text-white">
         <div class="container d-flex flex-wrap justify-content-between align-items-center">
-            <h1><a href="indexBootstrap.html" class="text-white text-decoration-none">MODA UNIVERSITAS</a></h1>
-            <div class="d-flex gap-2">
-                <button class="btn btn-outline-light">🛒 0</button>
+            <div class="header-info">
+                <h1 class="m-0"><a href="indexBootstrap.html" class="text-white text-decoration-none">MODA UNIVERSITAS</a></h1>
+                <small>Tu estilo, tu universidad.</small>
+            </div>
+            <div class="d-flex gap-2 align-items-center">
+                <button class="btn btn-light text-brand fw-bold btn-sm">🛒 <span class="badge bg-dark text-white">0</span></button>
                 <form action="https://www.google.com/search" target="_blank" class="d-flex">
                     <input type="text" name="q" class="form-control form-control-sm" placeholder="Buscar en Google..." required>
-                    <button type="submit" class="btn btn-dark">BUSCAR</button>
+                    <button type="submit" class="btn btn-dark btn-sm ms-1">BUSCAR</button>
                 </form>
             </div>
         </div>
     </header>
+    
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navNews">
@@ -53,8 +57,8 @@
         <!-- Noticia 1 (Nacional) -->
         <article class="card text-white mb-5 border-0 shadow">
             <img src="./img/noticias/Noticia1.jpg" class="card-img news-img" alt="Noticia 1">
-            <div class="card-img-overlay d-flex flex-column justify-content-center p-0">
-                <div class="news-overlay p-4 col-md-8 col-lg-6 h-100 d-flex flex-column justify-content-center">
+            <div class="card-img-overlay p-0">
+                <div class="news-overlay-container col-md-8 col-lg-6">
                     <h2 class="card-title display-6 fw-bold">Wonderland, la exposición del otoño que explora la trayectoria de Annie Leibovitz</h2>
                     <h3 class="h5 mb-3 text-light">El MOP de A Coruña acoge la primera gran retrospectiva de la fotógrafa norteamericana en nuestro país</h3>
                     <p class="card-text d-none d-md-block small">A Annie Leibovitz le encanta acompañar cada uno de sus libros con una correspondiente exposición. Sin embargo, hizo la excepción en 2021 con el lanzamiento de Wonderland, donde pone el foco en su fotografía de moda...</p>
@@ -67,11 +71,11 @@
             </div>
         </article>
 
-        <!-- Noticia 2 (Internacional - Borde Dorado) -->
-        <article class="card text-white mb-5 border-warning border-4 shadow">
+        <!-- Noticia 2 (Internacional) -->
+        <article class="card text-white mb-5 border-internacional shadow">
             <img src="./img/noticias/Noticia2.jpg" class="card-img news-img" alt="Noticia 2">
-            <div class="card-img-overlay d-flex flex-column justify-content-center p-0">
-                <div class="news-overlay p-4 col-md-8 col-lg-6 h-100 d-flex flex-column justify-content-center border-start border-warning border-5">
+            <div class="card-img-overlay p-0">
+                <div class="news-overlay-container col-md-8 col-lg-6 border-start border-warning border-5">
                     <h2 class="card-title display-6 fw-bold">Cómo llevar medias de colores este invierno sin resultar extravagante</h2>
                     <h3 class="h5 mb-3 text-light">Rojas, blancas e incluso verdes: las medias de colores son la estrella del otoño-invierno 2025/2026</h3>
                     <p class="card-text d-none d-md-block small">Con las temperaturas bajando poco a poco y el aire cada vez más cortante, el armario se prepara para dar la bienvenida a nuevas prendas y accesorios imprescindibles para combatir el frío, pero no solo eso...</p>
@@ -87,8 +91,8 @@
         <!-- Noticia 3 (Nacional) -->
         <article class="card text-white mb-5 border-0 shadow">
             <img src="./img/noticias/Noticia3.jpg" class="card-img news-img" alt="Noticia 3">
-            <div class="card-img-overlay d-flex flex-column justify-content-center p-0">
-                <div class="news-overlay p-4 col-md-8 col-lg-6 h-100 d-flex flex-column justify-content-center">
+            <div class="card-img-overlay p-0">
+                <div class="news-overlay-container col-md-8 col-lg-6">
                     <h2 class="card-title display-6 fw-bold">La boda en Alicante del diseñador Edward Cuming: una celebración minimalista en una joya arquitectónica contemporánea</h2>
                     <h3 class="h5 mb-3 text-light">A continuación, los detalles de la boda en Alicante de Edward Cuming y Juanma Costa Ripoll:</h3>
                     <p class="card-text d-none d-md-block small">El pasado mes de octubre fue de lo más especial para Edward Cuming. El diseñador australiano no solo se coronó como el ganador de la 14ª edición de Vogue Fashion Fund...</p>
@@ -104,8 +108,8 @@
         <!-- Noticia 4 (Nacional) -->
         <article class="card text-white mb-5 border-0 shadow">
             <img src="./img/noticias/Noticia4.jpg" class="card-img news-img" alt="Noticia 4">
-            <div class="card-img-overlay d-flex flex-column justify-content-center p-0">
-                <div class="news-overlay p-4 col-md-8 col-lg-6 h-100 d-flex flex-column justify-content-center">
+            <div class="card-img-overlay p-0">
+                <div class="news-overlay-container col-md-8 col-lg-6">
                     <h2 class="card-title display-6 fw-bold">Vuelven los vestidos de fiesta navideños, vuelve el qipao</h2>
                     <h3 class="h5 mb-3 text-light">El vestido que se convirtió en el símbolo estético de la China moderna vuelve al armario de cara a las fiestas</h3>
                     <p class="card-text d-none d-md-block small">Hay algunos vestidos de fiesta que, como el turrón, siempre están de vuelta por Navidad. Uno de ellos es la enésima versión del diseño verde que luce Keira Knightley en Expiación...</p>
@@ -120,7 +124,7 @@
 
     </main>
     
-    <!-- FOOTER REUTILIZADO -->
+    <!-- FOOTER -->
     <footer class="py-5 mt-auto text-center">
         <div class="container">
             <div class="row g-4">

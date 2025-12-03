@@ -10,6 +10,7 @@
     --white: #ffffff;
     --accent-gold: #c5a009;   /* Dorado Premium */
     --accent-red: #d32f2f;    /* Rojo Ofertas */
+    --text-light: #FCF6F5;    /* Color de texto claro (nav/header) */
 }
 
 /* Aplicación global */
@@ -30,7 +31,7 @@ h1, h2, h3, h4, h5, .navbar-brand {
 
 /* --- 2. PERSONALIZACIÓN DE BOOTSTRAP (Colores Exactos) --- */
 
-/* Cabecera y elementos de marca (#990011) */
+/* Cabecera (#990011) */
 .bg-brand {
     background-color: var(--secondary-color) !important;
 }
@@ -41,7 +42,7 @@ h1, h2, h3, h4, h5, .navbar-brand {
 
 /* Navbar: Fondo claro (#FCF6F5) y borde primario */
 .navbar-custom {
-    background-color: #FCF6F5;
+    background-color: var(--text-light);
     border-bottom: 1px solid var(--primary-color);
 }
 
@@ -53,7 +54,14 @@ h1, h2, h3, h4, h5, .navbar-brand {
 .navbar-custom .nav-link:hover, 
 .navbar-custom .nav-link.active {
     background-color: var(--secondary-color);
-    color: #FCF6F5; /* Texto claro al hacer hover */
+    color: var(--text-light);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    border-radius: 0;
+    border: 1px solid #eee;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 /* Botones: Color primario (#2E0D14) */
@@ -70,18 +78,18 @@ h1, h2, h3, h4, h5, .navbar-brand {
 /* Footer: Rojo corporativo (#990011) */
 footer {
     background-color: var(--secondary-color);
-    color: #FCF6F5;
+    color: var(--text-light);
     font-family: "Oswald", sans-serif;
 }
 footer a {
-    color: #FCF6F5;
+    color: var(--text-light);
     text-decoration: none;
 }
 footer h4 {
-    border-bottom: 1px solid #FCF6F5;
+    border-bottom: 1px solid var(--text-light);
     padding-bottom: 5px;
     display: inline-block;
-    color: #FCF6F5;
+    color: var(--text-light);
 }
 
 /* --- 3. ESTILOS DE PRODUCTOS --- */
@@ -121,7 +129,7 @@ footer h4 {
 /* Categoría Trending (Fondo rojizo suave) */
 .trending {
     background-color: rgba(46, 13, 20, 0.1);
-    border: 2px dashed var(--primary-color);
+    border: 2px dashed var(--secondary-color);
 }
 .trending .stars-inner {
     color: var(--accent-red);
@@ -131,7 +139,7 @@ footer h4 {
 .mobile-texture {
     background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
     background-color: #fff8e1;
-    border: 2px dashed var(--primary-color);
+    border: 2px dashed var(--secondary-color);
 }
 
 /* --- 4. GUÍA DE TALLAS (Solución Overflow) --- */
@@ -201,7 +209,29 @@ footer h4 {
     display: block; 
 }
 
-/* --- 5. EXTRAS --- */
+/* --- 5. NOTICIAS (Overlay Style) --- */
+.news-img {
+    height: 550px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.news-overlay-container {
+    background: rgba(40, 20, 10, 0.45); /* Mismo tono semi-transparente */
+    backdrop-filter: blur(1px);
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Borde Internacional */
+.border-internacional {
+    border: 5px solid var(--accent-gold) !important;
+}
+
+/* --- 6. EXTRAS --- */
 .w3c-icon {
     border: 1px solid black;
     padding: 5px;

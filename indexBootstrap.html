@@ -8,12 +8,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- CSS Propio Reciclado -->
+    <!-- CSS Propio -->
     <link rel="stylesheet" href="estiloBootstrap.css">
 </head>
 <body class="d-flex flex-column min-vh-100">
 
-    <!-- HEADER (Grid adaptativo) -->
+    <!-- HEADER (Color original #990011) -->
     <header class="bg-brand py-3 text-white">
         <div class="container">
             <div class="row align-items-center">
@@ -23,7 +23,7 @@
                 </div>
                 <div class="col-md-4 mt-3 mt-md-0">
                     <div class="d-flex gap-2 justify-content-center justify-content-md-end">
-                        <button class="btn btn-outline-light">🛒 <span class="badge bg-white text-dark">0</span></button>
+                        <button class="btn btn-light text-brand fw-bold">🛒 <span class="badge bg-dark text-white">0</span></button>
                         <form action="https://www.google.com/search" target="_blank" class="d-flex">
                             <input type="text" name="q" class="form-control me-1" placeholder="Buscar en Google..." required>
                             <button type="submit" class="btn btn-dark"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -34,7 +34,7 @@
         </div>
     </header>
 
-    <!-- NAVBAR (Componente Bootstrap) -->
+    <!-- NAVBAR (Color original #FCF6F5) -->
     <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
@@ -67,7 +67,7 @@
             <p class="lead">¡Bienvenido a nuestra página web! Nos complace tenerte. Explora nuestros productos/artículos más recientes.</p>
         </div>
 
-        <!-- CAROUSEL (Componente Bootstrap para secciones de imagen) -->
+        <!-- CAROUSEL (Sustituye imágenes estáticas) -->
         <div id="heroCarousel" class="carousel slide mb-5 shadow rounded overflow-hidden" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
@@ -77,17 +77,17 @@
                 <!-- Slide 1 -->
                 <div class="carousel-item active">
                     <img src="./img/Index1.jpg" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Modas Membresía">
-                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
-                        <h5>Modas Membresia</h5>
-                        <p>Regístrate y disfruta de un 2% de cashback con cada compra, ventajas exclusivas y mucho más</p>
+                    <div class="carousel-caption d-none d-md-block news-overlay-container rounded" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 20px;">
+                        <h5 class="text-white font-weight-bold">Modas Membresia</h5>
+                        <p class="text-white">Regístrate y disfruta de un 2% de cashback con cada compra, ventajas exclusivas y mucho más</p>
                     </div>
                 </div>
                 <!-- Slide 2 -->
                 <div class="carousel-item">
                     <img src="./img/bienvenida2.jpg" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="#UNIVESITYLOOKS">
-                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
-                        <h5>#UNIVESITYLOOKS</h5>
-                        <p>Inspírate con los #stradilooks de nuestra comunidad y descubre cómo tú también puedes convertirte en creador de contenido.</p>
+                    <div class="carousel-caption d-none d-md-block news-overlay-container rounded" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 20px;">
+                        <h5 class="text-white font-weight-bold">#UNIVESITYLOOKS</h5>
+                        <p class="text-white">Inspírate con los #stradilooks de nuestra comunidad y descubre cómo tú también puedes convertirte en creador de contenido para Stradivarius.</p>
                     </div>
                 </div>
             </div>
@@ -99,7 +99,7 @@
             </button>
         </div>
 
-        <!-- SEDES (Grid System) -->
+        <!-- SEDES (Grid System: 2 columnas en MD/LG, 1 en XS) -->
         <section class="mb-5">
             <h3 class="text-center mb-4">Nuestras Sedes</h3>
             <div class="row g-4">
@@ -144,7 +144,7 @@
             </div>
         </section>
 
-        <!-- INFOGRAFÍA / ACORDEÓN (Completo con los 5 consejos) -->
+        <!-- INFOGRAFÍA / ACORDEÓN -->
         <section class="bg-light p-4 rounded border">
             <h3 class="text-center mb-4">Consejos para <span class="text-brand">EMPRENDER</span></h3>
             <p class="text-center text-muted">Presentado por El Pulpo Simpático</p>
@@ -160,8 +160,8 @@
                     <div id="c1" class="accordion-collapse collapse show" data-bs-parent="#accordionInfografia">
                         <div class="accordion-body">
                             <div class="row align-items-center">
-                                <div class="col-md-8">Si tu no amas tu proyecto, es difícil que los demás lo hagan. La pasión se transmite, así que si tú estás convencida de lo que haces, los demás creerán en ti.</div>
-                                <div class="col-md-4 text-center"><img src="./img/img1.jpg" class="img-fluid rounded" alt="img1" style="max-height: 150px;"></div>
+                                <div class="col-md-8">Si tu no amas tu proyecto, es difícil que los demás lo hagan. La pasión se transmite, así que si tú estás convencida de lo que haces, los demás creerán en ti y en lo que ofreces.</div>
+                                <div class="col-md-4 text-center"><img src="./img/img1.jpg" class="img-fluid rounded border border-warning" alt="img1" style="max-height: 150px;"></div>
                             </div>
                         </div>
                     </div>
@@ -177,7 +177,7 @@
                         <div class="accordion-body">
                             <div class="row align-items-center">
                                 <div class="col-md-8">Es muy importante que tengas claras tus metas a corto, mediano y largo plazo, de manera que puedas establecer un plan de acción para cumplir cada una de ellas.</div>
-                                <div class="col-md-4 text-center"><img src="./img/img2.jpg" class="img-fluid rounded" alt="img2" style="max-height: 150px;"></div>
+                                <div class="col-md-4 text-center"><img src="./img/img2.jpg" class="img-fluid rounded border border-danger" alt="img2" style="max-height: 150px;"></div>
                             </div>
                         </div>
                     </div>
@@ -192,8 +192,8 @@
                     <div id="c3" class="accordion-collapse collapse" data-bs-parent="#accordionInfografia">
                         <div class="accordion-body">
                             <div class="row align-items-center">
-                                <div class="col-md-8">Para conseguir clientes, es fundamental darte a conocer. Las redes sociales pueden ser grandes herramientas para esto.</div>
-                                <div class="col-md-4 text-center"><img src="./img/img3.jpg" class="img-fluid rounded" alt="img3" style="max-height: 150px;"></div>
+                                <div class="col-md-8">Para conseguir clientes, es fundamental darte a conocer. Las redes sociales pueden ser grandes herramientas para esto, así como compartir con tus conocidos.</div>
+                                <div class="col-md-4 text-center"><img src="./img/img3.jpg" class="img-fluid rounded border border-secondary" alt="img3" style="max-height: 150px;"></div>
                             </div>
                         </div>
                     </div>
@@ -208,8 +208,8 @@
                     <div id="c4" class="accordion-collapse collapse" data-bs-parent="#accordionInfografia">
                         <div class="accordion-body">
                             <div class="row align-items-center">
-                                <div class="col-md-8">Ya sea que lo hagas tú o lo delegues a otra persona, tener muy bien organizadas las finanzas de tu emprendimiento te ayudará a que crezca.</div>
-                                <div class="col-md-4 text-center"><img src="./img/img4.jpg" class="img-fluid rounded" alt="img4" style="max-height: 150px;"></div>
+                                <div class="col-md-8">Ya sea que lo hagas tú o lo delegues a otra persona, tener muy bien organizadas las finanzas de tu emprendimiento te ayudará a que crezca y sea sostenible.</div>
+                                <div class="col-md-4 text-center"><img src="./img/img4.jpg" class="img-fluid rounded border border-info" alt="img4" style="max-height: 150px;"></div>
                             </div>
                         </div>
                     </div>
@@ -224,45 +224,28 @@
                     <div id="c5" class="accordion-collapse collapse" data-bs-parent="#accordionInfografia">
                         <div class="accordion-body">
                             <div class="row align-items-center">
-                                <div class="col-md-8">Tu negocio está centrado en tus clientes, recuerda siempre estar atenta a sus necesidades y preferencias.</div>
-                                <div class="col-md-4 text-center"><img src="./img/img5.jpg" class="img-fluid rounded" alt="img5" style="max-height: 150px;"></div>
+                                <div class="col-md-8">Tu negocio está centrado en tus clientes, recuerda siempre estar atenta a sus necesidades y preferencias, de esta forma, ellas ocuparán tu producto.</div>
+                                <div class="col-md-4 text-center"><img src="./img/img5.jpg" class="img-fluid rounded border border-success" alt="img5" style="max-height: 150px;"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="text-center mt-3">
-                <p>Para más consejos ingresa a: <a href="#" class="fw-bold text-brand">www.sitioincreible.com</a></p>
+                <p>Para más consejos como estos ingresa a: <a href="#" class="fw-bold text-brand" style="font-family: 'Momo Trust Display', sans-serif;">www.sitioincreible.com</a></p>
             </div>
         </section>
 
     </main>
 
-    <!-- FOOTER (Grid System) -->
+    <!-- FOOTER -->
     <footer class="py-5 mt-auto text-center">
         <div class="container">
             <div class="row g-4">
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <h4>Autores</h4>
-                    <p class="mt-2">José Manuel Moreno Quesada<br>Alejandra Fogacho Suquilanda</p>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <h4>Validación CSS</h4>
-                    <br>
-                    <div class="w3c-icon">✓ Bootstrap 5</div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <h4>Redes Sociales</h4>
-                    <div class="mt-2 fs-4">
-                        <p><a href="https://www.facebook.com/UniversidadMiguelHernandezElche/?locale=es_ES"><i class="fa-brands fa-facebook"></i></a><br></p>
-                        <p><a href="https://www.instagram.com/universidadmh/?hl=es"><i class="fa-brands fa-instagram"></i></a></p>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <h4>Enlaces PW</h4>
-                    <p class="mt-2"><a href="https://www.umh.es/">Universidad</a><br></p>
-                    <p><a href="https://www.umh.es/contenido/Estudios/:asi_g_2804_S8/datos_es.html">Departamento</a></p>
-                </div>
+                <div class="col-12 col-sm-6 col-lg-3"><h4>Autores</h4><p class="mt-2">José Manuel Moreno Quesada<br>Alejandra Fogacho Suquilanda</p></div>
+                <div class="col-12 col-sm-6 col-lg-3"><h4>Validación CSS</h4><br><div class="w3c-icon">✓ Bootstrap 5</div></div>
+                <div class="col-12 col-sm-6 col-lg-3"><h4>Redes Sociales</h4><div class="mt-2 fs-4"><p><a href="https://www.facebook.com/UniversidadMiguelHernandezElche/?locale=es_ES"><i class="fa-brands fa-facebook"></i></a><br></p><p><a href="https://www.instagram.com/universidadmh/?hl=es"><i class="fa-brands fa-instagram"></i></a></p></div></div>
+                <div class="col-12 col-sm-6 col-lg-3"><h4>Enlaces PW</h4><p class="mt-2"><a href="https://www.umh.es/">Universidad</a><br></p><p><a href="https://www.umh.es/contenido/Estudios/:asi_g_2804_S8/datos_es.html">Departamento</a></p></div>
             </div>
         </div>
     </footer>
