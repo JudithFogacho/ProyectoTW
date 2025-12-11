@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Ropa - Contacto</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+    <div class="grid-container">
+
+        <!-- 1. CABECERA -->
+        <header class="header">
+            <div class="header-info">
+                <h1><a href="#en-construccion">MODA UNIVERSITAS</a></h1>
+                <p>Tu estilo, tu universidad.</p>
+            </div>
+            
+            <!-- Zona derecha: Carrito Global + Buscador -->
+            <div class="header-search">
+                <!-- Botón del Carrito General -->
+                <button class="cart-main-btn" title="Ver mi compra">
+                    🛒 0
+                </button>
+                
+                <!-- Formulario de Búsqueda (Google) -->
+                <form action="https://www.google.com/search" method="get" target="_blank">
+                    <input type="text" name="q" placeholder="Buscar en Google..." required>
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+        </header>
+
+        <!-- 2. MENÚ -->
+        <nav class="main-menu">
+            <ul>
+                <li><a href="#en-construccion">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="productosP4.html">Productos <span class="arrow-icon">▾</span></a>
+                    <ul class="dropdown-content">
+                        <li><a href="productosP4.html#mujer">Ropa Mujer</a></li>
+                        <li><a href="productosP4.html#hombre">Ropa Hombre</a></li>
+                        <li><a href="productosP4.html#ninos">Ropa Niños</a></li>
+                    </ul>
+                </li>
+                <li><a href="#en-construccion">Novedades</a></li>
+                <li><a href="contactoP4.html" class="active">Contactos</a></li>
+            </ul>
+        </nav>
+
+        <!-- 3. ZONA CENTRAL (1 columna por defecto gracias al CSS) -->
+        <div class="main-wrapper">
+            
+            <!-- FORMULARIO DE CONTACTO -->
+            <main class="content-area">
+                <h2>Formulario de contacto</h2>
+                <p class="warning-text">Rellene el documento, por favor. Los datos * son obligatorios.</p>
+
+                <!-- Formulario maquetado con GRID -->
+                <form action="mailto:mquesada@umh.es" method="post" enctype="text/plain" class="contact-form-grid">
+                    
+                    <!-- Fila 1: Nombre y Apellido -->
+                    <div class="form-group">
+                        <label for="nombre">Nombre*</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre..">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellido*</label>
+                        <input type="text" id="apellido" name="apellido" required placeholder="Tu apellido..">
+                    </div>
+
+                    <!-- Fila 2: Dirección -->
+                    <div class="form-group full-width">
+                        <label for="direccion">Dirección*</label>
+                        <input type="text" id="direccion" name="direccion" required placeholder="Calle, número, piso...">
+                    </div>
+
+                    <!-- Fila 3: Apartamento -->
+                    <div class="form-group full-width">
+                        <label for="Apart">Apartamento, suite o unidad</label>
+                        <input type="text" id="Apart" name="Apart">
+                    </div>
+
+                    <!-- Fila 4: Ciudad y Provincia -->
+                    <div class="form-group">
+                        <label for="Ciudad">Ciudad*</label>
+                        <input type="text" id="Ciudad" name="Ciudad" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Provincia">Provincia*</label>
+                        <select id="Provincia" name="Provincia" required>
+                            <option value="">Seleccione uno...</option>
+                            <option value="AL">Alicante</option>
+                            <option value="MU">Murcia</option>
+                            <option value="VA">Valencia</option>
+                        </select>
+                    </div>
+
+                    <!-- Fila 5: CP y Email -->
+                    <div class="form-group">
+                        <label for="CopPost">Código postal*</label>
+                        <input type="text" id="CopPost" name="CopPost" required pattern="[0-9]{5}">
+                    </div>
+                    <div class="form-group">
+                        <label for="email1">Email*</label>
+                        <input type="email" id="email1" name="email" required placeholder="ejemplo@umh.es">
+                    </div>
+
+                    <!-- Fila 6: Teléfono y Tipo -->
+                    <div class="form-group">
+                        <label for="telef">Número de teléfono*</label>
+                        <input type="tel" id="telef" name="telef" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="tipo_telef" value="casa"> Casa</label>
+                            <label><input type="radio" name="tipo_telef" value="trabajo"> Trabajo</label>
+                            <label><input type="radio" name="tipo_telef" value="movil"> Móvil</label>
+                        </div>
+                    </div>
+
+                    <!-- Fila 7: DNI y Banco -->
+                    <div class="form-group">
+                        <label for="dni">DNI*</label>
+                        <input type="text" id="dni" name="dni" required pattern="[0-9]{8}[A-Za-z]">
+                    </div>
+                    <div class="form-group">
+                        <label for="bank">Código bancario*</label>
+                        <input type="text" id="bank" name="bank" required pattern="[A-Za-z][A-Za-z][0-9]{22}">
+                    </div>
+
+                    <!-- Fila 8: Confirmar Email -->
+                    <div class="form-group full-width">
+                        <label for="email2">Confirmar Email*</label>
+                        <input type="email" id="email2" name="email_confirmar" required>
+                    </div>
+
+                    <!-- Fila 9: Fecha y Color -->
+                    <div class="form-group">
+                        <label for="fecha_nac">Fecha de nacimiento</label>
+                        <input type="date" id="fecha_nac" name="fecha_nac">
+                    </div>
+                    <div class="form-group">
+                        <label for="color_fav">Color favorito:</label>
+                        <div class="color-wrapper">
+                            <input type="color" id="color_fav" name="color_fav">
+                        </div>
+                    </div>
+
+                    <!-- Fila 10: Range -->
+                    <div class="form-group full-width">
+                        <label for="satisfac">Nivel de satisfacción (1-10):</label>
+                        <div class="range-wrapper">
+                            <span>1</span>
+                            <input type="range" id="satisfac" name="satisfac" min="1" max="10">
+                            <span>10</span>
+                        </div>
+                    </div>
+
+                    <!-- Botones -->
+                    <div class="form-buttons full-width">
+                        <input type="submit" value="Enviar" class="btn-submit">
+                        <input type="reset" value="Limpiar" class="btn-reset">
+                    </div>
+
+                </form>
+            </main>
+
+        </div>
+
+        <!-- 4. PIE DE PÁGINA -->
+        <footer class="footer">
+            <div class="footer-col">
+                <h4>Autores</h4>
+                <p>José Manuel Moreno Quesada</p>
+                <p>Alejandra Fogacho Suquilanda</p>
+            </div>
+            <div class="footer-col">
+                <h4>Validación CSS</h4>
+                <br>
+                <div class="w3c-icon">✓ CSS Válido</div>
+            </div>
+            <div class="footer-col">
+                <h4>Redes Sociales</h4>
+                <p><a href="https://www.facebook.com/UniversidadMiguelHernandezElche/?locale=es_ES"><i class="fa-brands fa-facebook"></i></a><br></p>
+                <p><a href="https://www.instagram.com/universidadmh/?hl=es"><i class="fa-brands fa-instagram"></i></a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Enlaces PW</h4>
+                <p><a href="https://www.umh.es/">Universidad</a><br></p>
+                <p><a href="https://www.umh.es/contenido/Estudios/:asi_g_2804_S8/datos_es.html">Departamento</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <div id="en-construccion" class="modal-overlay">
+        <div class="modal-content">
+            <h3>🚧 Página en construcción 🚧</h3>
+            <p>La sección a la que desea acceder se está implementando actualmente.</p>
+            <p>Disculpa las molestias.</p>
+            <a href="#" class="modal-close-btn">Cerrar</a>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<!-- Reglas usadas de W3Schools -CSS Form https://www.w3schools.com/css/css_form.asp -->
