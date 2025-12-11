@@ -745,3 +745,45 @@ h2 {
 }
 
 .mobile-only-category { display: none; }
+
+/* --- DESCUENTO ESPECIAL (GHOST) --- */
+
+/* El elemento que flota */
+#ghost-discount {
+    position: fixed;
+    padding: 15px 25px;
+    background-color: #c5a009; /* Dorado Premium */
+    color: var(--primary-color);
+    font-weight: bold;
+    border: 2px dashed var(--primary-color);
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 9999; /* Por encima de todo */
+    box-shadow: 0 0 15px rgba(197, 160, 9, 0.8);
+    transition: top 1s ease, left 1s ease, transform 0.2s; /* Movimiento suave */
+    user-select: none;
+}
+
+#ghost-discount:active {
+    transform: scale(0.9);
+}
+
+/* Clase para ocultarlo */
+.ghost-hidden {
+    display: none !important;
+}
+
+/* ESTILO DINÁMICO PARA EL TOTAL CON DESCUENTO */
+/* Requisito: Cambiar estilo del total al aplicar descuento */
+.total-discount-applied {
+    color: #28a745 !important; /* Verde éxito */
+    text-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+    font-size: 1.6em !important;
+    border-top: 2px solid #28a745 !important;
+}
+
+.total-discount-applied::after {
+    content: " (-10% APLICADO)";
+    font-size: 0.6em;
+    vertical-align: middle;
+}
