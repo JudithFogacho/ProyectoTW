@@ -363,5 +363,362 @@ if(btnCleanCart) {
     });
 }
 
-// Inicializar
-initCatalog();
+// VALIDACIÓN DE FORMULARIO DE CONTACTO
+
+// Función para validar el DNI español
+function validarDNI(dni) {
+    // Patrón: 8 números seguidos de una letra
+    const dniPattern = /^[0-9]{8}[A-Za-z]$/;
+    
+    if (!dniPattern.test(dni)) {
+        return false;
+    }
+    
+    // Extraer número y letra
+    const numero = parseInt(dni.substr(0, 8), 10);
+    const letraIngresada = dni.charAt(8).toUpperCase();
+    
+    // Tabla de letras válidas según el módulo 23
+    const letrasValidas = "TRWAGMYFPDXBNJZSQVHLCKE";
+    const letraCalculada = letrasValidas.charAt(numero % 23);
+    
+    return letraIngresada === letraCalculada;
+}
+
+// Función para validar IBAN español
+function validarIBAN(iban) {
+    // Eliminar espacios en blanco
+    iban = iban.replace(/\s/g, '').toUpperCase();
+    
+    // Patrón IBAN español: ES seguido de 2 dígitos de control y 20 caracteres alfanuméricos
+    const ibanPattern = /^ES[0-9]{2}[0-9A-Z]{20}$/;
+    
+    if (!ibanPattern.test(iban)) {
+        return false;
+    }
+    
+    // Mover los 4 primeros caracteres al final
+    const reordenado = iban.substring(4) + iban.substring(0, 4);
+    
+    // Convertir letras a números (A=10, B=11, ..., Z=35)
+    let numeroIBAN = '';
+    for (let i = 0; i < reordenado.length; i++) {
+        const char = reordenado.charAt(i);
+        if (char >= 'A' && char <= 'Z') {
+            numeroIBAN += (char.charCodeAt(0) - 55).toString();
+        } else {
+            numeroIBAN += char;
+        }
+    }
+    
+    // Calcular módulo 97
+    // Para números grandes, hacemos el cálculo por partes
+    let resto = 0;
+    for (let i = 0; i < numeroIBAN.length; i++) {
+        resto = (resto * 10 + parseInt(numeroIBAN.charAt(i))) % 97;
+    }
+    
+    return resto === 1;
+}
+
+// Función para validar email UMH
+function validarEmailUMH(email) {
+    // El email debe terminar en @umh.es
+    const emailPattern = /^[a-zA-Z0-9._-]+@umh\.es$/;
+    return emailPattern.test(email);
+}
+
+// Función para mostrar error en un campo
+function mostrarError(campo, mensaje) {
+    // Añadir clase de error al campo
+    campo.classList.add('campo-error');
+    
+    // Buscar si ya existe un mensaje de error
+    let errorMsg = campo.parentElement.querySelector('.mensaje-error');
+    
+    if (!errorMsg) {
+        // Crear elemento de mensaje de error
+        errorMsg = document.createElement('span');
+        errorMsg.className = 'mensaje-error';
+        campo.parentElement.appendChild(errorMsg);
+    }
+    
+    errorMsg.textContent = mensaje;
+    errorMsg.style.display = 'block';
+}
+
+// Función para limpiar error de un campo
+function limpiarError(campo) {
+    campo.classList.remove('campo-error');
+    const errorMsg = campo.parentElement.querySelector('.mensaje-error');
+    if (errorMsg) {
+        errorMsg.style.display = 'none';
+    }
+}
+
+// Función para validar coincidencia de emails
+function validarCoincidenciaEmails(email1, email2) {
+    return email1.value === email2.value;
+}
+
+// Función para mostrar mensaje de éxito
+function mostrarMensajeExito() {
+    // Crear overlay de éxito
+    const overlay = document.createElement('div');
+    overlay.className = 'modal-overlay';
+    overlay.style.display = 'flex';
+    overlay.style.alignItems = 'center';
+    overlay.style.justifyContent = 'center';
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    overlay.style.zIndex = '10000';
+    
+    const modalContent = document.createElement('div');
+    modalContent.className = 'modal-content';
+    modalContent.style.backgroundColor = 'white';
+    modalContent.style.padding = '30px';
+    modalContent.style.borderRadius = '10px';
+    modalContent.style.textAlign = 'center';
+    modalContent.style.maxWidth = '500px';
+    modalContent.innerHTML = `
+        <h3 style="color: #27ae60; margin-bottom: 15px;">✅ Formulario Válido</h3>
+        <p style="margin-bottom: 10px;">Todos los datos han sido validados correctamente.</p>
+        <p style="margin-bottom: 20px;">El formulario está listo para ser enviado.</p>
+        <button class="modal-close-btn" style="background-color: #3498db; color: white; border: none; padding: 10px 25px; border-radius: 5px; cursor: pointer; font-size: 1rem;">Cerrar</button>
+    `;
+    
+    overlay.appendChild(modalContent);
+    document.body.appendChild(overlay);
+    
+    // Cerrar al hacer clic en el botón
+    const btnCerrar = modalContent.querySelector('.modal-close-btn');
+    btnCerrar.addEventListener('click', function() {
+        overlay.remove();
+    });
+    
+    // Cerrar al hacer clic fuera del modal
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) {
+            overlay.remove();
+        }
+    });
+}
+
+// Inicialización cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', function() {
+    const formulario = document.querySelector('.contact-form-grid');
+    
+    if (!formulario) return;
+    
+    console.log('Formulario de contacto encontrado, iniciando validación...');
+    
+    // Obtener campos del formulario
+    const campoEmail1 = document.getElementById('email1');
+    const campoEmail2 = document.getElementById('email2');
+    const campoDNI = document.getElementById('dni');
+    const campoIBAN = document.getElementById('bank');
+    
+    
+    // Validación de Email 1 (dominio UMH)
+    if (campoEmail1) {
+        campoEmail1.addEventListener('blur', function() {
+            limpiarError(this);
+            
+            if (this.value.trim() === '') {
+                mostrarError(this, 'El email es obligatorio');
+            } else if (!validarEmailUMH(this.value)) {
+                // Mostrar alerta de error
+                alert(' ERROR: El email debe pertenecer al dominio de la UMH (debe finalizar en @umh.es)');
+                mostrarError(this, 'El email debe pertenecer al dominio @umh.es');
+                this.focus();
+            }
+        });
+        
+        // Limpiar error al escribir
+        campoEmail1.addEventListener('input', function() {
+            if (this.classList.contains('campo-error')) {
+                limpiarError(this);
+            }
+        });
+    }
+    
+    // Validación de Email 2 (confirmación)
+    if (campoEmail2) {
+        campoEmail2.addEventListener('blur', function() {
+            limpiarError(this);
+            
+            if (this.value.trim() === '') {
+                mostrarError(this, 'Debe confirmar el email');
+            } else if (!validarEmailUMH(this.value)) {
+                // Mostrar alerta de error
+                alert(' ERROR: El email debe pertenecer al dominio de la UMH (debe finalizar en @umh.es)');
+                mostrarError(this, 'El email debe pertenecer al dominio @umh.es');
+                this.focus();
+            } else if (campoEmail1 && !validarCoincidenciaEmails(campoEmail1, campoEmail2)) {
+                alert(' ERROR: Los emails ingresados no coinciden. Por favor verifique.');
+                mostrarError(this, 'Los emails no coinciden');
+                this.focus();
+            }
+        });
+        
+        campoEmail2.addEventListener('input', function() {
+            if (this.classList.contains('campo-error')) {
+                limpiarError(this);
+            }
+        });
+    }
+    
+    // Validación de DNI
+    if (campoDNI) {
+        campoDNI.addEventListener('blur', function() {
+            limpiarError(this);
+            
+            if (this.value.trim() === '') {
+                mostrarError(this, 'El DNI es obligatorio');
+            } else if (!validarDNI(this.value)) {
+                mostrarError(this, 'DNI inválido. Debe tener 8 números y una letra válida');
+            }
+        });
+        
+        campoDNI.addEventListener('input', function() {
+            // Convertir a mayúsculas automáticamente
+            this.value = this.value.toUpperCase();
+            
+            if (this.classList.contains('campo-error')) {
+                limpiarError(this);
+            }
+        });
+    }
+    
+    // Validación de IBAN
+    if (campoIBAN) {
+        campoIBAN.addEventListener('blur', function() {
+            limpiarError(this);
+            
+            if (this.value.trim() === '') {
+                mostrarError(this, 'El código bancario (IBAN) es obligatorio');
+            } else if (!validarIBAN(this.value)) {
+                mostrarError(this, 'IBAN inválido. Debe ser un código IBAN español válido');
+            }
+        });
+        
+        campoIBAN.addEventListener('input', function() {
+            // Convertir a mayúsculas automáticamente
+            this.value = this.value.toUpperCase();
+            
+            if (this.classList.contains('campo-error')) {
+                limpiarError(this);
+            }
+        });
+    }
+    
+    // ===========================
+    // VALIDACIÓN AL ENVIAR
+    // ===========================
+    
+    formulario.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevenir envío por defecto
+        
+        console.log('Formulario enviado, validando...');
+        
+        let formularioValido = true;
+        
+        // Limpiar todos los errores previos
+        const todosLosCampos = formulario.querySelectorAll('input, select');
+        todosLosCampos.forEach(campo => limpiarError(campo));
+        
+        // Array para almacenar campos con error
+        const camposConError = [];
+        
+        // Validar campos obligatorios básicos
+        const camposObligatorios = formulario.querySelectorAll('[required]');
+        camposObligatorios.forEach(campo => {
+            if (campo.value.trim() === '' || (campo.tagName === 'SELECT' && campo.value === '')) {
+                mostrarError(campo, 'Este campo es obligatorio');
+                formularioValido = false;
+                camposConError.push(campo);
+            }
+        });
+        
+        // Validar Email 1
+        if (campoEmail1 && campoEmail1.value.trim() !== '') {
+            if (!validarEmailUMH(campoEmail1.value)) {
+                alert(' ERROR: El email debe pertenecer al dominio de la UMH (debe finalizar en @umh.es)');
+                mostrarError(campoEmail1, 'El email debe pertenecer al dominio @umh.es');
+                formularioValido = false;
+                camposConError.push(campoEmail1);
+            }
+        }
+        
+        // Validar Email 2 y coincidencia
+        if (campoEmail2 && campoEmail2.value.trim() !== '') {
+            if (!validarEmailUMH(campoEmail2.value)) {
+                alert(' ERROR: El email de confirmación debe pertenecer al dominio de la UMH (debe finalizar en @umh.es)');
+                mostrarError(campoEmail2, 'El email debe pertenecer al dominio @umh.es');
+                formularioValido = false;
+                camposConError.push(campoEmail2);
+            } else if (campoEmail1 && !validarCoincidenciaEmails(campoEmail1, campoEmail2)) {
+                alert(' ERROR: Los emails ingresados no coinciden. Por favor verifique.');
+                mostrarError(campoEmail2, 'Los emails no coinciden');
+                formularioValido = false;
+                camposConError.push(campoEmail2);
+            }
+        }
+        
+        // Validar DNI
+        if (campoDNI && campoDNI.value.trim() !== '') {
+            if (!validarDNI(campoDNI.value)) {
+                mostrarError(campoDNI, 'DNI inválido. Debe tener 8 números y una letra válida');
+                formularioValido = false;
+                camposConError.push(campoDNI);
+            }
+        }
+        
+        // Validar IBAN
+        if (campoIBAN && campoIBAN.value.trim() !== '') {
+            if (!validarIBAN(campoIBAN.value)) {
+                mostrarError(campoIBAN, 'IBAN inválido. Debe ser un código IBAN español válido');
+                formularioValido = false;
+                camposConError.push(campoIBAN);
+            }
+        }
+        
+        // Si hay errores, hacer scroll al primer campo con error
+        if (!formularioValido) {
+            console.log('Formulario con errores:', camposConError.length);
+            if (camposConError.length > 0) {
+                camposConError[0].focus();
+                camposConError[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            return false;
+        }
+        
+        // Si todo es válido, mostrar mensaje de éxito
+        console.log('¡Formulario válido!');
+        
+        // Mostrar alerta de éxito
+        alert(' FORMULARIO ENVIADO CORRECTAMENTE\n\nTodos los datos han sido validados y el formulario ha sido enviado exitosamente.\n\n¡Gracias por contactarnos!');
+        
+        // Opcional: Limpiar el formulario después de enviar
+        formulario.reset();
+        
+        // NO enviar a Gmail - El preventDefault() ya evita el envío
+        // formulario.submit(); // Esta línea está comentada para NO enviar
+    });
+    
+    // Validación del botón reset
+    const btnReset = formulario.querySelector('.btn-reset');
+    if (btnReset) {
+        btnReset.addEventListener('click', function() {
+            // Limpiar todos los errores visuales
+            setTimeout(() => {
+                const todosLosCampos = formulario.querySelectorAll('input, select');
+                todosLosCampos.forEach(campo => limpiarError(campo));
+            }, 10);
+        });
+    }
+});

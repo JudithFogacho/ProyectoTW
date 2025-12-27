@@ -787,3 +787,101 @@ h2 {
     font-size: 0.6em;
     vertical-align: middle;
 }
+
+/* ===================================
+   ESTILOS PARA VALIDACIÓN DE FORMULARIO
+   =================================== */
+
+/* Campo con error */
+.campo-error {
+    border: 2px solid #e74c3c !important;
+    background-color: #ffe6e6 !important;
+    animation: shake 0.3s ease-in-out;
+}
+
+/* Animación de sacudida para campos con error */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Mensaje de error */
+.mensaje-error {
+    display: none;
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    font-weight: 500;
+    animation: fadeIn 0.3s ease-in;
+}
+
+/* Animación de aparición suave */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Icono de error antes del mensaje */
+.mensaje-error::before {
+    content: "⚠ ";
+    font-weight: bold;
+}
+
+/* Ajustes para form-group para mensajes de error */
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem; /* Espacio extra para mensajes de error */
+}
+
+/* Campo válido (opcional, para feedback positivo) */
+input:not(.campo-error):focus:valid,
+select:not(.campo-error):focus:valid {
+    border-color: #27ae60;
+}
+
+/* Estilo para el modal de éxito */
+.modal-overlay.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mejorar visibilidad del botón de cerrar */
+.modal-close-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.modal-close-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Estilo para focus en campos del formulario */
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* Responsive: ajustar tamaño de mensajes en móviles */
+@media (max-width: 768px) {
+    .mensaje-error {
+        font-size: 0.8rem;
+    }
+}

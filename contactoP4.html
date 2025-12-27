@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda de Ropa - Contacto</title>
     <link rel="stylesheet" href="estilosP4.css">
+    <link rel="stylesheet" href="validacionFormulario.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
@@ -60,7 +61,7 @@
                 <p class="warning-text">Rellene el documento, por favor. Los datos * son obligatorios.</p>
 
                 <!-- Formulario maquetado con GRID -->
-                <form action="mailto:mquesada@umh.es" method="post" enctype="text/plain" class="contact-form-grid">
+                <form class="contact-form-grid" novalidate>
                     
                     <!-- Fila 1: Nombre y Apellido -->
                     <div class="form-group">
@@ -102,7 +103,7 @@
                     <!-- Fila 5: CP y Email -->
                     <div class="form-group">
                         <label for="CopPost">Código postal*</label>
-                        <input type="text" id="CopPost" name="CopPost" required pattern="[0-9]{5}">
+                        <input type="text" id="CopPost" name="CopPost" required pattern="[0-9]{5}" placeholder="03000">
                     </div>
                     <div class="form-group">
                         <label for="email1">Email*</label>
@@ -112,7 +113,7 @@
                     <!-- Fila 6: Teléfono y Tipo -->
                     <div class="form-group">
                         <label for="telef">Número de teléfono*</label>
-                        <input type="tel" id="telef" name="telef" required>
+                        <input type="tel" id="telef" name="telef" required placeholder="966658500">
                     </div>
                     <div class="form-group">
                         <label>Tipo</label>
@@ -126,17 +127,17 @@
                     <!-- Fila 7: DNI y Banco -->
                     <div class="form-group">
                         <label for="dni">DNI*</label>
-                        <input type="text" id="dni" name="dni" required pattern="[0-9]{8}[A-Za-z]">
+                        <input type="text" id="dni" name="dni" required placeholder="12345678A" maxlength="9">
                     </div>
                     <div class="form-group">
-                        <label for="bank">Código bancario*</label>
-                        <input type="text" id="bank" name="bank" required pattern="[A-Za-z][A-Za-z][0-9]{22}">
+                        <label for="bank">Código bancario (IBAN)*</label>
+                        <input type="text" id="bank" name="bank" required placeholder="ES91 2100 0418 4502 0005 1332" maxlength="24">
                     </div>
 
                     <!-- Fila 8: Confirmar Email -->
                     <div class="form-group full-width">
                         <label for="email2">Confirmar Email*</label>
-                        <input type="email" id="email2" name="email_confirmar" required>
+                        <input type="email" id="email2" name="email_confirmar" required placeholder="ejemplo@umh.es">
                     </div>
 
                     <!-- Fila 9: Fecha y Color -->
@@ -206,7 +207,8 @@
         </div>
     </div>
 
+    <!-- Script de validación del formulario -->
+    <script src="carrito.js"></script>
+
 </body>
 </html>
-
-<!-- Reglas usadas de W3Schools -CSS Form https://www.w3schools.com/css/css_form.asp -->
